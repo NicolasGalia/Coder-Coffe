@@ -14,9 +14,9 @@ const Menu = () => {
         <Navbar key={expand} expand={expand} className="mb-3 navbarPaginas">
           <Container fluid>
             <Navbar.Brand href="#">LOGO</Navbar.Brand>
-            <a>Menú</a>
-            <a>Nuestro Café</a>
-            <a>Expieriencia CoderCoffe</a>
+            <Nav.Link href="#action1" className="itemsNavb">Menú</Nav.Link>
+            <Nav.Link href="#action2" className="itemsNavb">Nuestro Café</Nav.Link>
+            <Nav.Link href="#action3" className="itemsNavb">Expieriencia CoderCoffe</Nav.Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

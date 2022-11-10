@@ -1,11 +1,23 @@
 .navbarPaginas{
 background-color:#b0d4e7;
+padding: 20px;
 
 }
 
 .navbarExpand{
     background-color:#b0d4e7;
 }
+
+.itemsNavb:hover{
+    position: relative;
+    color: white  !important;
+    text-transform:initial;
+    transition: color var(--time);
+	display: inline-block;
+	height: 2em;
+	overflow: hidden;
+}
+
 
 
 
