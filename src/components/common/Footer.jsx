@@ -1,29 +1,44 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { BsInstagram, BsFacebook } from "react-icons/bs";
+import { Nav, Row} from 'react-bootstrap';
+import { BsInstagram, BsFacebook, BsFillTelephoneInboundFill, BsCreditCard2FrontFill } from "react-icons/bs";
 import {AiOutlineTwitter} from "react-icons/ai"
-import {MdContactPhone} from "react-icons/md"
-import {FaHistory} from "react-icons/fa"
+import {GiCoffeeCup} from "react-icons/gi"
+import {IoLocationOutline} from "react-icons/io5"
 
 
 
 const Footer = () => {
     return (
-        <footer className="bg-dark text-light py-4 footer d-flex justify-content-center">
-            <Nav.Link href="#" className="fs-2 m-3">Sobre nosotros
-            <p className="fs-5 m-2">Nuestra Cultura</p>
-            <p className="fs-5 m-2">Nuestra mision</p>
-            <p className="fs-5 m-2"> <FaHistory></FaHistory>Historias y Novedades</p>
-            </Nav.Link>
-            <Nav.Link href="#" className="fs-2 m-3">Atencion al Cliente
-            <p className="fs-5 m-2"> <MdContactPhone></MdContactPhone> Contacto</p></Nav.Link>
-            <Nav.Link href="#" className="fs-2 m-3">Disfrutar Codeando?
-            <p className="fs-5 m-2">Tenemos la mejor experiencia para Ti</p></Nav.Link>
-        <p className="flex-end m-2">&copy; Todos los derechos reservados</p>
-        <BsInstagram className="m-2"/>
-        <BsFacebook className="m-2"></BsFacebook>
-        <AiOutlineTwitter className="m-2"   ></AiOutlineTwitter>
-       </footer>
+    <footer className="bg-dark text-light py-4 footer">
+<Row className="row d-flex">
+    <div className="col-3">
+    <Nav.Link href="#" className="m-3">
+ LOGO
+    </Nav.Link>
+    </div> 
+    <div className="col-3">
+    <Nav.Link href="#" className="m-3 fs-4">Sobre Nosotros</Nav.Link>
+    <Nav.Link href="#"className="m-4">Nuestro Cafe <GiCoffeeCup></GiCoffeeCup></Nav.Link>
+    <Nav.Link href="#"className="m-4">Nuestras Promociones</Nav.Link>
+    <Nav.Link href="#"className="m-4">Nuestra Ubicacion <IoLocationOutline></IoLocationOutline></Nav.Link>
+    </div> 
+    <div className="col-3"> 
+    <Nav.Link href="#" className="m-3 fs-4">Atencion al Cliente </Nav.Link>
+    <p className="m-4">+ 11 4347 9443 <BsFillTelephoneInboundFill className ="m-1"/></p>
+    <p className="m-4">Medios de pago <BsCreditCard2FrontFill></BsCreditCard2FrontFill></p>
+    </div> 
+    <div className = "col-2 text-center d-flex">
+        <Nav.Link href="#"><BsInstagram className="m-2 bg"/></Nav.Link>
+        <Nav.Link href="#"> <BsFacebook className="m-2"></BsFacebook></Nav.Link>
+        <Nav.Link href="#"> <AiOutlineTwitter className="m-2"></AiOutlineTwitter></Nav.Link>
+        </div>
+    <hr />
+    <div>
+       <p className="m-5 d-flex justify-content-center">&copy; Todos los derechos reservados</p>
+       </div>
+</Row>      
+        </footer>
+
     );
 };
 
