@@ -1,6 +1,18 @@
 import React from 'react';
-
+import { Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import {useForm} from 'react-hook-form';
 const CrearProducto = () => {
+    const {register, handleSubmit, formState:{errors}, reset} = useForm();
+    //inicializamos useNavigate
+    const navegacion = useNavigate();
+
+    const onSubmit = (datos) =>{
+        console.log(datos)
+
+        }
+
+
     return (
         <section className="container mainSection">
       <h1 className="display-4 mt-5">Nuevo producto</h1>

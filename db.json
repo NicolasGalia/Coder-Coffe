@@ -1,0 +1,13 @@
+{
+    "productos": [
+      {
+        "nombreProducto": "café",
+        "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "precio": 300,
+        "categoria": "bebida-caliente",
+        "id": 1
+      }      
+
+      ]      
+
+      }
