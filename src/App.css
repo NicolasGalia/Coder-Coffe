@@ -39,15 +39,14 @@ padding: 20px;
 /*PAGINA ADMIN*/
 
 .boxAdmin{
-    background-color:rgba(231, 142, 139, 0.88) ;
+    background-color:rgba(204, 191, 70, 0.88) ;
 
-    color: white;
-    border-radius: 20px;
+        border-radius: 20px;
 }
 
 .boxCrear{
-    background-color:rgba(231, 142, 139, 0.88) ;
-    color: white;
+    background-color:rgba(204, 191, 70, 0.88) ;
+    
     border-radius: 20px;
     width: 50em;
     height:fit-content;
@@ -61,14 +60,15 @@ padding: 20px;
 
 
 .btnAgregar{
-    background-color:white ;
-    color: rgb(10, 104, 10);
+    background-color:rgb(10, 104, 10) ;
+    color: white;
     font-weight: 600;
 }
 
 .btnAgregar:hover{
-    color: white;
-    background-color: rgb(10, 104, 10);
+    color: rgb(10, 104, 10);
+    background-color:white;
+    font-weight: 700;
 }
 
 .btnGuardar{

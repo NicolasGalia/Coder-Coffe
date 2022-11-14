@@ -45,7 +45,7 @@ const CrearProducto = () => {
       <hr />
 
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formNombreProdcuto">
+        <Form.Group className="mb-3 fw-bold" controlId="formNombreProdcuto">
           <Form.Label>Nombre producto*</Form.Label>
           <Form.Control
             type="text"
@@ -68,7 +68,7 @@ const CrearProducto = () => {
             {errors.nombreProducto?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3 fw-bold" controlId="formPrecio">
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
@@ -89,7 +89,7 @@ const CrearProducto = () => {
             {errors.precio?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formImagen">
+        <Form.Group className="mb-3 fw-bold" controlId="formImagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
             type="text"
@@ -106,7 +106,7 @@ const CrearProducto = () => {
             {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3 fw-bold" controlId="formPrecio">
           <Form.Label>Categoria*</Form.Label>
           <Form.Select
             {...register("categoria", {
