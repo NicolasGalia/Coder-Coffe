@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../components/helpers/queries";
 import { useNavigate } from "react-router-dom";
-import { Swal } from "sweetalert2";
+import Swal from "sweetalert2"
 
 const CrearProducto = () => {
   const {
