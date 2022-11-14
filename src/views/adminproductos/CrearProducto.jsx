@@ -26,7 +26,7 @@ const CrearProducto = () => {
         //resetear el formulario
         reset();
         //redireccionar
-        navegacion("/administrar");
+        navegacion("/administrador");
       } else {
         Swal.fire(
           "Ocurrio un error",

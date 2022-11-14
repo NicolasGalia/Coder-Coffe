@@ -18,12 +18,21 @@ padding: 20px;
 	overflow: hidden;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    height: auto;
-  }
+
+/*MANTIENE EL FOOTER ABAJO SIEMPRE*/
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*AGREGAR ESTA CLASE EN EL RETURN PARA QUE ESTE SIEMPRE ABAJO EL FOOTER*/
+.mainSection{
+    flex-grow: 1;
+}
+
+
+
 
 
 

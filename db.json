@@ -6,34 +6,7 @@
       "precio": 300,
       "categoria": "bebida-caliente",
       "id": 1
-    },
-    {
-      "nombreProducto": "mate cocido",
-      "precio": "380",
-      "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "bebida-caliente",
-      "id": 2
-    },
-    {
-      "nombreProducto": "cafe con leche",
-      "precio": "520",
-      "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "bebida-caliente",
-      "id": 3
-    },
-    {
-      "nombreProducto": "tostado jyq",
-      "precio": "750",
-      "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "salado",
-      "id": 4
-    },
-    {
-      "nombreProducto": "pan tostado",
-      "precio": "230",
-      "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "salado",
-      "id": 5
     }
+    
   ]
 }
