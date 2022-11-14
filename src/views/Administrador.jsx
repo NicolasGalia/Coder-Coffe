@@ -28,13 +28,13 @@ const Administrador = () => {
   return (
     <section className="container mainSection boxAdmin p-2 my-5">
       <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
-        <h1 className="display-6 tituloAdmin ">Productos en Stock</h1>
+        <h1 className="display-6 tituloAdmin ">PRODUCTOS</h1>
         <Link to="/CrearProducto" className="btn  btnAgregar ">
           Agregar Producto
         </Link>
       </div>
       <hr />
-      <Table>
+      <Table responsive={"sm md"} >
         <thead className="text-light text-center">
           <tr>
             <th>CODIGO</th>

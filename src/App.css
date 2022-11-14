@@ -84,6 +84,38 @@ padding: 20px;
 
 
 
+@media all and (max-width:756px){
+
+    .boxCrear{
+        background-color:rgba(204, 191, 70, 0.88) ;
+        
+        border-radius: 20px;
+        width: 23em;
+        height:fit-content;
+    }
+
+    .boxAdmin{
+        background-color:rgba(204, 191, 70, 0.88) ;
+    width: 23em;
+            border-radius: 20px;
+    }
+
+    .btnAgregar{
+        font-weight: 300;
+        
+    }
+
+    .btnAgregar:hover{
+        font-weight: 300;
+    }
+
+}
+
+
+
+
+
+
 
 
 /* #fcbc90
