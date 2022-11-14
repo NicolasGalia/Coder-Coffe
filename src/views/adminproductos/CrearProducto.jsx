@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../components/helpers/queries";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert";
+import { Swal } from "sweetalert2";
 
 const CrearProducto = () => {
   const {
@@ -11,22 +11,21 @@ const CrearProducto = () => {
     formState: { errors },
     reset,
   } = useForm();
-  //inicializamos useNavigate
+
   const navegacion = useNavigate();
 
   const onSubmit = (datos) => {
     crearProductoAPI(datos).then((respuesta) => {
       if (respuesta.status === 201) {
-        //si la respuesta es correcta indicarle al usuario
         Swal.fire(
           "Producto creado",
           "El producto fue creado exitosamente",
           "success"
         );
-        //resetear el formulario
+
         reset();
-        //redireccionar
-        navegacion("/administrador");
+
+        navegacion("/Administrador");
       } else {
         Swal.fire(
           "Ocurrio un error",
