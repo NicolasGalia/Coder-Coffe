@@ -1,3 +1,4 @@
+const URL = process.env.REACT_APP_API_CODER;
 
 export const consultarAPI = async () => {
     // console.log(URL)
@@ -7,12 +8,12 @@ export const consultarAPI = async () => {
       return listaProductos;
     } catch (error) {
       console.log(error);
-      return false;
+      //return false;
     }
   };
 
 
-export const crearProductoAPI = async (producto, token) => {
+export const crearProductoAPI = async (producto) => {
     // console.log(URL)
     try {
       const respuesta = await fetch(URL, {
@@ -20,13 +21,13 @@ export const crearProductoAPI = async (producto, token) => {
         headers: {
           "Content-Type": "application/json",
           // envio el token en el header personalizado
-          "x-token": token,
+         // "x-token": token,
         },
         body: JSON.stringify(producto),
       });
       return respuesta;
     } catch (error) {
       console.log(error);
-      return false;
+      //return false;
     }
   };

@@ -14,7 +14,7 @@ function App() {
       <Menu></Menu>
       <Routes>
     
-    <Route exact path='/administrador' element={<Administrador></Administrador>}></Route>
+    <Route exact path='/Administrador' element={<Administrador></Administrador>}></Route>
     
     <Route exact path='/Menu' element={<Menu></Menu>} ></Route>
     <Route exact path='/Footer' element={<Footer></Footer>} ></Route>

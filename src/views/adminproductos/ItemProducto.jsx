@@ -1,19 +1,22 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const ItemProducto = () => {
+const ItemProducto = ({producto, setProductos}) => {
+    const {id, nombreProducto, categoria, imagen, precio} = {...producto} 
+
     return (
         <tr>
-        <td>2</td>        
-        <td></td>
-        <td>$512</td>
-        <td>imagen</td>
-        <td>Cafe-Expresso</td>
+        <td>{id}</td>        
+        <td>{nombreProducto}</td>
+        <td>${precio}</td>
+        <td>{imagen}</td>
+        <td>{categoria}</td>
         <td>
-          <Button className="btn btn-warning me-2" >
+          <Link to="./EditarProducto" className="btn btn-warning ms-2" >
             Editar
-          </Button>
-          <Button variant="danger">
+          </Link>
+          <Button variant="danger" className='ms-2 mt-2'>
             Borrar
           </Button>
         </td>
