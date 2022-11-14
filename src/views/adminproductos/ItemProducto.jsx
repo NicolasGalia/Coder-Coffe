@@ -12,12 +12,12 @@ const ItemProducto = ({producto, setProductos}) => {
         <td>${precio}</td>
         <td>{imagen}</td>
         <td>{categoria}</td>
-        <td>
-          <Link to="./EditarProducto" className="btn btn-warning ms-2" >
-            Editar
+        <td className='text-center'>
+          <Link to="./EditarProducto" className="btn btn-warning " >
+            Editar Producto
           </Link>
-          <Button variant="danger" className='ms-2 mt-2'>
-            Borrar
+          <Button variant="danger" className=' mt-2'>
+            Borrar Producto
           </Button>
         </td>
       </tr>

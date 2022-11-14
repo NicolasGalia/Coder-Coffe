@@ -24,6 +24,10 @@ padding: 20px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url("https://fondosmil.com/fondo/15505.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /*AGREGAR ESTA CLASE EN EL RETURN PARA QUE ESTE SIEMPRE ABAJO EL FOOTER*/
@@ -32,8 +36,51 @@ padding: 20px;
 }
 
 
+/*PAGINA ADMIN*/
+
+.boxAdmin{
+    background-color:rgba(231, 142, 139, 0.88) ;
+
+    color: white;
+    border-radius: 20px;
+}
+
+.boxCrear{
+    background-color:rgba(231, 142, 139, 0.88) ;
+    color: white;
+    border-radius: 20px;
+    width: 50em;
+    height:fit-content;
+}
+
+.tituloAdmin{
+    color: rgb(10, 104, 10);
+    font-weight: 400;
+    
+}
 
 
+.btnAgregar{
+    background-color:white ;
+    color: rgb(10, 104, 10);
+    font-weight: 600;
+}
+
+.btnAgregar:hover{
+    color: white;
+    background-color: rgb(10, 104, 10);
+}
+
+.btnGuardar{
+    background-color:rgb(10, 104, 10) ;
+    color: white;
+    font-weight: 600;
+    border: rgb(10, 104, 10);
+}
+.btnGuardar:hover{
+    color: rgb(10, 104, 10);
+    background-color: white;
+}
 
 
 

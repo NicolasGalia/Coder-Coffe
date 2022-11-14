@@ -1,3 +1,3 @@
 ## comando para ejecutar JSON-server
 
-json-server --watch db.json --port 3006
+json-server --watch db.json --port 3004

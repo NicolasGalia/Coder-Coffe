@@ -16,12 +16,15 @@ const CrearProducto = () => {
 
   const onSubmit = (datos) => {
     crearProductoAPI(datos).then((respuesta) => {
+      
       if (respuesta.status === 201) {
-        Swal.fire(
-          "Producto creado",
-          "El producto fue creado exitosamente",
-          "success"
-        );
+        // Swal.fire(
+        //   "Producto creado",
+        //   "El producto fue creado exitosamente",
+        //   "success"
+        // );
+
+        alert("creado");
 
         reset();
 
@@ -37,8 +40,8 @@ const CrearProducto = () => {
   };
 
   return (
-    <section className="container mainSection">
-      <h1 className="display-4 mt-5">Nuevo producto</h1>
+    <section className="container mainSection my-5 boxCrear ">
+      <h1 className="display-5 mt-5 tituloAdmin text-center">Nuevo producto</h1>
       <hr />
 
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -120,9 +123,12 @@ const CrearProducto = () => {
             {errors.categoria?.message}
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Guardar
+        <div className="text-center my-4 pb-2">
+        <Button className="btnGuardar" type="submit">
+          Guardar Producto
         </Button>
+
+        </div>
       </Form>
     </section>
   );
