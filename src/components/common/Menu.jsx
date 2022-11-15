@@ -13,7 +13,7 @@ const Menu = () => {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3 navbarPaginas">
           <Container fluid>
-            <Navbar.Brand href="#">LOGO</Navbar.Brand>
+            <Navbar.Brand >LOGO</Navbar.Brand>
             <Nav.Link href="#action1" className="itemsNavb">Menú</Nav.Link>
             <Nav.Link href="#action2" className="itemsNavb">Nuestro Café</Nav.Link>
             <Nav.Link href="#action3" className="itemsNavb">Expieriencia CoderCoffe</Nav.Link>
