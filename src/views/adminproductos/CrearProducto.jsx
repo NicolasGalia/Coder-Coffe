@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../components/helpers/queries";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2"
+import swal from "sweetalert"
 
 const CrearProducto = () => {
   const {
@@ -18,11 +18,11 @@ const CrearProducto = () => {
     crearProductoAPI(datos).then((respuesta) => {
       
       if (respuesta.status === 201) {
-        // Swal.fire(
-        //   "Producto creado",
-        //   "El producto fue creado exitosamente",
-        //   "success"
-        // );
+        swal.fire(
+          "Producto creado",
+          "El producto fue creado exitosamente",
+          "success"
+        );
 
         alert("creado");
 
@@ -30,7 +30,7 @@ const CrearProducto = () => {
 
         navegacion("/Administrador");
       } else {
-        Swal.fire(
+        swal.fire(
           "Ocurrio un error",
           "El producto no pudo ser creado",
           "error"
