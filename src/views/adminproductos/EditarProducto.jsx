@@ -8,7 +8,6 @@ import { editarProductoAPI, obtenerProductoAPI } from "../../components/helpers/
 
 const EditarProducto = () => {
   const {register, handleSubmit, formState:{errors}, setValue} = useForm();
-  //buscamos el parametros de la url
   const {id} = useParams();
   const navegacion = useNavigate();
 
@@ -29,7 +28,6 @@ const EditarProducto = () => {
         Swal.fire('Producto editado','El producto fue correctamente actualizado','success');
         navegacion('/administrador');
       }else{
-        // mostrar el cartel de error al usuario
         Swal.fire('Editar el producto','Usted debe modificar el producto','error');
       }
     })
@@ -59,8 +57,8 @@ const EditarProducto = () => {
               message: 'La cantidad de caracteres es 2 como minimo'
             },
             maxLength:{
-              value:50,
-              message:'La cantidad maxima de caracteres es de 50'
+              value:100,
+              message:'La cantidad maxima de caracteres es de 100'
             }
           })}
           />

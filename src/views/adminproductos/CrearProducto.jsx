@@ -56,8 +56,8 @@ const CrearProducto = () => {
                 message: "La cantidad de caracteres es 2 como minimo",
               },
               maxLength: {
-                value: 50,
-                message: "La cantidad maxima de caracteres es de 50",
+                value: 100,
+                message: "La cantidad maxima de caracteres es de 100",
               },
             })}
           />
