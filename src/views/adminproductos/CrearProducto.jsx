@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../components/helpers/queries";
 import { useNavigate } from "react-router-dom";
-import swal from "sweetalert"
+import Swal from "sweetalert2";
 
 const CrearProducto = () => {
   const {
@@ -18,19 +18,16 @@ const CrearProducto = () => {
     crearProductoAPI(datos).then((respuesta) => {
       
       if (respuesta.status === 201) {
-        swal.fire(
+        Swal.fire(
           "Producto creado",
           "El producto fue creado exitosamente",
           "success"
         );
-
-        alert("creado");
-
         reset();
 
         navegacion("/Administrador");
       } else {
-        swal.fire(
+        Swal.fire(
           "Ocurrio un error",
           "El producto no pudo ser creado",
           "error"
@@ -114,10 +111,10 @@ const CrearProducto = () => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="bebida-caliente">Bebida caliente</option>
-            <option value="bebida-fria">Bebida fria</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="Almuerzos/Cenas">Almuerzos/Cenas</option>
+            <option value="Desayunos/Meriendas">Desayunos/Meriendas</option>
+            <option value="Postres">Postres</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}

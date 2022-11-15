@@ -1,25 +1,25 @@
 {
   "productos": [
     {
-      "nombreProducto": "café",
-      "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "precio": 300,
-      "categoria": "bebida-caliente",
-      "id": 1
-    },
-    {
       "nombreProducto": "cortado",
+      "precio": "400",
       "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "precio": 450,
-      "categoria": "bebida-caliente",
+      "categoria": "Almuerzos/Cenas",
       "id": 2
     },
     {
-      "nombreProducto": "tostado jyq",
-      "precio": "480",
+      "nombreProducto": "milanesa a la napolitana con papas ",
+      "precio": "1800",
       "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "salado",
+      "categoria": "Almuerzos/Cenas",
       "id": 3
+    },
+    {
+      "nombreProducto": "alfajor de maicena",
+      "precio": "150",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "dulce",
+      "id": 4
     }
   ]
 }
