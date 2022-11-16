@@ -1,7 +1,7 @@
 import Menu from "./components/common/Menu";
 import Footer from './components/common/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
+import './App.css';
 
 function App() {
   return (
