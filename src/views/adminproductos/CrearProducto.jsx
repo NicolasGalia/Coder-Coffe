@@ -4,7 +4,6 @@ import { crearProductoAPI } from "../../components/helpers/queries";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 const CrearProducto = () => {
   const {
     register,
@@ -24,9 +23,6 @@ const CrearProducto = () => {
           "El producto fue creado exitosamente",
           "success"
         );
-
-        
-
         reset();
 
         navegacion("/Administrador");
@@ -60,8 +56,8 @@ const CrearProducto = () => {
                 message: "La cantidad de caracteres es 2 como minimo",
               },
               maxLength: {
-                value: 50,
-                message: "La cantidad maxima de caracteres es de 50",
+                value: 100,
+                message: "La cantidad maxima de caracteres es de 100",
               },
             })}
           />
@@ -115,10 +111,10 @@ const CrearProducto = () => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="bebida-caliente">Bebida caliente</option>
-            <option value="bebida-fria">Bebida fria</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="Almuerzos/Cenas">Almuerzos/Cenas</option>
+            <option value="Desayunos/Meriendas">Desayunos/Meriendas</option>
+            <option value="Postres">Postres</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}

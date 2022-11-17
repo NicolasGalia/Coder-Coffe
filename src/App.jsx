@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Administrador from "./views/Administrador";
 import CrearProducto from "./views/adminproductos/CrearProducto";
+import EditarProducto from "./views/adminproductos/EditarProducto";
 import "../src/App.css"
 
 function App() {
@@ -14,11 +15,12 @@ function App() {
       <Menu></Menu>
       <Routes>
     
-    <Route exact path='/administrador' element={<Administrador></Administrador>}></Route>
+    <Route exact path='/administrador' element={<Administrador/>}></Route>
     
-    <Route exact path='/Menu' element={<Menu></Menu>} ></Route>
-    <Route exact path='/Footer' element={<Footer></Footer>} ></Route>
-  <Route exact path='/CrearProducto' element={<CrearProducto></CrearProducto>} ></Route>
+    <Route exact path='/Menu' element={<Menu/>} ></Route>
+    <Route exact path='/Footer' element={<Footer/>} ></Route>
+  <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
+  <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
     
 
 

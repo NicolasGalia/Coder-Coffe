@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
-import Swal from "sweetalert2";
+import swal from "sweetalert"
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
@@ -16,7 +16,7 @@ const Administrador = () => {
       (reason) => {
         console.log(reason);
 
-        Swal.fire(
+        swal.fire(
           "Ocurrio un error",
           "Intentelo nuevamente en unos minutos",
           "error"

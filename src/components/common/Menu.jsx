@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Logo from '../../../src/img/logoBgTransparent.png';
 
 const Menu = () => {
     return (
@@ -13,7 +14,9 @@ const Menu = () => {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3 navbarPaginas">
           <Container fluid>
-            <Navbar.Brand href="#">LOGO</Navbar.Brand>
+            <Navbar.Brand href="#"> 
+            <img src={Logo} alt="Logo" className="w-25"/>
+            </Navbar.Brand>
             <Nav.Link href="#action1" className="itemsNavb">Menú</Nav.Link>
             <Nav.Link href="#action2" className="itemsNavb">Nuestro Café</Nav.Link>
             <Nav.Link href="#action3" className="itemsNavb">Expieriencia CoderCoffe</Nav.Link>
