@@ -1,6 +1,6 @@
 .navbarPaginas{
 background-color: rgb(16, 128, 16);
-padding: 20px;
+padding: 10px;
 
 }
 
@@ -16,6 +16,13 @@ padding: 20px;
 	display: inline-block;
 	height: 2em;
 	overflow: hidden;
+}
+
+.logoNav{
+    width: 8em;
+}
+.logoFooter{
+    width: 15em;
 }
 
 
@@ -90,13 +97,13 @@ padding: 20px;
         background-color:rgba(204, 191, 70, 0.88) ;
         
         border-radius: 20px;
-        width: 23em;
+        width: 22em;
         height:fit-content;
     }
 
     .boxAdmin{
         background-color:rgba(204, 191, 70, 0.88) ;
-    width: 23em;
+    width: 22em;
             border-radius: 20px;
     }
 
@@ -109,6 +116,16 @@ padding: 20px;
         font-weight: 300;
     }
 
+
+    .linknoMostrar{
+        display: none;
+    }
+
+    .logoNav{
+        width: 6em;
+    }
+    
+   
 }
 
 
