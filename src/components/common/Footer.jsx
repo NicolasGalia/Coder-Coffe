@@ -8,7 +8,6 @@ import {
 } from "react-icons/bs";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { GiCoffeeCup } from "react-icons/gi";
-import { IoLocationOutline } from "react-icons/io5";
 import Logo from "../../../src/img/logoBgTransparent.png";
 
 const Footer = () => {
@@ -27,13 +26,13 @@ const Footer = () => {
             Sobre Nosotros
           </Nav.Link>
           <Nav.Link href="#" className="m-4">
-            Nuestro Cafe <GiCoffeeCup></GiCoffeeCup>
+            Menús
           </Nav.Link>
           <Nav.Link href="#" className="m-4">
-            Nuestras Promociones
+          Nuestro Cafe <GiCoffeeCup></GiCoffeeCup>
           </Nav.Link>
           <Nav.Link href="#" className="m-4">
-            Nuestra Ubicacion <IoLocationOutline></IoLocationOutline>
+            Experiencia CoderCoffe
           </Nav.Link>
         </Col>
           
