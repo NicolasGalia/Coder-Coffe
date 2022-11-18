@@ -34,7 +34,7 @@ const EditarProducto = () => {
   }
 
   return (
-    <section className="container mainSection boxAdmin p-2 my-5">
+    <section className="container mainSection boxCrear p-2 my-5">
         <div className="d-flex justify-content-between align-items-center mt-5 ps-3 pe-3">
       <h1 className="display-4 tituloAdmin">Editar producto</h1>
       <Link to="/Administrador" className="btn btnAgregar">
@@ -119,9 +119,12 @@ const EditarProducto = () => {
             {errors.categoria?.message}
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Guardar
+        <div className="text-center">
+
+        <Button className="btnGuardar" type="submit">
+          Guardar Cambios
         </Button>
+        </div>
       </Form>
     </section>
   );
