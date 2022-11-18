@@ -34,7 +34,7 @@ const Administrador = () => {
         </Link>
       </div>
       <hr />
-      <Table responsive={"sm md"} >
+      <Table responsive={"sm md"}>
         <thead className="text-light text-center">
           <tr>
             <th>CODIGO</th>

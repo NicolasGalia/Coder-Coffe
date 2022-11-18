@@ -1,3 +1,5 @@
+/* NAVBAR */
+
 .navbarPaginas{
 background-color: rgb(16, 128, 16);
 padding: 10px;
@@ -89,7 +91,7 @@ padding: 10px;
     background-color: white;
 }
 
-
+/* MEDIAS QUERIES */
 
 @media all and (max-width:756px){
 
@@ -108,8 +110,7 @@ padding: 10px;
     }
 
     .btnAgregar{
-        font-weight: 300;
-        
+        font-weight: 300;        
     }
 
     .btnAgregar:hover{
@@ -126,6 +127,13 @@ padding: 10px;
     }
     
    
+}
+
+/* MEDIA QUERIS DE TABLA */
+
+.boxAdmin{
+    background-color:rgba(204, 191, 70, 0.88) ;
+overflow-x: auto;
 }
 
 
