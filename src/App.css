@@ -25,6 +25,17 @@ padding: 20px;
     height: auto;
   }
 
+  /*Estilos de la pagina inicio*/
+  
+  .detalle-imagen{
+    height: 85px;
+  }
+
+  .columns{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
 
 
 

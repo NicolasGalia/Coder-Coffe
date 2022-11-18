@@ -1,6 +1,7 @@
 import Menu from "./components/common/Menu";
 import Footer from './components/common/Footer';
 import Inicio from "./views/Inicio";
+import DetalleProducto from "./views/DetalleProducto"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -10,7 +11,8 @@ function App() {
       <>
       <Menu></Menu>
       <Inicio></Inicio>
-<Footer></Footer>
+      <DetalleProducto></DetalleProducto>
+      <Footer></Footer>
       </>
 
     </div>
