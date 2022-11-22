@@ -16,15 +16,17 @@ const Registro = ({ setUsuarioLogueado }) => {
   } = useForm();
   const onSubmit = data => console.log(data);
 
-  // console.log(watch('username'));
+  console.log(watch('userName'));
 
   return (
-    <section>
+    <section className="formularioRegistro">
       <div className="register">
-        <div className="col-1">
-          <h2>Sign In</h2>
-          <span>register and enjoy the service</span>
-
+        <div className="col-6">
+        <div className="m-3 p-3">
+        <h2>Registrate</h2>
+          <span>Unite a coder coffe y disfruta de nuestros servicios</span>
+      </div>
+         
           <form
             id="form"
             className="flex flex-col"
@@ -133,10 +135,11 @@ const Registro = ({ setUsuarioLogueado }) => {
             <button className="btn">Registrarse</button>
           </form>
         </div>
-        <div className="col-2">
+        <div className="col-6">
           <img
-            src="https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
+            className="imagenRegistro"
           />
         </div>
       </div>
