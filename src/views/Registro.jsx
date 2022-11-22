@@ -24,11 +24,11 @@ const Registro = ({setUsuarioLogueado}) => {
             "success"
           );
           // //guardar la sesion del usuario en localstorage
-          //   localStorage.setItem('tokenCafeBenito', JSON.stringify(datos));
+          // localStorage.setItem('tokenCafeBenito', JSON.stringify(datos));
           //   //actualizar el state usuarioLogueado
-          //   setUsuarioLogueado(datos)
+         // setUsuarioLogueado(datos)
           //   // redireccionamos
-          //   navigate("/administrar");
+          navigate("/administrar");
         } else {
           Swal.fire(
             `Hubo un error inesperado`,
