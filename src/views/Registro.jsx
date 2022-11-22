@@ -1,133 +1,93 @@
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import "../registro.css";
 import Swal from "sweetalert2";
 import { crearUsuarioAPI } from "../components/helpers/queriesLogin";
-const Registro = ({setUsuarioLogueado}) => {
-  const navigate = useNavigate();
 
+const Registro = ({ setUsuarioLogueado }) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
+  const onSubmit = data => console.log(data);
 
-  const onSubmit = (datos) => {
-   
-      crearUsuarioAPI(datos).then((respuesta) => {
-        if (respuesta.status === 201) {
-
-          Swal.fire(
-            `Se registrasto correctamente, ${datos.nombre}`,
-            "Inicia sesion con la nueva cuenta.",
-            "success"
-          );
-          // //guardar la sesion del usuario en localstorage
-          // localStorage.setItem('tokenCafeBenito', JSON.stringify(datos));
-          //   //actualizar el state usuarioLogueado
-         // setUsuarioLogueado(datos)
-          //   // redireccionamos
-          navigate("/administrar");
-        } else {
-          Swal.fire(
-            `Hubo un error inesperado`,
-            "Intentelo nuevamente en breve.",
-            "error"
-          );
-        }
-      });
-    
-  };
+  // console.log(watch('username'));
 
   return (
-    <div className="mt-5 mainSection bg-light">
-      <h3 className="text-center">Registro</h3>
-      <div className="row justify-content-center">
-        <div className="col-12 col-sm-8 col-md-6 col-xl-4">
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-2">
-              <Form.Control
-                type="text"
-                placeholder="Ingrese un nombre de usuario"
-                {...register("nombre", {
-                  required: "Debe ingresar un nombre de usuario",
-                  minLength: {
-                    value: 3,
-                    message: "El nombre debe tener al menos 3 caracteres",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message: "El nombre no debe tener mas de 30 caracteres",
-                  },
-                  pattern: {
-                    value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
-                    message: "Debe ingresar un nombre de usaurio valido",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger mb-2">
-                {errors.nombre?.message}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Control
-                placeholder="Ingrese un email"
-                {...register("email", {
-                  required: "Debe ingresar un email",
-                  pattern: {
-                    value:
-                      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
-                    message: "Debe ingresar un formato valido",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger mb-2">
-                {errors.email?.message}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Control
-                type="password"
-                placeholder="Ingrese un password"
-                {...register("password", {
-                  required: "Debe ingresar una contraseña",
-                  minLength: {
-                    value: 8,
-                    message: "Su contraseña debe tener al menos 8 caracteres",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message:
-                      "Su contraseña debe tener como 30 caracteres como maximo",
-                  },
-                })}
-             
-              />
-              <Form.Text className="text-danger mb-2">
-                {errors.password?.message}
-              </Form.Text>
-            </Form.Group>
-            <div className="row">
-              <Button
-                className="btn btn-dark btn-lg btn-block mb-2"
-                type="submit"
-              >
-                Registrarse
-              </Button>
-              <button
-                className="btn btn-danger btn-sm mt-2"
-                type="button"
-                onClick={() => navigate("/login/iniciarSesion")}
-              >
-                ¿Ya estas registrado?
-              </button>
-            </div>
-          </Form>
+    <section>
+      <div className="register">
+        <div className="col-1">
+          <h2>Sign In</h2>
+          <span>register and enjoy the service</span>
+
+          <form
+            id="form"
+            className="flex flex-col"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <input
+              type="text"
+              {...register("nombre", {
+                required: "Debe ingresar un nombre",
+                minLength: {
+                  value: 3,
+                  message: "El nombre debe tener al menos 3 caracteres",
+                },
+                maxLength: {
+                  value: 30,
+                  message: "El nombre no debe tener mas de 30 caracteres",
+                },
+                pattern: {
+                  value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                  message: "Debe ingresar un nombre valido",
+                },
+              })}
+              placeholder="nombre"
+            />
+            <input
+              type="text"
+              {...register("apellido", {
+                required: "Debe ingresar un apellido",
+                minLength: {
+                  value: 3,
+                  message: "El nombre debe tener al menos 3 caracteres",
+                },
+                maxLength: {
+                  value: 30,
+                  message: "El nombre no debe tener mas de 30 caracteres",
+                },
+                pattern: {
+                  value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                  message: "Debe ingresar un nombre valido",
+                },
+              })}
+              placeholder="apellido"
+            />
+            <input
+              type="text"
+              {...register("username")}
+              placeholder="username"
+            />
+            <input
+              type="text"
+              {...register("password")}
+              placeholder="contraseña"
+            />
+            <button className="btn">Registrarse</button>
+          </form>
+        </div>
+        <div className="col-2">
+          <img
+            src="https://images.pexels.com/photos/907142/pexels-photo-907142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
-
 export default Registro;
