@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdOutlineLocalCafe } from 'react-icons/md';
 import magdalenas from "../img/magdalenas.png"
 import "../aboutUs.css";
 
@@ -45,22 +46,19 @@ const AboutUs = () => {
         <div className="a-right">
           <h1 className="a-title">Coder Coffee</h1>
           <p className="a-sub">
-            It is a long established fact that a reader will be distracted by the
-            readable content.
+            Nacio como un proyecto entre compañeros, que destinaban la mayor parte de su tiempo a estar en una computadora.
           </p>
           <p className="a-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat duis aute irure dolor in reprehende.
+            Por eso mismo la importancia de un buen cafe a nuestro lado fue la motivacion para crear este lugar, 
+            con el objetivo de ofrecerles a todos nuestros invitados la posibilidad de relajarse, disfrutar con amigos o
+             simplemente pasar esas horas de trabajo acompañado de los mejores platos y un buen ambiente.
           </p>
           <div className="a-award">
             <img src="https://images.pexels.com/photos/6321237/pexels-photo-6321237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="a-award-img" />
             <div className="a-award-texts">
-              <h4 className="a-award-title">International Design Awards 2021</h4>
+              <h4 className="a-award-title"><MdOutlineLocalCafe />  Sucursal</h4>
               <p className="a-award-desc">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur autodit
-                and fugit.
+              Av. 24 de septiembre 757 <br /> San Miguel de Tucumán, Tucumán.
               </p>
             </div>
           </div>
