@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Button, Form } from "react-bootstrap";
 import "../registro.css";
@@ -133,6 +133,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                 {errors.password?.message}
               </Form.Text>
             <button className="btn">Registrarse</button>
+            <a href="#" className="btn">¿Ya tenes cuenta? Iniciar Sesion</a>
           </form>
         </div>
         <div className="col-6">

@@ -6,7 +6,8 @@
 }
 
 .formularioRegistro{
-    height: 100vh;
+   padding-bottom: 20px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +35,7 @@
 
 #form >  input, .btn{
   border: 1px solid #e9ecef ;
-  padding: .9em 1em;
+  padding: .7em 1em;
 }
 
 #form > input:focus{
