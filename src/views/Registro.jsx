@@ -14,9 +14,28 @@ const Registro = ({ setUsuarioLogueado }) => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = data => console.log(data);
-
-  console.log(watch('userName'));
+  const onSubmit = (data) => {
+    crearUsuarioAPI(data).then((respuesta) => {
+          if (respuesta.status === 201) {
+            Swal.fire(
+              `Te registraste correctamente, ${data.nombre}`,
+              "Disfruta de nuestro contenido.",
+              "success"
+            );
+            localStorage.setItem(
+              "usuarioActivo",
+              JSON.stringify(data.email)
+            );
+            navigate("/inicio");
+          } else {
+            Swal.fire(
+              `Hubo un error inesperado`,
+              "Intentelo nuevamente en breve.",
+              "error"
+            );
+          }
+        });
+    };
 
   return (
     <section className="formularioRegistro">

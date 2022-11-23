@@ -32,50 +32,21 @@
   ], 
 
   "usuarios": [
-    {
-      "id": "1",
-      "nombreUsuario": "nicolas",
-      "apellidoUsuario": "elias",
-      "email": "nicoelias997@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "2",
-      "nombreUsuario": "nicolas",
-      "apellidoUsuario": "elias",
-      "email": "nicoelias9aa97@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "nombreUsuario": "asda",
-      "apellidoUsuario": "ads",
-      "email": "nicoelasdsaias@gmail.com",
-      "password": "12345678910",
-      "id": "t3PPXo1"
-    },
-    {
-      "nombreUsuario": "Nicolas",
-      "apellidoUsuario": "Elias",
-      "email": "nico@gmail.com",
-      "password": "12345678",
-      "check": true,
-      "id": "0a4ixNw"
-    },
-    {
-      "nombreUsuario": "Nico",
-      "apellidoUsuario": "Elias",
-      "email": "lalala@gmail.com",
-      "password": "12345678",
-      "check": true,
-      "id": "tKPxJ_B"
-    },
-    {
-      "nombreUsuario": "aaa",
-      "apellidoUsuario": "bb",
-      "email": "niconico@gmail.com",
-      "password": "holahola",
-      "check": true,
-      "id": "MktpAdS"
-    }
+   {
+    "nombre": "florencia",
+    "apellido": "palma",
+    "email": "flor@gmail.com",
+    "userName": "florpalma1",
+    "password": "florencia12345",
+    "id":1
+   },
+   {
+    "nombre": "myriam",
+    "apellido": "salazar",
+    "email": "myriarg@gmail.com",
+    "userName": "myriss",
+    "password": "salazar2345",
+    "id":2
+   }
   ]
 }
