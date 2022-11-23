@@ -6,27 +6,26 @@ import "../registro.css";
 import Swal from "sweetalert2";
 import { crearUsuarioAPI } from "../components/helpers/queriesLogin";
 
-const Registro = ({ setUsuarioLogueado }) => {
-  const navigate = useNavigate();
+const Registro = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    crearUsuarioAPI(data).then((respuesta) => {
+
+  const navegacion = useNavigate();
+
+  const onSubmit = (datos) => {
+    crearUsuarioAPI(datos).then((respuesta) => {
+
           if (respuesta.status === 201) {
             Swal.fire(
-              `Te registraste correctamente, ${data.nombre}`,
-              "Disfruta de nuestro contenido.",
+              `Ya sos parte de Coder Coffe, ${datos.nombre}`,
+              "Disfruta todos nuestros servicios.",
               "success"
             );
-            localStorage.setItem(
-              "usuarioActivo",
-              JSON.stringify(data.email)
-            );
-            navigate("/inicio");
+            navegacion("/inicio");
+            
           } else {
             Swal.fire(
               `Hubo un error inesperado`,
