@@ -6,6 +6,7 @@ import Administrador from "./views/Administrador";
 import Registro from "./views/Registro";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
+import AboutUs from "./views/AboutUs";
 import "../src/App.css"
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <Route exact path='/Menu' element={<Menu/>} ></Route>
     <Route exact path='/Footer' element={<Footer/>} ></Route>
   <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
+  <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
   <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
     
 

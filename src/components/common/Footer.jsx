@@ -9,6 +9,7 @@ import {
 import { AiOutlineTwitter } from "react-icons/ai";
 import { GiCoffeeCup } from "react-icons/gi";
 import Logo from "../../../src/img/logoBgTransparent.png";
+import {Routes} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
         
 
         <Col xs={12} lg={3} md={6}>
-        <Nav.Link href="#" className="m-3 fs-4">
+        <Nav.Link end to="/acercaDeNosotros" className="m-3 fs-4">
             Sobre Nosotros
           </Nav.Link>
           <Nav.Link href="#" className="m-4">
