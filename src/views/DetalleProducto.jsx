@@ -1,56 +1,43 @@
-import { Tab,Nav, Col, Row } from "react-bootstrap";
+import { Tab,Nav, Col, Row, Container } from "react-bootstrap";
 
 
 
 const DetalleProducto =()=>{
   return (
-    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-    <Row>
-      <Col sm={3}>
-        <Nav variant="pills" className="flex-column">
-          <Nav.Item>
-            <Nav.Link eventKey="first">Tab 1</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="second">Tab 2</Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </Col>
-      <Col sm={9}>
-        <Tab.Content>
-          <Tab.Pane eventKey="first">
-            <div className="columns">
-              <div className="column">
-                <a href="">
-                  <div className="detalle-imagen d-flex">
-                    <img src="https://media.istockphoto.com/id/1309352410/es/foto/hamburguesa-con-queso-con-tomate-y-lechuga-en-tabla-de-madera.jpg?s=612x612&w=0&k=20&c=HaSLXFFns4_IHfbvWY7_FX7tlccVjl0s0BrlqaLHOTE=" alt="" />
+    <Container>
+      <div className="mcd-content">
+        <div className="mcd-products-block">
+          <div className="mcd-container">
+           <Nav role='navigation' className="mcd-category d-flex">
+            <aside className="mcd-category-menu">
+              <a href="/productos" className="mcd-section" aria-current ='page'>
+                <img src="https://images.pexels.com/photos/262896/pexels-photo-262896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagen-category"/>
+                Nuestros productos
+              </a>
+              <div className="mcd-category-section-menu">
+                <div className="column-category">
+                  <div className="column-mobile">
+                    <a href="/productos" className="mcd-category-menu-item" aria-current="page">
+                      <img src="https://images.pexels.com/photos/262896/pexels-photo-262896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="img-category" />
+                    Nuestros productos
+                    </a>
                   </div>
-                  "hamburguesa"
-                </a>
-              </div>
-              <div className="column">
-                <a href="">
-                  <div className="detalle-imagen d-flex">
-                    <img src="https://media.istockphoto.com/id/1309352410/es/foto/hamburguesa-con-queso-con-tomate-y-lechuga-en-tabla-de-madera.jpg?s=612x612&w=0&k=20&c=HaSLXFFns4_IHfbvWY7_FX7tlccVjl0s0BrlqaLHOTE=" alt="" />
+                  <div className="hamburguesas"> 
+                    <a href="/productos/hamburguesas" className="item-hamburguesas">
+                      <img src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagen-hamburguesas" />
+                    Hamburguesas
+                    </a>
                   </div>
-                  "hamburguesa"
-                </a>
+                </div>
               </div>
-              <div class="columns"></div>
-              <div class="columns"></div>
-              <div class="columns"></div>
-            </div>
-          </Tab.Pane>
-          <Tab.Pane eventKey="second">
-          
-          </Tab.Pane>
-        </Tab.Content>
-      </Col>
-    </Row>
-  </Tab.Container>
-    
-
-  );
+            </aside>
+           </Nav>
+          </div>
+        </div>
+      </div>
+    </Container>
+  )
 }
+
 
 export default DetalleProducto;
