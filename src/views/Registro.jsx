@@ -8,8 +8,9 @@ import "../registro.css"
 const Registro = () => {
   const { register, handleSubmit, formState: {errors} } = useForm();
 
-  const onSubmit = () =>{
+  const onSubmit = (datos) =>{
     console.log("desde mi funcion submit")
+    console.log(datos);
   }
   const [usuarios, setUsuarios] = useState([])
 
@@ -140,7 +141,7 @@ const Registro = () => {
             <Form.Text className="text-danger mb-2">
               {errors.password?.message}
             </Form.Text>
-            <button className="btn">Registrarse</button>
+            <button className="btn" type="submit">Registrarse</button>
           </form>
         </div>
         <div className="col-6">

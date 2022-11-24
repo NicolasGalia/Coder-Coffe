@@ -6,19 +6,18 @@
 }
 
 .formularioRegistro{
-    height: 100vh;
+    height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 .register{
-  max-width: 1050px;
+  max-width: 1000px;
   width: 100vw;
   display:flex;
   border: 1px solid #F2DEA2;
   border-radius: 5px;
-  /* box-shadow: 1px 3px 10px #e9ecef; */
   background-color: #F2DEA2;
 }
 
