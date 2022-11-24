@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* > * {
+    font-family: "Poppins", cursive;
+    margin: 0;
+}
+
+.formularioRegistro{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.register{
+  max-width: 1050px;
+  width: 100vw;
+  display:flex;
+  border: 1px solid #F2DEA2;
+  border-radius: 5px;
+  /* box-shadow: 1px 3px 10px #e9ecef; */
+  background-color: #F2DEA2;
+}
+
+.register span{
+  color: #818C69;
+}
+
+#form{
+  max-width: 320px;
+  width: 100vw;
+  margin: 2em auto;
+}
+
+#form >  input, .btn{
+  border: 1px solid #e9ecef ;
+  padding: .9em 1em;
+}
+
+#form > input:focus{
+  outline: none;
+}
+
+#form > .btn{
+  background-color: #818C69;
+  color: #e9ecef;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #818C69 ;
+}
+
+.flex{
+  display: flex;
+  gap: 1em;
+  
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.imagenRegistro{
+  width: 100%;
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  
+}
+
+@media screen and (min-width: 860px)  {
+  .imagenRegistro{
+    display: initial;
+  }
+}
