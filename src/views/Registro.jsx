@@ -2,15 +2,23 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
-import { consultarUsuario } from '../components/helpers/queriesLogin';
+import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import "../registro.css"
 
-const Registro = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm();
 
-  const onSubmit = (datos) =>{
-    console.log("desde mi funcion submit")
+const Registro = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (datos) => {
     console.log(datos);
+    crearUsuario(datos).then((respuesta) => {
+      console.log(respuesta)
+      if(respuesta.status === 201){
+        Swal.fire("Bienvenido", "Te registraste exitosamente", "success")
+      }else{
+        Swal.fire("Ha ocurrido un error", "No pudimos registrate","error")
+      }
+    })
   }
   const [usuarios, setUsuarios] = useState([])
 

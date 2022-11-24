@@ -28,25 +28,87 @@
       "categoria": "Desayunos/Meriendas",
       "id": 5
     }
-    
-  ], 
-
+  ],
   "usuarios": [
-   {
-    "nombre": "florencia",
-    "apellido": "palma",
-    "email": "flor@gmail.com",
-    "userName": "florpalma1",
-    "password": "florencia12345",
-    "id":1
-   },
-   {
-    "nombre": "myriam",
-    "apellido": "salazar",
-    "email": "myriarg@gmail.com",
-    "userName": "myriss",
-    "password": "salazar2345",
-    "id":2
-   }
+    {
+      "nombre": "florencia",
+      "apellido": "palma",
+      "email": "flor@gmail.com",
+      "userName": "florpalma1",
+      "password": "florencia12345",
+      "id": 1
+    },
+    {
+      "nombre": "myriam",
+      "apellido": "salazar",
+      "email": "myriarg@gmail.com",
+      "userName": "myriss",
+      "password": "salazar2345",
+      "id": 2
+    },
+    {
+      "nombre": "carla",
+      "apellido": "carretero",
+      "email": "carla@gmail.com",
+      "userName": "evita125",
+      "password": "carlitacarr1542",
+      "id": 3
+    },
+    {
+      "nombre": "neymar",
+      "apellido": "santos",
+      "email": "brasil2022@gmail.com",
+      "userName": "boricua2022",
+      "password": "alemania7",
+      "id": 4
+    },
+    {
+      "nombre": "Lucas",
+      "apellido": "Paqueta",
+      "email": "lpaqueta@mail.com",
+      "userName": "Brasil123",
+      "password": "bailandotiktok",
+      "id": 5
+    },
+    {
+      "nombre": "lionel",
+      "apellido": "messi",
+      "email": "liomessi@gmail.com",
+      "userName": "d10s",
+      "password": "antomateo12",
+      "id": 6
+    },
+    {
+      "nombre": "Palma",
+      "apellido": "florenciaq",
+      "email": "contr.lucascordoba98@gmail.com",
+      "userName": "nsduiovfhsi",
+      "password": "987654321",
+      "id": 7
+    },
+    {
+      "nombre": "daniel",
+      "apellido": "scioli",
+      "email": "pichici@gmail.com",
+      "userName": "pichichi15",
+      "password": "gobierno12345",
+      "id": 8
+    },
+    {
+      "nombre": "daniel",
+      "apellido": "scioli",
+      "email": "pichici@gmail.com",
+      "userName": "pichichi15",
+      "password": "gobierno12345",
+      "id": 9
+    },
+    {
+      "nombre": "juan",
+      "apellido": "taxista",
+      "email": "juangh@mail.com",
+      "userName": "tachero",
+      "password": "bigbrother32",
+      "id": 10
+    }
   ]
 }
