@@ -1,69 +1,173 @@
-import { Tab,Nav, Col, Row, Container } from "react-bootstrap";
+
+import { Container }  from 'react-bootstrap';
+import "../css/DetalleProducto.css";
+import Carousel from "react-elastic-carousel"
+
+const breakPoints=[
+  {width:1, itemsToShow: 1},
+  {width:550, itemsToShow: 2},
+  {width:768, itemsToShow: 3},
+  {width:1200, itemsToShow: 4},
+]
 
 
 
 const DetalleProducto =()=>{
+  
   return (
-    <Container>
-      <div className="mcd-content">
-        <div className="mcd-products-block">
-          <div className="mcd-container">
-           <Nav role='navigation' className="mcd-category d-flex">
-            <aside className="mcd-category-menu">
-              <a href="/productos" className="mcd-section" aria-current ='page'>
-                <img src="https://images.pexels.com/photos/262896/pexels-photo-262896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagen-category"/>
-                Nuestros productos
-              </a>
-              <div className="mcd-category-section-menu">
-                <div className="column-category">
-                  <div className="column-mobile">
-                    <a href="/productos" className="mcd-category-menu-item" aria-current="page">
-                      <img src="https://images.pexels.com/photos/262896/pexels-photo-262896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="img-category" />
-                    Nuestros productos
-                    </a>
-                  </div>
-                  <div className="hamburguesas"> 
-                    <a href="/productos/hamburguesas" className="item-hamburguesas">
-                      <img src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagen-hamburguesas" />
-                    Hamburguesas
-                    </a>
-                  </div>
-                  <div className="sandwiches">
-                    <a href="/productos/sandwiches" className="item-sandwiches">
-                      <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="imagen-sandwiches"/>
-                    Sándwiches
-                    </a>
-                  </div>
-                  <div className="pizzas">
-                    <a href="/productos/pizzas" className="item-pizzas">
-                      <img src="https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagen-pizzas"/>
-                    Pizzas
-                    </a>
-                  </div>
-                  <div className="bebidas">
-                    <a href="/productos/bebidas" className="item-bebidas">
-                      <img src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="imagen-bebidas"/>
-                    Bebidas
-                    </a>
-                  </div>
+   <Container>
+    <section>
+      <div className='row'>
+        <Carousel breakPoints={breakPoints}>
+        <div className='producto'>
+          <div className='producto-thumb'>
+            <a href="#"><img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /></a>
+          </div>
+            <div className='producto-body'>
+              <div className='title'>
+                <h6>Hamburguesa</h6>
+              </div>
+              <div className='precio'>
+                <span>$650</span>
+              </div>
+              <div className='reating'>
+                <div className='star'>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
                 </div>
               </div>
-            </aside>
-            <div className="mcd-container-detalle d-block">
-              <div className="mcd-home">
-                <div className="mcd-home-d">
-                  <a href="/" className="link-inicio">Inicio</a>
-                  <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" alt="" className="imagen-flecha" />
-                  <span className="actual-pagina">Productos</span>
+              <div className='footer-card'>
+                <div className='btn'>
+                  <a href="#" className='btn-custom primary'>Agregar al carrito</a>
+                  <a href="#" className='btn-custom secund'>Quick view</a>
                 </div>
               </div>
             </div>
-           </Nav>
-          </div>
         </div>
-      </div>
-    </Container>
-  )
+        {/*producto 2*/}
+        <div className='producto'>
+          <div className='producto-thumb'>
+            <a href="#"><img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /></a>
+          </div>
+            <div className='producto-body'>
+              <div className='title'>
+                <h6>Hamburguesa</h6>
+              </div>
+              <div className='precio'>
+                <span>$650</span>
+              </div>
+              <div className='reating'>
+                <div className='star'>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                </div>
+              </div>
+              <div className='footer-card'>
+                <div className='btn'>
+                  <a href="#" className='btn-custom primary'>Agregar al carrito</a>
+                  <a href="#" className='btn-custom secund'>Quick view</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        {/*producto 3 */}
+        <div className='producto'>
+          <div className='producto-thumb'>
+            <a href="#"><img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /></a>
+          </div>
+            <div className='producto-body'>
+              <div className='title'>
+                <h6>Hamburguesa</h6>
+              </div>
+              <div className='precio'>
+                <span>$650</span>
+              </div>
+              <div className='reating'>
+                <div className='star'>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                </div>
+              </div>
+              <div className='footer-card'>
+                <div className='btn'>
+                  <a href="#" className='btn-custom primary'>Agregar al carrito</a>
+                  <a href="#" className='btn-custom secund'>Quick view</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        {/*producto 4*/}
+        <div className='producto'>
+          <div className='producto-thumb'>
+            <a href="#"><img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /></a>
+          </div>
+            <div className='producto-body'>
+              <div className='title'>
+                <h6>Hamburguesa</h6>
+              </div>
+              <div className='precio'>
+                <span>$650</span>
+              </div>
+              <div className='reating'>
+                <div className='star'>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                </div>
+              </div>
+              <div className='footer-card'>
+                <div className='btn'>
+                  <a href="#" className='btn-custom primary'>Agregar al carrito</a>
+                  <a href="#" className='btn-custom secund'>Quick view</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        {/*producto 5 */}
+        <div className='producto'>
+          <div className='producto-thumb'>
+            <a href="#"><img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /></a>
+          </div>
+            <div className='producto-body'>
+              <div className='title'>
+                <h6>Hamburguesa</h6>
+              </div>
+              <div className='precio'>
+                <span>$650</span>
+              </div>
+              <div className='reating'>
+                <div className='star'>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                  <i class='fa fa-star'></i>
+                </div>
+              </div>
+              <div className='footer-card'>
+                <div className='btn'>
+                  <a href="#" className='btn-custom primary'>Agregar al carrito</a>
+                  <a href="#" className='btn-custom secund'>Quick view</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        </Carousel> 
+        </div>
+    </section>
+   </Container>
+  );
 }
 
 
