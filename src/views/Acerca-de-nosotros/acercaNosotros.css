@@ -163,7 +163,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 7rem;
+      margin-top: 1rem;
       flex-direction: column;
       gap: 0rem;
       position: relative;
@@ -198,7 +198,8 @@
       padding: 1rem;
       width: 38rem;
       height: 19rem;
-      background: rgba(255, 255, 255, 0.129);
+      background: rgb(3,101,6);
+background: radial-gradient(circle, rgba(3,101,6,1) 0%, rgba(117,201,70,1) 30%, rgba(189,208,35,1) 100%);
       border: 7px solid #dbffda;
       box-shadow: var(--boxShadow);
       border-radius: 20px;
@@ -207,9 +208,10 @@
       width: 12rem;
       height: 12rem;
       border-radius: 100%;
+      border: 5px solid #dbffda;
   }
   .testimonial>span{
-      color: black;
+      color: #e0fedf;
   }
   
   

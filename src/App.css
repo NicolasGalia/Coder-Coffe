@@ -1,35 +1,36 @@
 /* NAVBAR */
 
-.navbarPaginas{
-background-color: rgb(16, 128, 16);
-padding: 10px;
+.navbarPaginas {
+    background-color: rgb(16, 128, 16);
+    padding: 10px;
 
 }
 
-.navbarExpand{
+.navbarExpand {
     background-color: rgb(10, 104, 10);
 }
 
-.itemsNavb:hover{
+.itemsNavb:hover {
     position: relative;
-    color: white  !important;
-    text-transform:initial;
+    color: white !important;
+    text-transform: initial;
     transition: color var(--time);
-	display: inline-block;
-	height: 2em;
-	overflow: hidden;
+    display: inline-block;
+    height: 2em;
+    overflow: hidden;
 }
 
-.logoNav{
+.logoNav {
     width: 8em;
 }
-.logoFooter{
+
+.logoFooter {
     width: 15em;
 }
 
 
 /*MANTIENE EL FOOTER ABAJO SIEMPRE*/
-#root{
+#root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -39,100 +40,128 @@ padding: 10px;
 }
 
 /*AGREGAR ESTA CLASE EN EL RETURN PARA QUE ESTE SIEMPRE ABAJO EL FOOTER*/
-.mainSection{
+.mainSection {
     flex-grow: 1;
 }
 
 
 /*PAGINA ADMIN*/
 
-.boxAdmin{
-    background-color:rgba(204, 191, 70, 0.88) ;
+.boxAdmin {
+    background-color: rgba(204, 191, 70, 0.88);
 
-        border-radius: 20px;
+    border-radius: 20px;
 }
 
-.boxCrear{
-    background-color:rgba(204, 191, 70, 0.88) ;
-    
+.boxCrear {
+    background-color: rgba(204, 191, 70, 0.88);
+
     border-radius: 20px;
     width: 50em;
-    height:fit-content;
+    height: fit-content;
 }
 
-.tituloAdmin{
+.tituloAdmin {
     color: rgb(10, 104, 10);
     font-weight: 400;
-    
+
 }
 
 
-.btnAgregar{
-    background-color:rgb(10, 104, 10) ;
+.btnAgregar {
+    background-color: rgb(10, 104, 10);
     color: white;
     font-weight: 600;
 }
 
-.btnAgregar:hover{
+.btnAgregar:hover {
     color: rgb(10, 104, 10);
-    background-color:white;
+    background-color: white;
     font-weight: 700;
 }
 
-.btnGuardar{
-    background-color:rgb(10, 104, 10) ;
+.btnGuardar {
+    background-color: rgb(10, 104, 10);
     color: white;
     font-weight: 600;
     border: rgb(10, 104, 10);
 }
-.btnGuardar:hover{
+
+.btnGuardar:hover {
     color: rgb(10, 104, 10);
     background-color: white;
 }
 
 /* MEDIAS QUERIES */
 
-@media all and (max-width:756px){
+@media all and (max-width:756px) {
 
-    .boxCrear{
-        background-color:rgba(204, 191, 70, 0.88) ;
-        
+    .boxCrear {
+        background-color: rgba(204, 191, 70, 0.88);
+
         border-radius: 20px;
         width: 22em;
-        height:fit-content;
+        height: fit-content;
     }
 
-    .boxAdmin{
-        background-color:rgba(204, 191, 70, 0.88) ;
-    width: 22em;
-            border-radius: 20px;
+    .boxAdmin {
+        background-color: rgba(204, 191, 70, 0.88);
+        width: 22em;
+        border-radius: 20px;
     }
 
-    .btnAgregar{
-        font-weight: 300;        
+    .btnAgregar {
+        font-weight: 300;
     }
 
-    .btnAgregar:hover{
+    .btnAgregar:hover {
         font-weight: 300;
     }
 
 
-    .linknoMostrar{
+    .linknoMostrar {
         display: none;
     }
 
-    .logoNav{
+    .logoNav {
         width: 6em;
     }
-    
    
+}
+
+/* Error 404 */
+.error {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.textoError{
+    color: rgb(10, 104, 10); 
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.botonError {
+    background-color: rgb(10, 104, 10);
+    color: rgba(117, 201, 70, 1);
+    margin-top: 15px
+   ;
+}
+@media screen and (max-width: 480px) {
+.textoError{
+    font-size: 15px;
+   
+}
+
 }
 
 /* MEDIA QUERIS DE TABLA */
 
-.boxAdmin{
-    background-color:rgba(204, 191, 70, 0.88) ;
-overflow-x: auto;
+.boxAdmin {
+    background-color: rgba(204, 191, 70, 0.88);
+    overflow-x: auto;
 }
 
 
@@ -142,10 +171,3 @@ overflow-x: auto;
 
 
 
-/* #fcbc90
-#fcbc90
-#dbcabe 
-#cecdcb
-#c0d1d9
-#b0d4e7
-#9dd8f5 */

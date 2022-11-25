@@ -9,6 +9,8 @@ import logo from "./Img-AN/logo.jpeg";
 import luciana from "./Img-AN/luciana.jpeg"
 import julieta from "./Img-AN/julieta.jpeg"
 import edu from "./Img-AN/edu.jpeg"
+import nico from "./Img-AN/nico.jpeg"
+import eloy from "./Img-AN/eloy.jpeg"
 
 
 const participantes = () => {
@@ -21,7 +23,7 @@ const participantes = () => {
       "24 años - Estudiante de RollingCode School"  
     },
     {
-      img: logo,
+      img: nico,
       nombreMiembro:
         "Nicolas Galia",
         review:
@@ -42,7 +44,7 @@ const participantes = () => {
       "24 años - Estudiante de RollingCode School"  
   },
   {
-    img: logo,
+    img: eloy,
     nombreMiembro:
       "Eloy Pintos",
       review:
