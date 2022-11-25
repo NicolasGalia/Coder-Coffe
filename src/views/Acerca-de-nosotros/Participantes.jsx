@@ -69,9 +69,9 @@ const participantes = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        {miembros.map((miembros) => {
+        {miembros.map((miembros, index) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div className="testimonial">
                 <img src={miembros.img} alt="miembro del equipo" />
                 <span className='nombreMiembro'>{miembros.nombreMiembro}</span>

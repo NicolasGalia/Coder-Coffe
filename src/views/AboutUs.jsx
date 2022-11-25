@@ -4,6 +4,8 @@ import Bienvenidos from './Acerca-de-nosotros/Bienvenidos';
 import InfoLocal from './Acerca-de-nosotros/InfoLocal';
 import Participantes from './Acerca-de-nosotros/Participantes';
 import "./Acerca-de-nosotros/acercaNosotros.css"
+import Librerias from './Acerca-de-nosotros/Librerias';
+
 
 
 const AboutUs = () => {
@@ -12,6 +14,7 @@ const AboutUs = () => {
       <Bienvenidos></Bienvenidos>
       <InfoLocal></InfoLocal>
       <Participantes></Participantes>
+      <Librerias></Librerias>
      </div>
     )
 };
