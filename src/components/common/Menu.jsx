@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Logo from '../../../src/img/logoBgTransparent.png';
+import {link, NavLink} from "react-router-dom";
 
 const Menu = () => {
     return (
@@ -35,6 +36,7 @@ const Menu = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Iniciar Sesion</Nav.Link>
+                  <NavLink end to="/registro" className="nav-item nav-link">Registro</NavLink>
                   <Nav.Link href="#action2">Productos destacados</Nav.Link>
                   <NavDropdown
                     title="Menús del dia"

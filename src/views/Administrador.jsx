@@ -4,7 +4,8 @@ import { Table } from "react-bootstrap";
 import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
-
+import { consultarUsuario } from "../components/helpers/queriesLogin";
+import ItemUsuarios from "./adminUsuarios/ItemUsuarios";
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -25,14 +26,27 @@ const Administrador = () => {
     );
   }, []);
 
-  const [usuarios, setUsuarios] = useState ([]);
-  useEffect(()=>{
-    
-  })
+  const [usuarios, setUsuarios] = useState([]);
+  useEffect(() => {
+    consultarUsuario().then(
+      (respuesta) => {
+        setUsuarios(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
+
+        swal.fire(
+          "Ocurrio un error",
+          "Intentelo nuevamente en unos minutos",
+          "error"
+        );
+      }
+    );
+  }, []);
 
   return (
     <div className="mainSection my-5 container">
-      <section className="container  boxAdmin p-2 my-5 " >
+      <section className="container  boxAdmin p-2 my-5 ">
         <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
           <h1 className="display-6 tituloAdmin ">PRODUCTOS</h1>
           <Link to="/CrearProducto" className="btn  btnAgregar ">
@@ -64,18 +78,27 @@ const Administrador = () => {
       </section>
       <section className="container  boxAdmin p-2 my-5 mainSection">
         <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
-          <h1 className="display-6 tituloAdmin ">USUARIOS</h1>
+          <h1 className="display-6 tituloAdmin ">USUARIOS REGISTRADOS</h1>
         </div>
         <hr />
         <Table responsive={"sm md"}>
           <thead className="text-light text-center">
             <tr>
               <th>IDENTIFICADOR</th>
-              <th>NOMBRE USUARIO</th>
-              <th>EMAIL USUARIO</th>
+              <th>USUARIO</th>
+              <th>EMAIL</th>
+              <th>ESTATUS</th>
             </tr>
           </thead>
-          <tbody className="fw-bold"></tbody>
+          <tbody className="fw-bold text-center">
+          {usuarios.map((usuario) => (
+              <ItemUsuarios
+                key={usuario.id}
+                usuario={usuario}
+                setUsuarios={setUsuarios}
+              ></ItemUsuarios>
+            ))}
+          </tbody>
         </Table>
       </section>
     </div>

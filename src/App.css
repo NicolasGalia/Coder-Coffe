@@ -24,7 +24,7 @@ padding: 10px;
     width: 8em;
 }
 .logoFooter{
-    width: 10em;
+    width: 15em;
 }
 
 
@@ -38,6 +38,7 @@ padding: 10px;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 
 
 
@@ -128,6 +129,13 @@ padding: 10px;
         width: 6em;
     }
     
+    .tituloAdmin{
+        color: rgb(10, 104, 10);
+        font-weight: 600;
+        font-size: 20px;
+        
+        
+    }
    
 }
 
