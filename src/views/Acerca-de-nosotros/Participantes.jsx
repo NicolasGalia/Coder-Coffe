@@ -1,84 +1,93 @@
 import React from 'react';
-import Card from "./Cards";
-import "./acercaNosotros.css"
-import HeartEmoji from "./Img-AN/heartemoji.png";
-import Glasses from "./Img-AN/glasses.png";
-import Humble from "./Img-AN/humble.png";
-import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "./acercaNosotros.css";
+import { Pagination } from "swiper";
+import "swiper/css/pagination";
+import flor from "./Img-AN/flor.jpg"
+import logo from "./Img-AN/logo.jpeg";
+import luciana from "./Img-AN/luciana.jpeg"
+import julieta from "./Img-AN/julieta.jpeg"
+import edu from "./Img-AN/edu.jpeg"
 
 
-const Participantes = () => {
- 
-    // transition
-    const transition = {
-      duration: 1,
-      type: "spring",
-    };
-    return (
-        <div className="services" id="services">
-      {/* left side */}
-      <div className="awesome">
+const participantes = () => {
+  const miembros = [
+    {
+      img: flor,
+      nombreMiembro:
+        "Florencia Palma",
+      review:
+      "24 años - Estudiante de RollingCode School"  
+    },
+    {
+      img: logo,
+      nombreMiembro:
+        "Nicolas Galia",
+        review:
+        "24 años - Estudiante de RollingCode School"  
+    },
+    {
+      img: luciana,
+      nombreMiembro:
+        "Luciana Soria",
+        review:
+        "24 años - Estudiante de RollingCode School"  
+    },
+  {
+    img: edu,
+    nombreMiembro:
+      "Eduardo Ross",
+      review:
+      "24 años - Estudiante de RollingCode School"  
+  },
+  {
+    img: logo,
+    nombreMiembro:
+      "Eloy Pintos",
+      review:
+      "24 años - Estudiante de RollingCode School"  
+  },
+  {
+    img: julieta,
+    nombreMiembro:
+      "Julieta Valdez",
+      review:
+      "24 años - Estudiante de RollingCode School"  
+  }];
 
-        <span>My Awesome</span>
-        <span>services</span>
-        <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
-          <br />
-          ispum is simpley dummy text of printing
-        </spane>
-        <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
+  return (
+    <div className="t-wrapper" id="testimonial">
+      <div className="t-heading">
+        <span>Miembros del </span>
+        <span className='equipo'>equipo</span>
+      <div className="blur t-blur1" ></div>
+      <div className="blur t-blur2"></div>
       </div>
-      {/* right */}
-      <div className="cards">
-        {/* first card */}
-         <motion.div
-          initial={{ left: "25rem" }}
-          whileInView={{ left: "14rem" }}
-          transition={transition}
-        > 
-          <Card
-            emoji={HeartEmoji}
-            heading={"Luciana Soria"}
-            detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
-          />
-        </motion.div>
-        {/* second card */}
-        <motion.div
-          initial={{ left: "-11rem", top: "12rem" }}
-          whileInView={{ left: "-4rem" }}
-          transition={transition}
-        > 
-          <Card
-            emoji={Glasses}
-            heading={"Florencia Palma"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express"}
-          />
-        </motion.div> 
-        {/* 3rd */}
-         <motion.div
-          initial={{ top: "19rem", left: "25rem" }}
-          whileInView={{ left: "12rem" }}
-          transition={transition}
-        > 
-          <Card
-            emoji={Humble}
-            heading={"Eduardo Ross"}
-            detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
-            }
-            color="rgba(252, 166, 31, 0.45)"
-          />
-        </motion.div> 
-        <div
-          className="blur s-blur2"
-          style={{ background: "var(--purple)" }}
-        ></div>
-      </div>
+      <Swiper
+        modules={[Pagination]}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+      >
+        {miembros.map((miembros) => {
+          return (
+            <SwiperSlide>
+              <div className="testimonial">
+                <img src={miembros.img} alt="miembro del equipo" />
+                <span className='nombreMiembro'>{miembros.nombreMiembro}</span>
+                <span>{miembros.review}</span>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
-    );
+  );
 };
 
-export default Participantes;
+export default participantes;
+
+
 
 
 

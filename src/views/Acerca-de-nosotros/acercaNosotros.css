@@ -4,6 +4,114 @@
     min-height: 100vh;
     background-image:none;}
 
+    /* AboutUs */
+    .aboutUs{
+      --yellow: #F5C32C;
+      --orange : #FCA61F;
+      --black : #242D49;
+      --gray : #788097;
+      --blueCard : #DDF8FE;
+      --purple: rgb(238 210 255);
+      --boxShadow : 0px 19px 60px rgb(0 0 0 / 8%);
+      --orangeCard: rgba(252, 166, 31, 0.45);
+      --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    /* participantes  */
+
+    .nombreMiembro{
+      font-size: 2rem;
+    }
+    .t-wrapper{
+      padding:  0 3rem 0 3rem;;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 7rem;
+      flex-direction: column;
+      gap: 0rem;
+      position: relative;
+  }
+  .t-heading{
+      align-self: center;
+      padding-top: 0px;
+  }
+  .t-heading>*{
+      font-size: 4rem;
+      font-weight: bold;
+  }
+  .t-heading span:nth-of-type(2){
+      color: #59b256;
+      font-size: 4.8rem;
+
+  }
+  
+  .t-blur1{
+      left: 38rem;
+      top: 16rem;
+  }
+  .t-blur2{
+      top: 9rem;
+      left: 0;
+  }
+  .testimonial{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 1rem;
+      width: 38rem;
+      height: 19rem;
+      background: rgba(255, 255, 255, 0.129);
+      border: 7px solid #dbffda;
+      box-shadow: var(--boxShadow);
+      border-radius: 20px;
+  }
+  .testimonial>img{
+      width: 12rem;
+      height: 12rem;
+      border-radius: 100%;
+  }
+  .testimonial>span{
+      color: black;
+  }
+  
+  
+  /* slider */
+  .t-wrapper .swiper {
+      width: 100%;
+      height: 70%;
+  }
+  
+  .t-wrapper .swiper-slide{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .t-wrapper .swiper-pagination-bullet-active{
+      background: #2D5940;
+  }
+  
+  @media screen and (max-width: 480px){
+      .t-wrapper{
+          padding: 0;
+      }
+      .testimonial>img{
+          width: 110px;
+          height: 110px;
+      }
+      .t-heading>*{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .testimonial>span{
+      align-self: center;
+    }
+    }
+    /* participantes */
+
 .a {
     height: 100vh;
     display: flex;
@@ -291,74 +399,6 @@
       position: static;
     }
   }
-  html,
-body {
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 20px;
-  border-radius: 25px;
-}
-
-li {
-  background-color: rgba(214, 214, 214, 0.5);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-li:last-child {
-  margin-bottom: 0px;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  background-color: #666;
-  border-radius: 20px;
-}
-
-.row {
-  width: 100%;
-  height: 8px;
-  background-color: #999;
-  border-radius: 10px;
-  margin-top: 12px;
-}
-
-
 
   @media screen and (max-width: 480px) {
     .card{
