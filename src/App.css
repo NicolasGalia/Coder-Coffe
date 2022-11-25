@@ -1,11 +1,13 @@
+/* NAVBAR */
+
 .navbarPaginas{
-background-color:#b0d4e7;
-padding: 20px;
+background-color: rgb(16, 128, 16);
+padding: 10px;
 
 }
 
 .navbarExpand{
-    background-color:#b0d4e7;
+    background-color: rgb(10, 104, 10);
 }
 
 .itemsNavb:hover{
@@ -18,140 +20,128 @@ padding: 20px;
 	overflow: hidden;
 }
 
-.footer {
+.logoNav{
+    width: 8em;
+}
+.logoFooter{
+    width: 15em;
+}
+
+
+/*MANTIENE EL FOOTER ABAJO SIEMPRE*/
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("https://fondosmil.com/fondo/15505.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*AGREGAR ESTA CLASE EN EL RETURN PARA QUE ESTE SIEMPRE ABAJO EL FOOTER*/
+.mainSection{
+    flex-grow: 1;
+}
+
+
+/*PAGINA ADMIN*/
+
+.boxAdmin{
+    background-color:rgba(204, 191, 70, 0.88) ;
+
+        border-radius: 20px;
+}
+
+.boxCrear{
+    background-color:rgba(204, 191, 70, 0.88) ;
     
-    bottom: 0px;
-    width: 100%;
-    height: auto;
-  }
+    border-radius: 20px;
+    width: 50em;
+    height:fit-content;
+}
 
-  /*Estilos de la pagina inicio*/
-  
-  .mcd-content{
-    position: relative;
-    flex: 1 0 auto;
-  }
-  
-  .mcd-section{
-    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 7%);
-    border: 2px solid #e1e1e1;
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    width: 275px;
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 0 12px 0 6px;
-    height: 80px;
-    font-size: 18px;
+.tituloAdmin{
+    color: rgb(10, 104, 10);
+    font-weight: 400;
+    
+}
+
+
+.btnAgregar{
+    background-color:rgb(10, 104, 10) ;
+    color: white;
+    font-weight: 600;
+}
+
+.btnAgregar:hover{
+    color: rgb(10, 104, 10);
+    background-color:white;
     font-weight: 700;
-    margin-bottom: 30px;
-    padding-left: 0;
-    border-left: 6px solid #ffbc0d;
-  }
+}
 
-  .imagen-category{
-    color: #6f6f6f;
-    font-size: 12px;
-    display: block;
-    max-width: 100%;
-    height: auto;
-    width: 75px;
-    max-height: 100%;
-    margin-left: 6px;
-    margin-right: 12px
-  }
+.btnGuardar{
+    background-color:rgb(10, 104, 10) ;
+    color: white;
+    font-weight: 600;
+    border: rgb(10, 104, 10);
+}
+.btnGuardar:hover{
+    color: rgb(10, 104, 10);
+    background-color: white;
+}
 
-  .category-section-menu{
-    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 7%);
-    border: 2px solid #e1e1e1;
-    border-radius: 6px;
-    overflow: hidden;
-    display: block;
-  }
+/* MEDIAS QUERIES */
 
-  .column-category{
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-  }
+@media all and (max-width:756px){
 
-  .column-mobile{
-    flex: none;
-    width: 100%;
-    display: none!important;
+    .boxCrear{
+        background-color:rgba(204, 191, 70, 0.88) ;
+        
+        border-radius: 20px;
+        width: 22em;
+        height:fit-content;
+    }
 
-  }
+    .boxAdmin{
+        background-color:rgba(204, 191, 70, 0.88) ;
+    width: 22em;
+            border-radius: 20px;
+    }
 
-  .img-category{
-    height: auto;
-    width: 75px;
-    max-height: 100%;
-    margin-left: 6px;
-    margin-right: 12px;
-    display: block;
-    font-size: 12px;
-    max-width: 100%;
-  }
+    .btnAgregar{
+        font-weight: 300;        
+    }
 
-  .mcd-category-menu-item{
-    padding-left: 0;
-    border-left: 6px solid #ffbc0d;
-    font-weight: 700;
-    width: 275px;
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 0 12px 0 6px;
-    height: 80px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-  }
+    .btnAgregar:hover{
+        font-weight: 300;
+    }
 
-  .hamburguesas, .sandwiches, .pizzas, .bebidas{
-    flex: none;
-    width: 100%;
-    display: block;
-  }
 
-  a{
-    cursor: pointer;
-    text-decoration: none;
-  }
+    .linknoMostrar{
+        display: none;
+    }
 
-  .item-hamburguesas, .item-sandwiches, .item-pizzas, .item-bebidas{
-    width: 275px;
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 0 12px 0 6px;
-    height: 80px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-  }
+    .logoNav{
+        width: 6em;
+    }
+    
+   
+}
 
-  .imagen-hamburguesas, .imagen-sandwiches, .imagen-pizzas, .imagen-bebidas{
-    height: auto;
-    width: 75px;
-    max-height: 100%;
-    margin-left: 6px;
-    margin-right: 12px;
-    font-size: 12px;
-    max-width: 100%;
-    display:block;
-  }
+/* MEDIA QUERIS DE TABLA */
 
-  .mcd-container-detalle{
-    width: 100%;
-    display: block;
+.boxAdmin{
+    background-color:rgba(204, 191, 70, 0.88) ;
+overflow-x: auto;
+}
 
-  }
+
+
+
+
+
+
 
 /* #fcbc90
 #fcbc90
