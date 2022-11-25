@@ -4,7 +4,7 @@ import "./acercaNosotros.css"
 import HeartEmoji from "./Img-AN/heartemoji.png";
 import Glasses from "./Img-AN/glasses.png";
 import Humble from "./Img-AN/humble.png";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const Participantes = () => {
@@ -18,7 +18,7 @@ const Participantes = () => {
         <div className="services" id="services">
       {/* left side */}
       <div className="awesome">
-        {/* dark mode */}
+
         <span>My Awesome</span>
         <span>services</span>
         <spane>
@@ -31,44 +31,44 @@ const Participantes = () => {
       {/* right */}
       <div className="cards">
         {/* first card */}
-        {/* <motion.div
+         <motion.div
           initial={{ left: "25rem" }}
           whileInView={{ left: "14rem" }}
           transition={transition}
-        > */}
+        > 
           <Card
             emoji={HeartEmoji}
-            heading={"Design"}
+            heading={"Luciana Soria"}
             detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
           />
-        {/* </motion.div> */}
+        </motion.div>
         {/* second card */}
-        {/* <motion.div
+        <motion.div
           initial={{ left: "-11rem", top: "12rem" }}
           whileInView={{ left: "-4rem" }}
           transition={transition}
-        > */}
+        > 
           <Card
             emoji={Glasses}
-            heading={"Developer"}
+            heading={"Florencia Palma"}
             detail={"Html, Css, JavaScript, React, Nodejs, Express"}
           />
-        {/* </motion.div> */}
+        </motion.div> 
         {/* 3rd */}
-        {/* <motion.div
+         <motion.div
           initial={{ top: "19rem", left: "25rem" }}
           whileInView={{ left: "12rem" }}
           transition={transition}
-        > */}
+        > 
           <Card
             emoji={Humble}
-            heading={"UI/UX"}
+            heading={"Eduardo Ross"}
             detail={
               "Lorem ispum dummy text are usually use in section where we need some random text"
             }
             color="rgba(252, 166, 31, 0.45)"
           />
-        {/* </motion.div> */}
+        </motion.div> 
         <div
           className="blur s-blur2"
           style={{ background: "var(--purple)" }}
