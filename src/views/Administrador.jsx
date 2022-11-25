@@ -26,8 +26,8 @@ const Administrador = () => {
   }, []);
 
   return (
-    <>
-      <section className="container  boxAdmin p-2 my-5 mainSection" >
+    <div className="mainSection my-5 container">
+      <section className="container  boxAdmin p-2 my-5 " >
         <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
           <h1 className="display-6 tituloAdmin ">PRODUCTOS</h1>
           <Link to="/CrearProducto" className="btn  btnAgregar ">
@@ -73,7 +73,7 @@ const Administrador = () => {
           <tbody className="fw-bold"></tbody>
         </Table>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -12,7 +12,7 @@ import Logo from "../../../src/img/logoBgTransparent.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4 footer text-center">
+    <footer className="bg-dark text-light py-4 footer text-center container-fluid">
       <Row >
         <Col xs={12} lg={3} md={12}>
           <Nav.Link href="#">
