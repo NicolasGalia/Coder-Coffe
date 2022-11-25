@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
 import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import "../registro.css"
-
+import logoBgTransparente from "../img/logoBgTransparent.png"
 
 const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -42,7 +42,7 @@ const Registro = () => {
       <div className="register">
         <div className="col-6">
           <div className="m-3 p-3">
-            <h2>Registrate</h2>
+            <h2 className='registroTitulo'>Registrate</h2>
             <span>Unite a coder coffe y disfruta de nuestros servicios</span>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}
@@ -154,7 +154,7 @@ const Registro = () => {
         </div>
         <div className="col-6">
           <img
-            src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src= {logoBgTransparente}
             alt=""
             className="imagenRegistro"
           />
