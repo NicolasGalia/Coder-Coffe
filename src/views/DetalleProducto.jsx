@@ -28,9 +28,30 @@ const DetalleProducto =()=>{
                     Hamburguesas
                     </a>
                   </div>
+                  <div className="sandwiches">
+                    <a href="/productos/sandwiches" className="item-sandwiches">
+                      <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="imagen-sandwiches"/>
+                    Sándwiches
+                    </a>
+                  </div>
+                  <div className="pizzas">
+                    <a href="/productos/pizzas" className="item-pizzas">
+                      <img src="https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagen-pizzas"/>
+                    Pizzas
+                    </a>
+                  </div>
+                  <div className="bebidas">
+                    <a href="/productos/bebidas" className="item-bebidas">
+                      <img src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="imagen-bebidas"/>
+                    Bebidas
+                    </a>
+                  </div>
                 </div>
               </div>
             </aside>
+            <div className="mcd-container-detalle">
+              <div className="mcd-home ms-20px"></div>
+            </div>
            </Nav>
           </div>
         </div>

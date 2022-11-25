@@ -113,13 +113,18 @@ padding: 20px;
     align-items: center;
   }
 
-  .hamburguesas{
+  .hamburguesas, .sandwiches, .pizzas, .bebidas{
     flex: none;
     width: 100%;
     display: block;
   }
 
-  .item-hamburguesas{
+  a{
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .item-hamburguesas, .item-sandwiches, .item-pizzas, .item-bebidas{
     width: 275px;
     flex-direction: row;
     justify-content: flex-start;
@@ -131,7 +136,7 @@ padding: 20px;
     align-items: center;
   }
 
-  .imagen-hamburguesas{
+  .imagen-hamburguesas, .imagen-sandwiches, .imagen-pizzas, .imagen-bebidas{
     height: auto;
     width: 75px;
     max-height: 100%;
@@ -142,6 +147,11 @@ padding: 20px;
     display:block;
   }
 
+  .mcd-container-detalle{
+    width: 100%;
+    display: block;
+
+  }
 
 /* #fcbc90
 #fcbc90
