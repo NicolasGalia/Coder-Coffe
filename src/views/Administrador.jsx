@@ -25,6 +25,11 @@ const Administrador = () => {
     );
   }, []);
 
+  const [usuarios, setUsuarios] = useState ([]);
+  useEffect(()=>{
+    
+  })
+
   return (
     <div className="mainSection my-5 container">
       <section className="container  boxAdmin p-2 my-5 " >
