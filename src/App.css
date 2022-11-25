@@ -24,7 +24,7 @@ padding: 10px;
     width: 8em;
 }
 .logoFooter{
-    width: 15em;
+    width: 13em;
 }
 
 
@@ -38,6 +38,8 @@ padding: 10px;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
 
 /*AGREGAR ESTA CLASE EN EL RETURN PARA QUE ESTE SIEMPRE ABAJO EL FOOTER*/
 .mainSection{
@@ -91,7 +93,7 @@ padding: 10px;
     background-color: white;
 }
 
-/* MEDIAS QUERIES */
+/* MEDIAS QUERIES celular */
 
 @media all and (max-width:756px){
 
@@ -130,10 +132,12 @@ padding: 10px;
 }
 
 /* MEDIA QUERIS DE TABLA */
+@media  (min-width:756px) and (max-width:991px){
 
-.boxAdmin{
-    background-color:rgba(204, 191, 70, 0.88) ;
-overflow-x: auto;
+    .boxAdmin{
+        background-color:rgba(204, 191, 70, 0.88) ;
+    overflow-x: auto;
+    }
 }
 
 
