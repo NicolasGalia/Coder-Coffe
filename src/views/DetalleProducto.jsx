@@ -49,8 +49,14 @@ const DetalleProducto =()=>{
                 </div>
               </div>
             </aside>
-            <div className="mcd-container-detalle">
-              <div className="mcd-home ms-20px"></div>
+            <div className="mcd-container-detalle d-block">
+              <div className="mcd-home">
+                <div className="mcd-home-d">
+                  <a href="/" className="link-inicio">Inicio</a>
+                  <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" alt="" className="imagen-flecha" />
+                  <span className="actual-pagina">Productos</span>
+                </div>
+              </div>
             </div>
            </Nav>
           </div>
