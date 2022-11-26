@@ -17,7 +17,6 @@ function App() {
       
       <Menu></Menu>
       <Inicio></Inicio>
-      <DetalleProducto></DetalleProducto>
       <Routes>
     
     <Route exact path='/administrador' element={<Administrador/>}></Route>
