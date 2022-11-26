@@ -8,6 +8,7 @@ import Administrador from "./views/Administrador";
 import Registro from "./views/Registro";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
+import PaginaPedido from "./views/PaginaPedido";
 import "../src/App.css"
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <Route exact path='/administrador' element={<Administrador/>}></Route>
     <Route exact path='/registro' element={<Registro/>}></Route>
     <Route exact path='/Menu' element={<Menu/>} ></Route>
+    <Route exact path='/pedido' element={<PaginaPedido/>} ></Route>
     <Route exact path='/Footer' element={<Footer/>} ></Route>
   <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
   <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
