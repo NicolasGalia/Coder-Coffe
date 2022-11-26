@@ -1,5 +1,7 @@
 import Menu from "./components/common/Menu";
 import Footer from './components/common/Footer';
+import Inicio from "./views/Inicio";
+import DetalleProducto from "./views/DetalleProducto"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Administrador from "./views/Administrador";
@@ -14,6 +16,8 @@ function App() {
       <BrowserRouter>
       
       <Menu></Menu>
+      <Inicio></Inicio>
+      <DetalleProducto></DetalleProducto>
       <Routes>
     
     <Route exact path='/administrador' element={<Administrador/>}></Route>

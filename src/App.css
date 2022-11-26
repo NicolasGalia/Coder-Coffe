@@ -33,11 +33,14 @@ padding: 10px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url("https://fondosmil.com/fondo/15505.jpg");
+    background-color:#F2DEA2;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
+
 
 /*AGREGAR ESTA CLASE EN EL RETURN PARA QUE ESTE SIEMPRE ABAJO EL FOOTER*/
 .mainSection{
@@ -91,7 +94,7 @@ padding: 10px;
     background-color: white;
 }
 
-/* MEDIAS QUERIES */
+/* MEDIAS QUERIES celular */
 
 @media all and (max-width:756px){
 
@@ -126,17 +129,24 @@ padding: 10px;
         width: 6em;
     }
     
+    .tituloAdmin{
+        color: rgb(10, 104, 10);
+        font-weight: 600;
+        font-size: 20px;
+        
+        
+    }
    
 }
 
 /* MEDIA QUERIS DE TABLA */
+@media  (min-width:756px) and (max-width:991px){
 
-.boxAdmin{
-    background-color:rgba(204, 191, 70, 0.88) ;
-overflow-x: auto;
+    .boxAdmin{
+        background-color:rgba(204, 191, 70, 0.88) ;
+    overflow-x: auto;
+    }
 }
-
-
 
 
 
