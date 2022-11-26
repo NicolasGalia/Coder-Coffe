@@ -1,9 +1,9 @@
-
+const URL = process.env.REACT_APP_API_CODER_PEDIDO;
 
 export const consultarPedidoUsuario = async () => {
     // console.log(URL)
     try {
-      const respuesta = await fetch("#URL");
+      const respuesta = await fetch(URL);
       const listaPedido = await respuesta.json();
       return listaPedido;
     } catch (error) {

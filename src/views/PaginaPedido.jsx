@@ -2,23 +2,35 @@ import "./css/pedido.css";
 import React from "react";
 import { Container, ListGroup, Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { consultarPedidoUsuario } from "../components/helpers/queriesPedido";
 
 const PaginaPedido = () => {
+  const [productosPedido, setProductosPedido] = useState([]);
+  const [resultadoPedido, setResultadoPedido] = useState([]);
 
-    const [productosPedido, setProductosPedido] = useState([])
+  let preciosProductos = [];
 
-    useEffect(() => {
-        consultarPedidoUsuario().then(
-          (pedido) => {
-            setProductosPedido(pedido);
-          },
-        );
-      }, []);
+  for (let i = 0; i < productosPedido.length; i++) {
+    preciosProductos = [...preciosProductos, productosPedido[i].precio];
+  }
+
+  const [totalPedido, setTotalPedido] = useState(0);
+
+if(preciosProductos.length !== 0){
+  const resultadoTotalPedido = preciosProductos.reduce((acc, item) => {
+    return (acc = acc + item);
+  });
+}
 
 
+  useEffect(() => {
+    consultarPedidoUsuario().then((pedido) => {
+      setProductosPedido(pedido);
+    });
+  }, [() => setTotalPedido(resultadoPedido)]);
 
+ 
 
   return (
     <Container>
@@ -42,7 +54,7 @@ const PaginaPedido = () => {
           <Col className="fs-4 display-1 ps-5 my-1" xs={9}>
             Total a pagar
           </Col>
-          <Col className="fs-4 display-1 my-1">$</Col>
+          <Col className="fs-4 display-1 my-1">${totalPedido}</Col>
         </Row>
       </Container>
       <div className="d-flex justify-content-evenly my-3">
@@ -57,4 +69,4 @@ const PaginaPedido = () => {
   );
 };
 
-export default PaginaPedido
+export default PaginaPedido;
