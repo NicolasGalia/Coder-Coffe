@@ -3,8 +3,23 @@ import React from "react";
 import { Container, ListGroup, Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Swal from 'sweetalert2';
+import { consultarPedidoUsuario } from "../components/helpers/queriesPedido";
 
 const PaginaPedido = () => {
+
+    const [productosPedido, setProductosPedido] = useState([])
+
+    useEffect(() => {
+        consultarPedidoUsuario().then(
+          (pedido) => {
+            setProductosPedido(pedido);
+          },
+        );
+      }, []);
+
+
+
+
   return (
     <Container>
       <h1 className="text-center mt-3 tituloPedido">Pedido</h1>
@@ -14,9 +29,9 @@ const PaginaPedido = () => {
             Aún no agrego ningun producto a su pedido
           </h1>
 
-          {/* {productosPedido.map((producto, posicion) => (
+          {/* {productosPedido.map((producto) => (
                     <ItemProductoPedido
-                      key={posicion}
+                      key={producto._id}
                       nombreProducto={producto.nombreProducto}
                       precio={producto.precio}
                     ></ItemProductoPedido>
