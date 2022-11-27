@@ -12,9 +12,9 @@ import Logo from "../../../src/img/logoBgTransparent.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4 footer text-center">
+    <footer className="bg-dark text-light py-4 footer text-center container-fluid">
       <Row >
-        <Col xs={12} lg={3} md={6}>
+        <Col xs={12} lg={3} md={12}>
           <Nav.Link href="#">
             <img src={Logo} alt="Logo" className="logoFooter " />
           </Nav.Link>
@@ -49,7 +49,7 @@ const Footer = () => {
           </p>
     </Col>
 
-        <Col xs={12} lg={3} md={6}>
+        <Col xs={12} lg={3} md={12}>
         
           <div className="d-flex justify-content-center">
             <Nav.Link href="#">
