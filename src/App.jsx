@@ -6,6 +6,9 @@ import Administrador from "./views/Administrador";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
 import "../src/App.css"
+import { Login } from "./views/Login";
+import  Registro from "./views/Registro"; 
+
 
 function App() {
   return (
