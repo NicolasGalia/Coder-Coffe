@@ -1,4 +1,4 @@
-import { Container, Button, Modal, Card } from "react-bootstrap";
+import { Container, Button, Modal, Card, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import Carousel from "react-elastic-carousel";
 import CardProducto from "./adminproductos/CardProducto";
@@ -13,11 +13,18 @@ const breakPoints = [
 const DetalleProducto = () => {
   return (
     <Container>
-      <section> Almuerzo/cena
+      <section> <h1>Menú</h1>
         <div className="row">
-          <Carousel breakPoints={breakPoints}>
+        <Form.Select aria-label="Default select example">
+      <option>Seleccionar categoria</option>
+      <option value="1">categotia1</option>
+      <option value="2">categoria2</option>
+      <option value="3">categoria3</option>
+      <option value="4">categoria4</option>
+    </Form.Select>
+
            <CardProducto></CardProducto>
-          </Carousel>
+
         </div>
       </section>
     </Container>

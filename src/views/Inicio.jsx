@@ -45,7 +45,6 @@ const Inicio = () =>{
       </Carousel.Item>
     </Carousel>
     <hr></hr>
-    <h1>Menú</h1>
     
     </Container>
     

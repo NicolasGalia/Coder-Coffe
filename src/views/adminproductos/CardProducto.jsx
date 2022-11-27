@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Button, Card, Modal } from "react-bootstrap";
+import { Button, Card, Modal, Container } from "react-bootstrap";
 
 
 
@@ -9,30 +9,16 @@ const CardProducto = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Card className="producto">
-    <div className="producto-thumb">
-      <a href="#">
-        <img
-          src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt=""
-        />
-      </a>
-    </div>
-    <div className="producto-body">
-      <div className="title">
-        <h6>Hamburguesa</h6>
-      </div>
-      <div className="precio">
-        <span>$650</span>
-      </div>
-      <div className="footer-card">
-        <div className="btn">
-          <a href="#" className="btn-custom primary">
-            Agregar al carrito
-          </a>
-        </div>
-        <div>
-          <>
+    <Container>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <>
             <Button variant="primary" onClick={handleShow}>
             Ver detalle
             </Button>
@@ -50,10 +36,9 @@ const CardProducto = () => {
               </Modal.Footer>
             </Modal>
           </>
-        </div>
-      </div>
-    </div>
-  </Card>
+      </Card.Body>
+    </Card>
+  </Container>
   );
 };
 
