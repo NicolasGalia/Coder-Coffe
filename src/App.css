@@ -33,7 +33,6 @@ padding: 10px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color:#F2DEA2;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

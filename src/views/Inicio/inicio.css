@@ -9,14 +9,16 @@
     padding: 20px 40px;
     cursor: pointer;
   }
-
   
   .tituloProducto{
     font-size: 18px;
     font-weight: bold;
-    color: #d1411e;
+    color: rgb(16, 128, 16);
+    text-align: center;
   }
-  
+  .imgProducto{
+    border-radius: 15%;
+  }
   .precioProducto {
     font-size: 18px;
     font-weight: bold;
@@ -56,7 +58,13 @@
     color: #444;
     width: 70%;
   }
-  
+  .tituloLista{
+    color: rgb(16, 128, 16);
+  }
+  .descLista{
+    color: #2D5940;
+    text-align: center;
+  }
   .wrapperLista {
     width: 100%;
     display: flex;

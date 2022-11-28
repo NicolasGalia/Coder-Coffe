@@ -16,11 +16,9 @@ const ListaProductos = () => {
 
     return (
         <div className="containerLista">
-        <h1 className="tituloLista">Lorem ipsum dolor sit amet.</h1>
+        <h1 className="tituloLista">Bienvenido</h1>
         <p className="descLista">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit arcu
-          in pretium molestie. Interdum et malesuada fames acme. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit.
+        Sabemos lo que es comer bien, elegi tu producto Coder Coffe y lo preparamos al instante.
         </p>
         <div className="wrapperLista">
             {productos.map((p) => (
