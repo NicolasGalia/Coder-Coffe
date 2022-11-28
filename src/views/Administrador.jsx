@@ -5,7 +5,11 @@ import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
+<<<<<<< HEAD
 import ItemUsuarios from "./adminUsuarios/itemUsuarios";
+=======
+// import ItemUsuarios from "./adminUsuarios/ItemUsuarios";
+>>>>>>> fafa4324f0e2e05a8352fafe0442e25851f0ee62
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -68,7 +72,7 @@ const Administrador = () => {
           <tbody className="fw-bold">
             {productos.map((producto) => (
               <ItemProducto
-                key={producto.id}
+                key={producto._id}
                 producto={producto}
                 setProductos={setProductos}
               ></ItemProducto>
@@ -91,13 +95,13 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
-          {usuarios.map((usuario) => (
+          {/* {usuarios.map((usuario) => (
               <ItemUsuarios
                 key={usuario.id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
-              ></ItemUsuarios>
-            ))}
+              ></ItemUsuarios> */}
+            {/* ))} */}
           </tbody>
         </Table>
       </section>

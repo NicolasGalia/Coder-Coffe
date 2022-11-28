@@ -3,7 +3,7 @@ const URL = process.env.REACT_APP_API_CODER;
 export const consultarAPI = async () => {
   // console.log(URL)
   try {
-    const respuesta = await fetch(URL + "/producto/cafe");
+    const respuesta = await fetch(URL + '/productos/cafe');
   
     const listaProductos = await respuesta.json();
     return listaProductos;
@@ -16,13 +16,12 @@ export const consultarAPI = async () => {
 export const crearProductoAPI = async (producto) => {
   // console.log(URL)
   try {
-    const respuesta = await fetch(URL + "/producto/cafe", {
+    const respuesta = await fetch(URL+'/productos/cafe', {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        // envio el token en el header personalizado
-        // "x-token": token,
-      },
+        "Content-Type": "application/json"
+        // "x-token": //poner el token del usuario que se registro
+  },
       body: JSON.stringify(producto),
     });
     return respuesta;
@@ -34,7 +33,7 @@ export const crearProductoAPI = async (producto) => {
 
 export const obtenerProductoAPI = async(id)=>{
   try {
-      const respuesta = await fetch(URL+ "/producto/cafe"+id);
+      const respuesta = await fetch(URL+'/productos/cafe/'+id);
       const producto={
           dato: await respuesta.json(),
           status: respuesta.status
@@ -48,7 +47,7 @@ export const obtenerProductoAPI = async(id)=>{
 
 export const borrarProductoAPI = async(id)=>{
   try {
-      const respuesta = await fetch(URL+ "/producto/cafe"+ id,{
+      const respuesta = await fetch(URL+'/productos/cafe/'+id,{
           method: "DELETE"          
       });
       return respuesta;
@@ -62,7 +61,7 @@ export const borrarProductoAPI = async(id)=>{
 export const editarProductoAPI = async(id, producto)=>{
 
   try {
-      const respuesta = await fetch(URL+ "/producto/cafe"+id,{
+      const respuesta = await fetch(URL+'/productos/cafe/'+id,{
           method: "PUT",
           headers:{
               "Content-Type": "application/json"
@@ -71,7 +70,7 @@ export const editarProductoAPI = async(id, producto)=>{
       });
       return respuesta;
   } catch (error) {
-      console.log(error);
+    
       return false;
   }
 }

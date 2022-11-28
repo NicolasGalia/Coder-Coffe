@@ -9,6 +9,7 @@ import Registro from "./views/Registro";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
 import "../src/App.css"
+import Inicio from "./views/Inicio";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Inicio></Inicio>
       <Routes>
     
+    <Route exact path='/' element={<Inicio/>}></Route>
     <Route exact path='/administrador' element={<Administrador/>}></Route>
     <Route exact path='/registro' element={<Registro/>}></Route>
     <Route exact path='/Menu' element={<Menu/>} ></Route>
