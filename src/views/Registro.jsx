@@ -12,8 +12,8 @@ const Registro = () => {
   const onSubmit = (datos) => {
     console.log(datos);
     crearUsuario(datos).then((respuesta) => {
-      console.log(respuesta)
-      if(respuesta.status === 201){
+     
+if(respuesta.status === 201){
         Swal.fire("Bienvenido", "Te registraste exitosamente", "success")
       }else{
         Swal.fire("Ha ocurrido un error", "No pudimos registrate","error")
@@ -122,7 +122,7 @@ const Registro = () => {
                 },
                 pattern: {
                   value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
-                  message: "Debe ingresar un nombre de usaurio valido",
+                  message: "Debe ingresar un nombre de usuario valido",
                 },
               })}
               placeholder="nombre de usuario"
