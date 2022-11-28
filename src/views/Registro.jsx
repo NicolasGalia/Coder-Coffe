@@ -1,56 +1,56 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { Button, Form } from "react-bootstrap";
-import "../registro.css";
-import Swal from "sweetalert2";
-import { crearUsuarioAPI } from "../components/helpers/queriesLogin";
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import { Form } from 'react-bootstrap';
+import { crearUsuario } from '../components/helpers/queriesLogin';
+import logoBgTransparente from "../img/logoBgTransparent.png"
+import "../views/css/registro.css"
+
 
 const Registro = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const navegacion = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (datos) => {
-    crearUsuarioAPI(datos).then((respuesta) => {
+    console.log(datos);
+    crearUsuario(datos).then((respuesta) => {
+      console.log(respuesta)
+      if(respuesta.status === 201){
+        Swal.fire("Bienvenido", "Te registraste exitosamente", "success")
+      }else{
+        Swal.fire("Ha ocurrido un error", "No pudimos registrate","error")
+      }
+    })
+  }
+  // const [usuarios, setUsuarios] = useState([])
 
-          if (respuesta.status === 201) {
-            Swal.fire(
-              `Ya sos parte de Coder Coffe, ${datos.nombre}`,
-              "Disfruta todos nuestros servicios.",
-              "success"
-            );
-            navegacion("/inicio");
-            
-          } else {
-            Swal.fire(
-              `Hubo un error inesperado`,
-              "Intentelo nuevamente en breve.",
-              "error"
-            );
-          }
-        });
-    };
+  // useEffect(() => {
+  //   consultarUsuario().then((respuesta) => {
+  //     setUsuarios(respuesta)
+  //   }, (reason) => {
+  //     console.log(reason);
+  //     Swal.fire(
+  //       "Ocurrio un error",
+  //       "Intentelo nuevamente en unos minutos",
+  //       "error"
+  //     )
+  //   })
+
+  // }, [])
+
 
   return (
     <section className="formularioRegistro">
       <div className="register">
         <div className="col-6">
-        <div className="m-3 p-3">
-        <h2>Registrate</h2>
-          <span>Unite a coder coffe y disfruta de nuestros servicios</span>
-      </div>
-         
-          <form
+          <div className="m-3 p-3">
+            <h2 className='registroTitulo'>Registrate</h2>
+            <span>Unite a coder coffe y disfruta de nuestros servicios</span>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}
             id="form"
             className="flex flex-col"
-            onSubmit={handleSubmit(onSubmit)}
           >
-          <input
+            <input
               type="text"
               {...register("nombre", {
                 required: "Debe ingresar un nombre",
@@ -69,9 +69,9 @@ const Registro = () => {
               })}
               placeholder="nombre"
             />
-             <Form.Text className="text-danger mb-2">
-                {errors.nombre?.message}
-              </Form.Text>
+            <Form.Text className="text-danger mb-2">
+              {errors.nombre?.message}
+            </Form.Text>
             <input
               type="text"
               {...register("apellido", {
@@ -91,10 +91,10 @@ const Registro = () => {
               })}
               placeholder="apellido"
             />
-              <Form.Text className="text-danger mb-2">
-                {errors.apellido?.message}
-              </Form.Text>
-              <input
+            <Form.Text className="text-danger mb-2">
+              {errors.apellido?.message}
+            </Form.Text>
+            <input
               type="text"
               {...register("email", {
                 required: "Debe ingresar un email",
@@ -107,8 +107,8 @@ const Registro = () => {
               placeholder="email"
             />
             <Form.Text className="text-danger mb-2">
-                {errors.email?.message}
-              </Form.Text>
+              {errors.email?.message}
+            </Form.Text>
             <input
               type="text"
               {...register("userName", {
@@ -129,8 +129,8 @@ const Registro = () => {
               placeholder="nombre de usuario"
             />
             <Form.Text className="text-danger mb-2">
-                {errors.userName?.message}
-              </Form.Text>
+              {errors.userName?.message}
+            </Form.Text>
             <input
               type="text"
               {...register("password", {
@@ -148,15 +148,14 @@ const Registro = () => {
               placeholder="contraseña"
             />
             <Form.Text className="text-danger mb-2">
-                {errors.password?.message}
-              </Form.Text>
-            <button className="btn">Registrarse</button>
-            <a href="#" className="btn">¿Ya tenes cuenta? Iniciar Sesion</a>
+              {errors.password?.message}
+            </Form.Text>
+            <button className="btn" type="submit">Registrarse</button>
           </form>
         </div>
         <div className="col-6">
           <img
-            src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src= {logoBgTransparente}
             alt=""
             className="imagenRegistro"
           />
@@ -165,4 +164,5 @@ const Registro = () => {
     </section>
   );
 };
+
 export default Registro;

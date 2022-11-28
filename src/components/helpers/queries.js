@@ -52,6 +52,7 @@ export const borrarProductoAPI = async(id)=>{
           method: "DELETE"          
       });
       return respuesta;
+      
   } catch (error) {
       console.log(error);
       return false;

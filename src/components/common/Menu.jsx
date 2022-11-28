@@ -38,6 +38,7 @@ const Menu = () => {
                   <Nav.Link href="#action1">Iniciar Sesion</Nav.Link>
                   <NavLink end to="/registro" className="nav-item nav-link">Registro</NavLink>
                   <Nav.Link href="#action2">Productos destacados</Nav.Link>
+                  <Nav.Link href="#action6">Login</Nav.Link>
                   <NavDropdown
                     title="Menús del dia"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
