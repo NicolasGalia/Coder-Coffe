@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { login } from "../helpers/queriesLogin";
+import { login } from "../components/helpers/queriesLogin";
 import Swal from "sweetalert2";
 
 const Login = ({ setUsuarioLogueado }) => {
@@ -22,8 +22,11 @@ const Login = ({ setUsuarioLogueado }) => {
           `Gracias por contar con nosotros, ${datos.email}`,
           "success"
         );
-        localStorage.setItem("tokenCoderCoffe", JSON.stringify(respuesta));
-        setUsuarioLogueado(respuesta);
+        localStorage.setItem(
+          "tokenCoderCofee",
+          JSON.stringify(respuesta)
+        );
+        setUsuarioLogueado(respuesta)
         navigate("/administrar");
       } else {
         Swal.fire(
@@ -36,7 +39,7 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <div className="mt-5 mainSection">
+    <div className="my-5 mainSection">
       <h3 className="text-center">Login de acceso</h3>
       <div className="row justify-content-center">
         <div className="col-12 col-sm-8 col-md-6 col-xl-4">

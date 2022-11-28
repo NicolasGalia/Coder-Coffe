@@ -6,8 +6,9 @@ import Administrador from "./views/Administrador";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
 import "../src/App.css";
-import Login from "./components/views/Login";
-import Registro from "./components/views/Registro";
+import Login from "./views/Login";
+
+import { useEffect, useState } from "react";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenCoderCoffe")) || {};  
