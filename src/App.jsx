@@ -1,6 +1,8 @@
 import Menu from "./components/common/Menu";
-import Footer from "./components/common/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from './components/common/Footer';
+import Inicio from "./views/Inicio";
+// import DetalleProducto from "./views/DetalleProducto"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Administrador from "./views/Administrador";
 import Registro from "./views/Registro";

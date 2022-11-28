@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
-import { crearUsuario } from '../components/helpers/queriesLogin';
-import logoBgTransparente from "../img/logoBgTransparent.png"
+import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import "../views/css/registro.css"
-
+import logoBgTransparente from "../img/logoBgTransparent.png"
 
 const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();

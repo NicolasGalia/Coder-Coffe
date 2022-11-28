@@ -7,7 +7,7 @@ import swal from "sweetalert";
 
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
-
+import ItemUsuarios from "./adminUsuarios/itemUsuarios";
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -92,26 +92,15 @@ const Administrador = () => {
               <th>ESTATUS</th>
             </tr>
           </thead>
-<<<<<<< HEAD
-          {/* <tbody className="fw-bold text-center">
-          {usuarios.map((usuario) => (
-=======
           <tbody className="fw-bold text-center">
           {/* {usuarios.map((usuario) => (
->>>>>>> fafa4324f0e2e05a8352fafe0442e25851f0ee62
               <ItemUsuarios
                 key={usuario.id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
-<<<<<<< HEAD
-              ></ItemUsuarios>
-            ))}
-          </tbody> */}
-=======
               ></ItemUsuarios> */}
             {/* ))} */}
           </tbody>
->>>>>>> fafa4324f0e2e05a8352fafe0442e25851f0ee62
         </Table>
       </section>
     </div>
