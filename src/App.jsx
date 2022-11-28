@@ -8,7 +8,9 @@ import Administrador from "./views/Administrador";
 import Registro from "./views/Registro";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
-import "./App.css"
+import AboutUs from "./views/AboutUs";
+import "../src/App.css"
+import Error404 from "./views/Error404";
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
     <Route exact path='/Menu' element={<Menu/>} ></Route>
     <Route exact path='/Footer' element={<Footer/>} ></Route>
   <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
-  {/* <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route> */}
+  <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
+  <Route exact path='/Error404' element={<Error404/>}></Route>
+  <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
     
 
 
