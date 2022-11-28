@@ -4,8 +4,8 @@ import { Table } from "react-bootstrap";
 import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
-import { consultarUsuario } from "../components/helpers/queriesLogin";
-import ItemUsuarios from "./adminUsuarios/itemUsuarios";
+// import { consultarUsuario } from "../components/helpers/queriesLogin";
+import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -90,15 +90,15 @@ const Administrador = () => {
               <th>ESTATUS</th>
             </tr>
           </thead>
-          <tbody className="fw-bold text-center">
-          {/* {usuarios.map((usuario) => (
+          {/* <tbody className="fw-bold text-center">
+          {usuarios.map((usuario) => (
               <ItemUsuarios
                 key={usuario.id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
               ></ItemUsuarios>
-            ))} */}
-          </tbody>
+            ))}
+          </tbody> */}
         </Table>
       </section>
     </div>
