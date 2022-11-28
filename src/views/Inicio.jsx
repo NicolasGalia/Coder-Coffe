@@ -9,7 +9,6 @@ const Inicio = () => {
     <div>
       <Slider></Slider>
 <ListaProductos></ListaProductos>
-<AboutUs></AboutUs>
     </div>
   );
 };

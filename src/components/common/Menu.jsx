@@ -18,9 +18,9 @@ const Menu = () => {
             <Navbar.Brand href="#"> 
             <img src={Logo} alt="Logo" className="logoNav"/>
             </Navbar.Brand>
-            <Nav.Link href="#action1" className="itemsNavb linknoMostrar">Menú</Nav.Link>
-            <Nav.Link href="#action2" className="itemsNavb linknoMostrar">Nuestro Café</Nav.Link>
-            <Nav.Link href="#action3" className="itemsNavb linknoMostrar">Expieriencia CoderCoffe</Nav.Link>
+            <Nav.Link to="/" className="itemsNavb linknoMostrar">Menú</Nav.Link>
+            <Nav.Link to="/AcercaNosotros" className="itemsNavb linknoMostrar">Sobre nosotros</Nav.Link>
+            <Nav.Link to="/error404" className="itemsNavb linknoMostrar">Medios de pago</Nav.Link>
             
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -35,20 +35,19 @@ const Menu = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Iniciar Sesion</Nav.Link>
+                  <Nav.Link to="/login">Iniciar Sesion</Nav.Link>
                   <NavLink end to="/registro" className="nav-item nav-link">Registro</NavLink>
-                  <Nav.Link href="#action2">Productos destacados</Nav.Link>
-                  <Nav.Link href="#action6">Login</Nav.Link>
+                  <Nav.Link to="/error404">Productos destacados</Nav.Link>
                   <NavDropdown
                     title="Menús del dia"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action3">Desayunos/Meriendas</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
+                    <NavDropdown.Item to="/error404">Desayunos/Meriendas</NavDropdown.Item>
+                    <NavDropdown.Item to="/error404">
                       Almuerzos/cena
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item to="/error404">
                       cerrar
                     </NavDropdown.Item>
                   </NavDropdown>

@@ -16,7 +16,12 @@ const ListaProductos = () => {
 
     return (
         <div className="containerLista">
-        <h1 className="tituloLista">Bienvenido</h1>
+       <div className="t-heading">
+        <span>Elegi tu producto </span>
+        <span className='equipo'> preferido</span>
+      <div className="blur t-blur1" ></div>
+      <div className="blur t-blur2"></div>
+      </div>
         <p className="descLista">
         Sabemos lo que es comer bien, elegi tu producto Coder Coffe y lo preparamos al instante.
         </p>
