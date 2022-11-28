@@ -1,15 +1,15 @@
 import React from 'react';
 import "./inicio.css"
-import productoPizza from "../../img/productoPizza.png"
 
-const ProductosCard = () => {
+
+const ProductosCard = ({producto}) => {
     return (
         <div className="containerProducto">
-      <img src={productoPizza} alt="" width="150" height="200"/>
-      <h1 className="tituloProducto">FIORI DI ZUCCA</h1>
-      <span className="precioProducto">$19.90</span>
+      <img src={producto.imagen} alt="" width="150" height="200"/>
+      <h1 className="tituloProducto">{producto.nombreProducto}</h1>
+      <span className="precioProducto">{producto.precio}</span>
       <p className="descripcionProducto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        {producto.categoria}
       </p>
       <button className='btn btnCard'>carrito</button>
       <button className='btn btnCard'>ver detalles</button>
@@ -18,4 +18,6 @@ const ProductosCard = () => {
 };
 
 export default ProductosCard;
+
+
 
