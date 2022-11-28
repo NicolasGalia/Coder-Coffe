@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { login } from "../components/helpers/queriesLogin";
 import "../views/css/registro.css"  
-import logo from "../img/logoBgTransparent.png"
+
 const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
 
