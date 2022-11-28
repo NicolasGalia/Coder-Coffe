@@ -23,13 +23,9 @@ const ListaProductos = () => {
           sit amet, consectetur adipiscing elit.
         </p>
         <div className="wrapperLista">
-        <Container className="my-5 wrapperLista">
-        <Row>
             {productos.map((p) => (
                 <ProductosCard producto={p} key={p._id} />
             ))}
-        </Row>
-    </Container>
         </div>
       </div>
     );
