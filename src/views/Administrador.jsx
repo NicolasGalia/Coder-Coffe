@@ -4,8 +4,10 @@ import { Table } from "react-bootstrap";
 import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
-// import { consultarUsuario } from "../components/helpers/queriesLogin";
+
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
+import { consultarUsuario } from "../components/helpers/queriesLogin";
+
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -68,7 +70,7 @@ const Administrador = () => {
           <tbody className="fw-bold">
             {productos.map((producto) => (
               <ItemProducto
-                key={producto.id}
+                key={producto._id}
                 producto={producto}
                 setProductos={setProductos}
               ></ItemProducto>
@@ -90,15 +92,26 @@ const Administrador = () => {
               <th>ESTATUS</th>
             </tr>
           </thead>
+<<<<<<< HEAD
           {/* <tbody className="fw-bold text-center">
           {usuarios.map((usuario) => (
+=======
+          <tbody className="fw-bold text-center">
+          {/* {usuarios.map((usuario) => (
+>>>>>>> fafa4324f0e2e05a8352fafe0442e25851f0ee62
               <ItemUsuarios
                 key={usuario.id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
+<<<<<<< HEAD
               ></ItemUsuarios>
             ))}
           </tbody> */}
+=======
+              ></ItemUsuarios> */}
+            {/* ))} */}
+          </tbody>
+>>>>>>> fafa4324f0e2e05a8352fafe0442e25851f0ee62
         </Table>
       </section>
     </div>

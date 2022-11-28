@@ -1,18 +1,25 @@
 {
   "productos": [
     {
-      "nombreProducto": "milanesa a la napolitana con papas ",
-      "precio": "1870",
-      "imagen": "https://images.pexels.com/photos/11942622/pexels-photo-11942622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "Almuerzos/Cenas",
-      "id": 3
+      "nombreProducto": "cafe",
+      "precio": "121",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "bebidas",
+      "id": 1
     },
     {
-      "nombreProducto": "Papas gratinadas",
-      "precio": "850",
-      "imagen": "https://images.pexels.com/photos/14369181/pexels-photo-14369181.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "categoria": "Almuerzos/Cenas",
-      "id": 4
+      "nombreProducto": "Brownie con nueces",
+      "precio": "123",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "Postres",
+      "id": 2
+    },
+    {
+      "nombreProducto": "Brownie con nueces",
+      "precio": "123",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "Postres",
+      "id": 3
     }
   ],
 

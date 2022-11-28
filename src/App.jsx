@@ -11,6 +11,7 @@ import "../src/App.css"
 import Error404 from "./views/Error404";
 import Login from "./views/Login";
 import { useEffect, useState } from "react";
+import Inicio from "./views/Inicio";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenCoderCoffe")) || {};  
@@ -23,6 +24,7 @@ function App() {
       <Menu></Menu>
       <Routes>
     
+    <Route exact path='/' element={<Inicio/>}></Route>
     <Route exact path='/administrador' element={<Administrador/>}></Route>
     <Route exact path='/registro' element={<Registro/>}></Route>
     <Route exact path='/Menu' element={<Menu/>} ></Route>
