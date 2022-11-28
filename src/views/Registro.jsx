@@ -38,11 +38,11 @@ if(respuesta.status === 201){
 
 
   return (
-    <section className="formularioRegistro">
-      <div className="register">
-        <div className="col-6">
-          <div className="m-3 p-3">
-            <h2 className='registroTitulo'>Registrate</h2>
+    <section className="formularioRegistro appRegistro">
+      <div>
+        <div>
+          <div>
+            <h1 className='registroTitulo'>Registrate</h1>
             <span>Unite a coder coffe y disfruta de nuestros servicios</span>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}
@@ -149,15 +149,8 @@ if(respuesta.status === 201){
             <Form.Text className="text-danger mb-2">
               {errors.password?.message}
             </Form.Text>
-            <button className="btn" type="submit">Registrarse</button>
+            <button className="buttonRegistro" type="submit">Registrarse</button>
           </form>
-        </div>
-        <div className="col-6">
-          <img
-            src= {logoBgTransparente}
-            alt=""
-            className="imagenRegistro"
-          />
         </div>
       </div>
     </section>
@@ -165,3 +158,4 @@ if(respuesta.status === 201){
 };
 
 export default Registro;
+
