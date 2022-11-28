@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { login } from "../components/helpers/queriesLogin";
-import "../registro.css"  
+import "../views/css/registro.css"  
+import logo from "../img/logoBgTransparent.png"
 const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
 
@@ -39,11 +40,11 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <section className="formularioRegistro container">
+    <section className="formularioRegistro container text-center">
       <div className="register">
-        <div className="col-lg-6 col-sm-12 col-md-12">
+        <div className="col-12">
           <div className="m-3 p-3">
-            <h2>Registrate</h2>
+            <h2>Iniciar Sesión</h2>
             <span>Unite a coder coffe y disfruta de nuestros servicios</span>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}
@@ -86,16 +87,10 @@ const Login = ({ setUsuarioLogueado }) => {
             <Form.Text className="text-danger mb-2">
               {errors.password?.message}
             </Form.Text>
-            <button className="btn" type="submit">Registrarse</button>
+            <button className="btn" type="submit">Iniciar Sesión</button>
           </form>
         </div>
-        <div className="col-6">
-          <img
-            src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt=""
-            className="imagenRegistro"
-          />
-        </div>
+       
       </div>
     </section>
   );
