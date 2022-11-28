@@ -5,7 +5,7 @@ import { consultarUsuario } from "../../components/helpers/queriesLogin";
 import { borrarUsuario } from "../../components/helpers/queriesLogin";
 
 const ItemUsuarios = ({ usuario, setUsuarios }) => {
-  const { id, userName, password, email } = { ...usuario };
+  const { _id, userName, password, email } = { ...usuario };
 
   const borrarUsuarioLogin = ()=>{
   
@@ -20,7 +20,7 @@ const ItemUsuarios = ({ usuario, setUsuarios }) => {
       confirmButtonText: 'si!'
     }).then((result) => {
       if (result.isConfirmed) {
-        borrarUsuario(id).then((respuesta)=>{
+        borrarUsuario(_id).then((respuesta)=>{
   
           if(respuesta.status === 200){
         Swal.fire(
@@ -39,7 +39,7 @@ const ItemUsuarios = ({ usuario, setUsuarios }) => {
 
   return (
     <tr>
-      <td>{id}</td>
+      <td>{_id}</td>
       <td>{userName}</td>
 
       <td>{email}</td>

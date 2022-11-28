@@ -5,7 +5,6 @@ import { Form } from 'react-bootstrap';
 import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import "../views/css/registro.css"
 
-import "../registro.css"
 import logoBgTransparente from "../img/logoBgTransparent.png"
 
 const Registro = () => {

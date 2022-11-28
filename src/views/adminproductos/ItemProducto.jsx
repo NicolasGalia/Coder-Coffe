@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Link } from 'react-router-dom';
 
 const ItemProducto = ({producto, setProductos}) => {
-    const {id, nombreProducto, categoria, imagen, precio} = {...producto} 
+    const {_id, nombreProducto, categoria, imagen, precio} = {...producto} 
     const borrarProducto = ()=>{
   
           Swal.fire({
@@ -18,7 +18,7 @@ const ItemProducto = ({producto, setProductos}) => {
             confirmButtonText: 'si!'
           }).then((result) => {
             if (result.isConfirmed) {
-              borrarProductoAPI(id).then((respuesta)=>{
+              borrarProductoAPI(_id).then((respuesta)=>{
         
                 if(respuesta.status === 200){
               Swal.fire(
@@ -38,13 +38,13 @@ const ItemProducto = ({producto, setProductos}) => {
 
     return (
         <tr>
-        <td>{id}</td>        
+        <td>{_id}</td>        
         <td>{nombreProducto}</td>
         <td>${precio}</td>
         <td>{imagen}</td>
         <td>{categoria}</td>
         <td className='text-center'>
-          <Link to={`/Administrador/EditarProducto/${id}`}  className="btn btn-warning " >
+          <Link to={`/Administrador/EditarProducto/${_id}`}  className="btn btn-warning " >
             Editar Producto
           </Link>
           <Button variant="danger" className=' mt-2' onClick={borrarProducto}>

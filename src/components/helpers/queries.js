@@ -1,7 +1,7 @@
 const URL = process.env.REACT_APP_API_CODER;
 
 export const consultarAPI = async () => {
-  // console.log(URL)
+  
   try {
     const respuesta = await fetch(URL);
   
@@ -14,14 +14,14 @@ export const consultarAPI = async () => {
 };
 
 export const crearProductoAPI = async (producto) => {
-  // console.log(URL)
+  
   try {
     const respuesta = await fetch(URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // envio el token en el header personalizado
-        // "x-token": token,
+        
+       // "x-token": token,
       },
       body: JSON.stringify(producto),
     });

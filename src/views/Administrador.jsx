@@ -5,7 +5,7 @@ import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
-import ItemUsuarios from "./adminUsuarios/ItemUsuarios";
+import ItemUsuarios from "./adminUsuarios/itemUsuarios";
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -26,23 +26,23 @@ const Administrador = () => {
     );
   }, []);
 
-  const [usuarios, setUsuarios] = useState([]);
-  useEffect(() => {
-    consultarUsuario().then(
-      (respuesta) => {
-        setUsuarios(respuesta);
-      },
-      (reason) => {
-        console.log(reason);
+  // const [usuarios, setUsuarios] = useState([]);
+  // useEffect(() => {
+  //   consultarUsuario().then(
+  //     (respuesta) => {
+  //       setUsuarios(respuesta);
+  //     },
+  //     (reason) => {
+  //       console.log(reason);
 
-        swal.fire(
-          "Ocurrio un error",
-          "Intentelo nuevamente en unos minutos",
-          "error"
-        );
-      }
-    );
-  }, []);
+  //       swal.fire(
+  //         "Ocurrio un error",
+  //         "Intentelo nuevamente en unos minutos",
+  //         "error"
+  //       );
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="mainSection my-5 container">
@@ -68,7 +68,7 @@ const Administrador = () => {
           <tbody className="fw-bold">
             {productos.map((producto) => (
               <ItemProducto
-                key={producto.id}
+                key={producto._id}
                 producto={producto}
                 setProductos={setProductos}
               ></ItemProducto>
@@ -91,13 +91,13 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
-          {usuarios.map((usuario) => (
+          {/* {usuarios.map((usuario) => (
               <ItemUsuarios
                 key={usuario.id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
               ></ItemUsuarios>
-            ))}
+            ))} */}
           </tbody>
         </Table>
       </section>
