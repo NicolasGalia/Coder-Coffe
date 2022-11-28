@@ -7,7 +7,11 @@ import Administrador from "./views/Administrador";
 import Registro from "./views/Registro";
 import CrearProducto from "./views/adminproductos/CrearProducto";
 import EditarProducto from "./views/adminproductos/EditarProducto";
+<<<<<<< HEAD
 import AboutUs from "./views/AboutUs";
+=======
+import PaginaPedido from "./views/PaginaPedido";
+>>>>>>> paginaPedido
 import "../src/App.css"
 import Error404 from "./views/Error404";
 import Login from "./views/Login";
@@ -29,6 +33,7 @@ function App() {
     <Route exact path='/administrador' element={<Administrador/>}></Route>
     <Route exact path='/registro' element={<Registro/>}></Route>
     <Route exact path='/Menu' element={<Menu/>} ></Route>
+    <Route exact path='/pedidos' element={<PaginaPedido/>} ></Route>
     <Route exact path='/Footer' element={<Footer/>} ></Route>
   <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
   <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
