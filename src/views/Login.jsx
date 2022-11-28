@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { login } from "../helpers/queriesLogin";
 import Swal from "sweetalert2";
 
-const Login = ({setUsuarioLogueado}) => {
+const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
 
   const {
@@ -22,11 +22,8 @@ const Login = ({setUsuarioLogueado}) => {
           `Gracias por contar con nosotros, ${datos.email}`,
           "success"
         );
-        localStorage.setItem(
-          "tokenCafeBenito",
-          JSON.stringify(respuesta)
-        );
-        setUsuarioLogueado(respuesta)
+        localStorage.setItem("tokenCoderCoffe", JSON.stringify(respuesta));
+        setUsuarioLogueado(respuesta);
         navigate("/administrar");
       } else {
         Swal.fire(
@@ -59,7 +56,6 @@ const Login = ({setUsuarioLogueado}) => {
                     message: "El nombre no debe tener mas de 30 caracteres",
                   },
                 })}
-        
               />
               <Form.Text className="text-danger">
                 {errors.email?.message}
@@ -82,7 +78,6 @@ const Login = ({setUsuarioLogueado}) => {
                       "Su contraseña debe tener como 30 caracteres como maximo",
                   },
                 })}
-    
               />
               <Form.Text className="text-danger mb-2">
                 {errors.password?.message}

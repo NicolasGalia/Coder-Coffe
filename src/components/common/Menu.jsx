@@ -36,6 +36,7 @@ const Menu = () => {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Iniciar Sesion</Nav.Link>
                   <Nav.Link href="#action2">Productos destacados</Nav.Link>
+                  <Nav.Link href="#action6">Login</Nav.Link>
                   <NavDropdown
                     title="Menús del dia"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
