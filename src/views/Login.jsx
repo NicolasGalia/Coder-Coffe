@@ -2,9 +2,9 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { login } from "../components/helpers/queriesLogin";
 import Swal from "sweetalert2";
-
+import { login } from "../components/helpers/queriesLogin";
+import "../registro.css"  
 const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const Login = ({ setUsuarioLogueado }) => {
           JSON.stringify(respuesta)
         );
         setUsuarioLogueado(respuesta)
-        navigate("/administrar");
+        navigate("/Inicio");
       } else {
         Swal.fire(
           "Error",
@@ -39,73 +39,67 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <div className="my-5 mainSection">
-      <h3 className="text-center">Login de acceso</h3>
-      <div className="row justify-content-center">
-        <div className="col-12 col-sm-8 col-md-6 col-xl-4">
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-2">
-              <Form.Control
-                type="text"
-                placeholder="Ingrese su nombre de usuario o email"
-                {...register("email", {
-                  required: "Debe ingresar un nombre de usuario",
-                  minLength: {
-                    value: 3,
-                    message: "El nombre debe tener al menos 3 caracteres",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message: "El nombre no debe tener mas de 30 caracteres",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger">
-                {errors.email?.message}
-              </Form.Text>
-            </Form.Group>
-
-            <Form.Group className="mb-2">
-              <Form.Control
-                type="password"
-                placeholder="Ingrese un password"
-                {...register("password", {
-                  required: "Debe ingresar una contraseña",
-                  minLength: {
-                    value: 8,
-                    message: "Su contraseña debe tener al menos 8 caracteres",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message:
-                      "Su contraseña debe tener como 30 caracteres como maximo",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger mb-2">
-                {errors.password?.message}
-              </Form.Text>
-            </Form.Group>
-            <div className="row">
-              <Button
-                className="btn btn-dark btn-lg btn-block mb-2"
-                type="submit"
-              >
-                Iniciar sesion
-              </Button>
-              <button
-                className="btn btn-danger btn-sm mt-2"
-                type="button"
-                onClick={() => navigate("/login")}
-              >
-                ¿No estas registrado?
-              </button>
-            </div>
-          </Form>
+    <section className="formularioRegistro container">
+      <div className="register">
+        <div className="col-lg-6 col-sm-12 col-md-12">
+          <div className="m-3 p-3">
+            <h2>Registrate</h2>
+            <span>Unite a coder coffe y disfruta de nuestros servicios</span>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}
+            id="form"
+            className="flex flex-col"
+          >
+            
+            <input
+              type="text"
+              {...register("email", {
+                required: "Debe ingresar un email",
+                pattern: {
+                  value:
+                    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
+                  message: "Debe ingresar un formato valido",
+                },
+              })}
+              placeholder="email"
+            />
+            <Form.Text className="text-danger mb-2">
+              {errors.email?.message}
+            </Form.Text>
+            
+            <input
+              type="text"
+              {...register("password", {
+                required: "Debe ingresar una contraseña",
+                minLength: {
+                  value: 8,
+                  message: "Su contraseña debe tener al menos 8 caracteres",
+                },
+                maxLength: {
+                  value: 30,
+                  message:
+                    "Su contraseña debe tener como 30 caracteres como maximo",
+                },
+              })}
+              placeholder="contraseña"
+            />
+            <Form.Text className="text-danger mb-2">
+              {errors.password?.message}
+            </Form.Text>
+            <button className="btn" type="submit">Registrarse</button>
+          </form>
+        </div>
+        <div className="col-6">
+          <img
+            src="https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+            className="imagenRegistro"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
+  
 };
 
 export default Login;

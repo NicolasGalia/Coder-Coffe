@@ -1,29 +1,32 @@
-const URL = process.env.REACT_APP_API_CAFE_USER;
+const URL = process.env.REACT_APP_API_CODER_USUARIO;
 
-export const consultarUserAPI = async () => {
+export const consultarUsuario = async () => {
+  // console.log(URL)
   try {
+    // peticion get para obtener listado de usuarios
     const respuesta = await fetch(URL);
-    const listaUsuarios = await respuesta.json();
+    const listaUsuarios = await respuesta.json()
     return listaUsuarios;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error)
   }
-};
+}
 
-export const crearUsuarioAPI = async (usuario) => {
+export const crearUsuario = async (usuario) => {
+  // console.log(URL)
   try {
-    const respuesta = await fetch(URL + "/nuevo", {
+    const respuesta = await fetch(URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(usuario),
+      body: JSON.stringify(usuario)
     });
     return respuesta;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error)
   }
-};
+}
 
 export const login = async (usuario) => {
   try {
@@ -48,3 +51,4 @@ export const login = async (usuario) => {
     return;
   }
 };
+
