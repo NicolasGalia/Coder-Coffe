@@ -3,7 +3,7 @@ import React from "react";
 import { Container, ListGroup, Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import { agregarProductoPedido, crearPedido } from "../components/helpers/queriesPedido";
+import { crearPedido } from "../components/helpers/queriesPedido";
 import ItemProductoPedido from "./productoPedido/ItemProductoPedido";
 
 const PaginaPedido = () => {
@@ -111,7 +111,5 @@ const PaginaPedido = () => {
     </Container>
   );
 };
-
-agregarProductoPedido({nombreProducto: producto.nombre, precio: producto.precio})
 
 export default PaginaPedido;
