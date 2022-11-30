@@ -26,23 +26,23 @@ const Administrador = () => {
     );
   }, []);
 
-  const [usuarios, setUsuarios] = useState([]);
-  useEffect(() => {
-    consultarUsuario().then(
-      (respuesta) => {
-        setUsuarios(respuesta);
-      },
-      (reason) => {
-        console.log(reason);
+  // const [usuarios, setUsuarios] = useState([]);
+  // useEffect(() => {
+  //   consultarUsuario().then(
+  //     (respuesta) => {
+  //       setUsuarios(respuesta);
+  //     },
+  //     (reason) => {
+  //       console.log(reason);
 
-        swal.fire(
-          "Ocurrio un error",
-          "Intentelo nuevamente en unos minutos",
-          "error"
-        );
-      }
-    );
-  }, []);
+  //       swal.fire(
+  //         "Ocurrio un error",
+  //         "Intentelo nuevamente en unos minutos",
+  //         "error"
+  //       );
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="mainSection my-5 container">
@@ -91,13 +91,13 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
-          {usuarios.map((usuario) => (
+          {/* {usuarios.map((usuario) => (
               <ItemUsuarios
                 key={usuario._id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
               ></ItemUsuarios>
-            ))}
+            ))} */}
           </tbody>
         </Table>
       </section>

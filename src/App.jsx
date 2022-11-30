@@ -11,6 +11,7 @@ import RutasProtegidas from "./routes/RutasProtegidas"
 import {useState} from "react"
 import Error404 from "./views/Error404"
 import Registro from "./views/Registro";
+import Administrador from "./views/Administrador";
 function App() {
 
   const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
@@ -56,6 +57,7 @@ function App() {
 
       <Routes>
         <Route exact path="/registro" element={<Registro></Registro>}></Route>
+        <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
