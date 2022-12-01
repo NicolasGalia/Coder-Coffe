@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
 import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import "../views/css/registro.css"
-import logoBgTransparente from "../img/logoBgTransparent.png"
+import { consultarUsuario } from '../components/helpers/queriesLogin';
 
 const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -20,21 +20,21 @@ if(respuesta.status === 201){
       }
     })
   }
-  // const [usuarios, setUsuarios] = useState([])
+  const [usuarios, setUsuarios] = useState([])
 
-  // useEffect(() => {
-  //   consultarUsuario().then((respuesta) => {
-  //     setUsuarios(respuesta)
-  //   }, (reason) => {
-  //     console.log(reason);
-  //     Swal.fire(
-  //       "Ocurrio un error",
-  //       "Intentelo nuevamente en unos minutos",
-  //       "error"
-  //     )
-  //   })
+  useEffect(() => {
+    consultarUsuario().then((respuesta) => {
+      setUsuarios(respuesta)
+    }, (reason) => {
+      console.log(reason);
+      Swal.fire(
+        "Ocurrio un error",
+        "Intentelo nuevamente en unos minutos",
+        "error"
+      )
+    })
 
-  // }, [])
+  }, [])
 
 
   return (

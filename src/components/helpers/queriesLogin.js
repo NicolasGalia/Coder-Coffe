@@ -15,7 +15,7 @@ export const consultarUsuario = async () => {
 export const crearUsuario = async (usuario) => {
   console.log(usuario);
   try {
-    const respuesta = await fetch(URL + "/usuarios/auth", {
+    const respuesta = await fetch(URL + "/nuevo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const crearUsuario = async (usuario) => {
 
 export const borrarUsuario = async (_id) => {
   try {
-    const respuesta = await fetch(URL + "/auth" + _id, {
+    const respuesta = await fetch(URL + "/nuevo" + _id, {
       method: "DELETE",
     });
     return respuesta;
