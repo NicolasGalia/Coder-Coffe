@@ -65,3 +65,5 @@ export const agregarProductoPedido = (producto) => {
     localStorage.setItem("listaProductos", JSON.stringify(...listaProductosLocal, producto));
   
 };
+
+agregarProductoPedido({nombreProducto: producto.nombre, precio: producto.precio})
