@@ -1,17 +1,17 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-const CardProducto = () => {
+const CardProducto = ({producto}) => {
   return (
-    <Card className="my-4">
+    <Card className="my-4 w-25 h-25">
       <Card.Img
         variant="top"
-        src="https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src={producto.imagen}
         className="img-fluid"
       />
       <Card.Body>
-        <Card.Title>Brownie</Card.Title>
-        <Card.Text>Precio: $400</Card.Text>
+        <Card.Title>{producto.nombreProducto}</Card.Title>
+        <Card.Text>Precio: {producto.precio}</Card.Text>
       </Card.Body>
       <Card.Footer>
         <Button className="btn btn-danger me-2">Ver más</Button>

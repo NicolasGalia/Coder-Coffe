@@ -38,12 +38,12 @@ const ItemProducto = ({producto, setProductos}) => {
 
     return (
         <tr>
-        <td>{_id}</td>        
+                
         <td>{nombreProducto}</td>
         <td>${precio}</td>
-        <td>{imagen}</td>
+        
         <td>{categoria}</td>
-        <td className='text-center'>
+        <td>
           <Link to={`/Administrador/EditarProducto/${_id}`}  className="btn btn-warning " >
             Editar Producto
           </Link>

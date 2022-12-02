@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { consultarUsuario } from "../../components/helpers/queriesLogin";
 import { borrarUsuario } from "../../components/helpers/queriesLogin";
-
 const ItemUsuarios = ({ usuario, setUsuarios }) => {
   const { _id, userName, password, email } = { ...usuario };
 
@@ -43,7 +42,7 @@ const ItemUsuarios = ({ usuario, setUsuarios }) => {
       <td>{userName}</td>
 
       <td>{email}</td>
-      <td>Registrado</td>
+      <td>Activo</td>
       
       <td className="text-center">
         <Button variant="danger" className=" mt-2" onClick={borrarUsuarioLogin}>

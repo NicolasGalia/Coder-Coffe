@@ -3,7 +3,7 @@ const URL = process.env.REACT_APP_API_USUARIO;
 
 export const consultarUsuario = async () => {
     try {
-      const respuesta = await fetch(URL);
+      const respuesta = await fetch(URL + "/nuevo");
       const listaUsuarios = await respuesta.json();
       return listaUsuarios;
       
@@ -31,7 +31,7 @@ export const crearUsuario = async (usuario) => {
 
 export const borrarUsuario = async(id)=>{
   try {
-      const respuesta = await fetch(URL+'/'+id,{
+      const respuesta = await fetch(URL+'/nuevo'+id,{
           method: "DELETE"          
       });
       return respuesta;

@@ -26,23 +26,23 @@ const Administrador = () => {
     );
   }, []);
 
-  // const [usuarios, setUsuarios] = useState([]);
-  // useEffect(() => {
-  //   consultarUsuario().then(
-  //     (respuesta) => {
-  //       setUsuarios(respuesta);
-  //     },
-  //     (reason) => {
-  //       console.log(reason);
+  const [usuarios, setUsuarios] = useState([]);
+  useEffect(() => {
+    consultarUsuario().then(
+      (respuesta) => {
+       console.log(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
 
-  //       swal.fire(
-  //         "Ocurrio un error",
-  //         "Intentelo nuevamente en unos minutos",
-  //         "error"
-  //       );
-  //     }
-  //   );
-  // }, []);
+        swal.fire(
+          "Ocurrio un error",
+          "Intentelo nuevamente en unos minutos",
+          "error"
+        );
+      }
+    );
+  }, []);
 
   return (
     <div className="mainSection my-5 container">
@@ -57,15 +57,14 @@ const Administrador = () => {
         <Table responsive={"sm md"}>
           <thead className="text-light text-center">
             <tr>
-              <th>CODIGO</th>
               <th>PRODUCTO</th>
               <th>PRECIO</th>
-              <th>URL IMAGEN</th>
+
               <th>CATEGORIA</th>
               <th>ACCIONES</th>
             </tr>
           </thead>
-          <tbody className="fw-bold">
+          <tbody className="fw-bold text-center">
             {productos.map((producto) => (
               <ItemProducto
                 key={producto._id}
@@ -91,13 +90,13 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
-          {/* {usuarios.map((usuario) => (
+            {usuarios.map((usuario) => (
               <ItemUsuarios
-                key={usuario.id}
+                key={usuario._id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
               ></ItemUsuarios>
-            ))} */}
+             ))} 
           </tbody>
         </Table>
       </section>
