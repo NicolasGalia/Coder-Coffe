@@ -1,6 +1,6 @@
 import { Container, Button, Modal, Card } from "react-bootstrap";
 import React, { useState } from "react";
-import Carousel from "react-elastic-carousel";
+import { Carousel } from "react-bootstrap";
 import CardProducto from "./adminproductos/CardProducto";
 
 const breakPoints = [

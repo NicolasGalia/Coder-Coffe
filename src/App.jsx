@@ -1,6 +1,5 @@
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
-import Inicio from "./views/Inicio";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../src/App.css"
@@ -12,21 +11,23 @@ import RutasProtegidas from "./routes/RutasProtegidas"
 import {useState} from "react"
 import Error404 from "./views/Error404"
 import Registro from "./views/Registro";
+import PaginaPedido from "./views/PaginaPedido";
+import { consultarUsuario } from "./components/helpers/queriesLogin";
 function App() {
 
   const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
+  
+
   return (
     <div className="App">
-     // administramos las rutas
     <BrowserRouter>
-      {/* aqui pongo un componente que aparece en todas las paginas */}
       <Menu
         usuarioLogueado={usuarioLogueado}
         setUsuarioLogueado={setUsuarioLogueado}
       ></Menu>
-      {/* <Routes>
+        <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route
           exact
@@ -42,9 +43,14 @@ function App() {
           exact
           path="/registro"
           element={<Registro></Registro>}
-        ></Route> */}
-        {/* aqui quiero las rutas protegidas */}
-        {/* <Route
+        ></Route> 
+        <Route
+          exact
+          path="/pedidos"
+          element={<PaginaPedido></PaginaPedido>}
+        ></Route> 
+         aqui quiero las rutas protegidas 
+       <Route
           path="/administrador/*"
           element={
             <RutasProtegidas>
@@ -53,7 +59,7 @@ function App() {
           }
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
-      </Routes> */}
+      </Routes> 
 
       <Routes>
         <Route exact path="/registro" element={<Registro></Registro>}></Route>
