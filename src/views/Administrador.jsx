@@ -6,6 +6,7 @@ import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
+
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
