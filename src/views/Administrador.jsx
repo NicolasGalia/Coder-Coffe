@@ -5,7 +5,7 @@ import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
-import ItemUsuarios from "./adminUsuarios/itemUsuarios";
+import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -30,7 +30,7 @@ const Administrador = () => {
   useEffect(() => {
     consultarUsuario().then(
       (respuesta) => {
-       console.log(respuesta);
+       setUsuarios(respuesta);
       },
       (reason) => {
         console.log(reason);
@@ -83,7 +83,7 @@ const Administrador = () => {
         <Table responsive={"sm md"}>
           <thead className="text-light text-center">
             <tr>
-              <th>IDENTIFICADOR</th>
+              
               <th>USUARIO</th>
               <th>EMAIL</th>
               <th>ESTATUS</th>

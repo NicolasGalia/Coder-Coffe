@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Link } from 'react-router-dom';
 
 const ItemProducto = ({producto, setProductos}) => {
-    const {_id, nombreProducto, categoria, imagen, precio} = {...producto} 
+    const {_id, nombreProducto, categoria, precio} = {...producto} 
     const borrarProducto = ()=>{
   
           Swal.fire({

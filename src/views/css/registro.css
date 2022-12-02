@@ -37,6 +37,7 @@
 #form >  input, .btn{
   border: 1px solid #e9ecef ;
   padding: .9em 1em;
+  width: 30em;
 }
 
 #form > input:focus{
@@ -60,6 +61,7 @@
 .flex-col{
   flex-direction: column;
   align-items: center;
+  
 }
 
 .imagenRegistro{
@@ -69,8 +71,20 @@
   
 }
 
+
 @media screen and (min-width: 756px)  {
   .imagenRegistro{
     display: initial;
+  }
+  
+  
+ 
+}
+
+@media all and (max-width:756px){
+  #form >  input, .btn{
+    border: 1px solid #e9ecef ;
+    padding: .9em 1em;
+    width: 15em;
   }
 }
