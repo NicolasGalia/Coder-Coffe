@@ -4,7 +4,7 @@ export const consultarUsuario = async () => {
   // console.log(URL)
   try {
     // peticion get para obtener listado de usuarios
-    const respuesta = await fetch(URL + "/auth");
+    const respuesta = await fetch(URL);
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -38,4 +38,29 @@ export const borrarUsuario = async (_id) => {
     console.log(error);
     return false;
   }
+}
+
+export const login = async (usuario) => {
+  try {
+    console.log(usuario);
+    const respuesta = await fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    const datos = await respuesta.json();
+    return {
+      status: respuesta.status,
+      mensaje: datos.mensaje,
+      nombre: datos.nombre,
+      token: datos.token,
+      uid: datos.uid,
+    };
+  } catch (error) {
+    console.log("errores en el login");
+    return;
+  }
 };
+

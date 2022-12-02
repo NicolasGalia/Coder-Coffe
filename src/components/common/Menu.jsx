@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Logo from '../../../src/img/logoBgTransparent.png';
-import {link, NavLink} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 const Menu = () => {
     return (
@@ -18,7 +18,7 @@ const Menu = () => {
             <Navbar.Brand href="#"> 
             <img src={Logo} alt="Logo" className="logoNav"/>
             </Navbar.Brand>
-            <Nav.Link href="#action1" className="itemsNavb linknoMostrar">Menú</Nav.Link>
+            <NavLink end to="/" className="nav-item nav-link linknoMostrar">Menú</NavLink>
             <Nav.Link href="#action2" className="itemsNavb linknoMostrar">Nuestro Café</Nav.Link>
             <Nav.Link href="#action3" className="itemsNavb linknoMostrar">Expieriencia CoderCoffe</Nav.Link>
             
@@ -35,9 +35,10 @@ const Menu = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Iniciar Sesion</Nav.Link>
+                  <NavLink end to="/login" className="nav-item nav-link">Iniciar Sesion</NavLink>
                   <NavLink end to="/registro" className="nav-item nav-link">Registro</NavLink>
-                  <Nav.Link href="#action2">Productos destacados</Nav.Link>
+                  <NavLink to="/*" className="nav-item nav-link">Productos destacados</NavLink>
+                 
                   <NavDropdown
                     title="Menús del dia"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}

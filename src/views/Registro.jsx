@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
+
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
 import { crearUsuario } from '../components/helpers/queriesLogin';
 import logoBgTransparente from "../img/logoBgTransparent.png"
 import "../views/css/registro.css"
-import { consultarUsuario } from '../components/helpers/queriesLogin';
+// import { consultarUsuario } from '../components/helpers/queriesLogin';
+import { useNavigate } from "react-router-dom";
+import Inicio from './Inicio';
+const Registro = ({setUsuarioLogueado}) => {
+  const navigate = useNavigate();
 
-const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (datos) => {
@@ -15,27 +18,21 @@ const Registro = () => {
     crearUsuario(datos).then((respuesta) => {
      
 if(respuesta.status === 201){
-        Swal.fire("Bienvenido", "Te registraste exitosamente", "success")
+        Swal.fire( `Bienvenido, ${datos.nombre}`, "Te registraste exitosamente", "success")
+         //guardar la sesion del usuario en localstorage
+            localStorage.setItem('tokenCoderCofee', JSON.stringify(datos));
+            //actualizar el state usuarioLogueado
+            setUsuarioLogueado(datos)
+            // redireccionamos
+            navigate("/");
       }else{
         Swal.fire("Ha ocurrido un error", "No pudimos registrate","error")
       }
     })
   }
-  const [usuarios, setUsuarios] = useState([])
 
-  useEffect(() => {
-    consultarUsuario().then((respuesta) => {
-      setUsuarios(respuesta)
-    }, (reason) => {
-      console.log(reason);
-      Swal.fire(
-        "Ocurrio un error",
-        "Intentelo nuevamente en unos minutos",
-        "error"
-      )
-    })
 
-  }, [])
+ 
 
 
   return (
