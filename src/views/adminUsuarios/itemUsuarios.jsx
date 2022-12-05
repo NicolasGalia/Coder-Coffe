@@ -45,6 +45,9 @@ const ItemUsuarios = ({ usuario, setUsuarios }) => {
         <Button variant="danger" className=" mt-2" onClick={borrarUsuarioLogin}>
           Borrar Usuario
         </Button>
+        <Button variant="danger" className=" mt-2" onClick={borrarUsuarioLogin}>
+          Suspender usuario
+        </Button>
       </td>
     </tr>
   );
