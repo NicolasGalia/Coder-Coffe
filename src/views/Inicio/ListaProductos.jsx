@@ -1,6 +1,5 @@
 import "./inicio.css"
 import ProductosCard from './ProductosCard';
-import { Container, Row } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 

@@ -15,7 +15,7 @@ export const consultarUsuario = async () => {
 export const crearUsuario = async (usuario) => {
   console.log(usuario);
   try {
-    const respuesta = await fetch(URL + "/usuarios/auth", {
+    const respuesta = await fetch(URL + "/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

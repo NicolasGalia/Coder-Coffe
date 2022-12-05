@@ -1,6 +1,6 @@
 
 /* css cards */
-.containerProducto {
+/* .containerProducto {
     width: 22%;
     padding: 10px;
     display: flex;
@@ -9,28 +9,60 @@
     justify-content: center;
     padding: 20px 40px;
     cursor: pointer;
+  }   */
+
+  .item .img  img{
+    height: 200px;
+    transition: 0.5s;
   }
-  
+
+  .item .img{
+    background-image:linear-gradient(to top right, 
+    #d89cd1,  #d499d4
+    ) ;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+  }
+
+  .item .content{
+    background-color: #ffffff24;
+    border-radius: 30px;
+    padding: 50px 30px;
+    transform: translate(0, -50px);
+    backdrop-filter: blur(20px);
+    color: black;
+  }
+
   .tituloProducto{
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(16, 128, 16);
-    text-align: center;
+    font-size: x-large;
   }
-  .imgProducto{
-    border-radius: 15%;
-  }
-  .precioProducto {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666;
+
+  .item .content .precioProducto {
+    font-size: large;
+  letter-spacing: 3px;
+    margin-bottom: 3px;
   }
   
-  .descripcionProducto {
-    text-align: center;
-    color: #777;
+  .item .content .descripcionProducto {
+    opacity: .7;
+    margin: 10px 0;
   }
-  
+  .item .content .add{
+    background-color:#b192ef;
+    padding: 20px;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+  }
+
+  .item:hover img{
+    transform: translate(0, -50px);
+  }
   @media screen and (max-width: 480px) {
     .containerProducto {
       width: 100%;
@@ -45,8 +77,7 @@
       font-size: 24px;
     }
   }
-  /* css cards */
-  /* css lista productos */
+ 
   .containerLista {
     padding: 20px 10px;
     display: flex;
