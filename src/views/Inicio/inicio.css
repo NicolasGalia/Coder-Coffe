@@ -1,20 +1,9 @@
 
-/* css cards */
-/* .containerProducto {
-    width: 22%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 40px;
-    cursor: pointer;
-  }   */
 .item{
   width: 300px;
 }
   .item .img  img{
-    height: 300px;
+    height: 320px;
     transition: 0.5s;
   }
 
@@ -42,6 +31,14 @@
   .tituloProducto{
     font-size: 20px;
     margin-bottom: 10px;
+  }
+  .tituloProductoModal{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(16, 128, 16) ;
+  }
+  .precioProducto{
+    color:rgb(82, 177, 82) ;
   }
 
   .item .content .precioProducto {
