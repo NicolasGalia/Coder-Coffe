@@ -2,7 +2,7 @@ import React from 'react';
 import "./inicio.css"
 
 
-const ProductosCard = ({producto}) => {
+const ProductosCard = ({producto, actualizarPedidoprops}) => {
     return (
         <div className="containerProducto">
       <img src={producto.imagen} alt="producto" width="150" height="200" className='imgProducto'/>
@@ -13,7 +13,7 @@ const ProductosCard = ({producto}) => {
       </p>
       <div class="container text-center">
       <div class="row">
-      <button className='btn btnCard col btn-success'>carrito</button>
+      <button onClick={()=>actualizarPedidoprops(producto.nombreProducto, producto.precio)} className='btn btnCard col btn-success'>carrito</button>
       <button className='btn btnCard col btn-warning'>ver detalles</button>
       </div>
       </div>
