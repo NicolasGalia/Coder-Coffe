@@ -4,12 +4,14 @@ import { Table } from "react-bootstrap";
 import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
-import { consultarUsuario } from "../components/helpers/queriesLogin";
+import { consultarUserApi } from "../components/helpers/queriesLogin";
+import { suspenderUsuario, borrarUsuarioAPI, darPermisosUser, obtenerYSuspenderUsuario, obtenerYDarPermisosUser } from "../components/helpers/queriesLogin";
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
+
+
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
-
-  useEffect(() => {
+    useEffect(() => {
     consultarAPI().then(
       (respuesta) => {
         setProductos(respuesta);
@@ -28,7 +30,7 @@ const Administrador = () => {
 
   const [usuarios, setUsuarios] = useState([]);
   useEffect(() => {
-    consultarUsuario().then(
+    consultarUserApi().then(
       (respuesta) => {
        setUsuarios(respuesta);
       },
@@ -43,6 +45,81 @@ const Administrador = () => {
       }
     );
   }, []);
+
+  const borrarUsuario = (id) => {
+    swal.fire({
+      title: "Esta seguro?",
+      text: "No podra revertir este cambio!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "c0050b",
+      cancelButtonColor: "#000",
+      confirmButtonText: "Eliminar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        borrarUsuarioAPI(id).then((respuesta) => {
+          if (respuesta.status === 200) {
+            swal.fire(
+              "Usuario eliminado",
+              "El usuario fue eliminado exitosamente",
+              "success"
+            );
+            consultarUserApi().then((users) => {
+              setUsuarios(users);
+            });
+          }
+        });
+      }
+    });
+  };
+
+  const suspenderUsuario = (id) => {
+    swal.fire({
+      title: "Esta seguro?",
+      text: "Le prohibiras el login al usuario..!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "c0050b",
+      cancelButtonColor: "#000",
+      confirmButtonText: "Suspender",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        obtenerYSuspenderUsuario(id).then((respuesta) => {
+          if (respuesta.status === 200) {
+            swal.fire(
+              "Usuario suspendido",
+              "El usuario fue suspendido exitosamente",
+              "success"
+            );
+          }
+        });
+      }
+    });
+  };
+  const darPermisosUser = (id) => {
+    swal.fire({
+      title: "Esta seguro?",
+      text: "Le daras permisos nuevamente al usuario...",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "c0050b",
+      cancelButtonColor: "#000",
+      confirmButtonText: "Permitir",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        obtenerYDarPermisosUser(id).then((respuesta) => {
+          if (respuesta.status === 200) {
+            swal.fire(
+              "Usuario con permisos nuevamente",
+              "Le dimos permisos al usuario para poder acceder",
+              "success"
+            );
+          }
+        });
+      }
+    });
+  };
+
 
   return (
     <div className="mainSection my-5 container">
@@ -86,7 +163,8 @@ const Administrador = () => {
               
               <th>USUARIO</th>
               <th>EMAIL</th>
-              <th>ESTATUS</th>
+              <th>Estado</th>
+              <th>Permisos</th>
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
@@ -95,6 +173,13 @@ const Administrador = () => {
                 key={usuario._id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
+                borrarUsuario={borrarUsuario}
+                darPermisosUser={darPermisosUser}
+                suspenderUsuario={suspenderUsuario}
+                permiso={usuario.permiso}
+                nombreUsuario={usuario.nombreUsuario}
+                email={usuario.email}
+                estado={usuario.estado}
               ></ItemUsuarios>
              ))} 
           </tbody>

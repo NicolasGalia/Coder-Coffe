@@ -1,6 +1,6 @@
 const URL = process.env.REACT_APP_API_CODER_USUARIO;
 
-export const consultarUsuario = async () => {
+export const consultarUserApi = async () => {
   // console.log(URL)
   try {
     // peticion get para obtener listado de usuarios
@@ -39,6 +39,51 @@ export const borrarUsuario = async (id) => {
     return false;
   }
 }
+
+export const obtenerYSuspenderUsuario = async (_id, req) => {
+  try{
+      
+      const respuesta = await fetch(URL+"perfilusuarios/"+_id,{
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(req)
+      })
+      const userSuspendido = await respuesta.json()
+      return userSuspendido
+  } catch(e){
+      console.log(e)
+  }
+}
+
+export const obtenerYDarPermisosUser = async (_id, req) => {
+  try{
+      const respuesta = await fetch(URL+"perfilusuarios/permisos/"+_id,{
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(req)
+      })
+      const permisoUser = await respuesta.json()
+      return permisoUser
+  } catch(e){
+      console.log(e)
+  }
+}
+
+export const borrarUsuarioAPI =  async (_id) => {
+  try{
+      const respuesta = await fetch(URL+"perfilusuarios/"+_id,{
+          method: "DELETE"
+      })
+      return respuesta
+  } catch(e){
+      console.log(e)
+  }
+}
+
 
 export const login = async (usuario) => {
   try {

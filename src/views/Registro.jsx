@@ -8,6 +8,7 @@ import "../views/css/registro.css"
 // import { consultarUsuario } from '../components/helpers/queriesLogin';
 import { useNavigate } from "react-router-dom";
 import Inicio from './Inicio';
+
 const Registro = ({setUsuarioLogueado}) => {
   const navigate = useNavigate();
 
