@@ -10,34 +10,38 @@
     padding: 20px 40px;
     cursor: pointer;
   }   */
-
+.item{
+  width: 300px;
+}
   .item .img  img{
-    height: 200px;
+    height: 300px;
     transition: 0.5s;
   }
 
   .item .img{
     background-image:linear-gradient(to top right, 
-    #d89cd1,  #d499d4
+  #fff, rgb(82, 177, 82)
     ) ;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+    margin: 5px;
   }
 
   .item .content{
     background-color: #ffffff24;
     border-radius: 30px;
-    padding: 50px 30px;
+    padding: 30px 30px;
     transform: translate(0, -50px);
     backdrop-filter: blur(20px);
     color: black;
   }
 
   .tituloProducto{
-    font-size: x-large;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .item .content .precioProducto {
@@ -49,15 +53,17 @@
   .item .content .descripcionProducto {
     opacity: .7;
     margin: 10px 0;
+    font-size: 15px;
   }
   .item .content .add{
-    background-color:#b192ef;
-    padding: 20px;
+    background-color: rgb(16, 128, 16);
+    padding: 12px;
     color: #fff;
     width: 100%;
     border: none;
     border-radius: 30px;
     text-decoration: none;
+    margin: 10px;
   }
 
   .item:hover img{
