@@ -35,7 +35,6 @@ function App() {
   <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
   <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
   <Route exact path='/Error404' element={<Error404/>}></Route>
-  <Route exact path='/Inicio' element={<Login/>}></Route>
   <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
     
 

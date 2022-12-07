@@ -7,7 +7,7 @@ const ListaProductos = () => {
     const [productos, setProductos] = useState([]);
     useEffect(() =>{
         const getProdutos = async () =>{
-            const {data} = await axios.get(`${process.env.REACT_APP_API_CODER}/productos/cafe`);
+            const {data} = await axios.get(`${process.env.REACT_APP_API_CODER}/cafe`);
             setProductos(data);
         };
         getProdutos();
