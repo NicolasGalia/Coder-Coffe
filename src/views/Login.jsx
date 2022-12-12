@@ -17,7 +17,8 @@ const Login = ({ setUsuarioLogueado }) => {
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      if (respuesta.status === 200) {
+      console.log(respuesta);
+      if (respuesta.token) {
         Swal.fire(
           "Bienvenido",
           `Gracias por contar con nosotros, ${datos.email}`,
@@ -28,7 +29,7 @@ const Login = ({ setUsuarioLogueado }) => {
           JSON.stringify(respuesta)
         );
         setUsuarioLogueado(respuesta)
-        navigate("/Inicio");
+        navigate("/");
       } else {
         Swal.fire(
           "Error",

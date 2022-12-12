@@ -1,10 +1,10 @@
 const URL = process.env.REACT_APP_API_CODER_USUARIO;
 
 export const consultarUsuario = async () => {
-  // console.log(URL)
+
   try {
-    // peticion get para obtener listado de usuarios
-    const respuesta = await fetch(URL + "/auth");
+ 
+    const respuesta = await fetch(URL);
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -30,7 +30,7 @@ export const crearUsuario = async (usuario) => {
 
 export const borrarUsuario = async (_id) => {
   try {
-    const respuesta = await fetch(URL + "/nuevo" + _id, {
+    const respuesta = await fetch(URL + "/" + _id, {
       method: "DELETE",
     });
     return respuesta;
@@ -42,7 +42,6 @@ export const borrarUsuario = async (_id) => {
 
 export const login = async (usuario) => {
   try {
-    console.log(usuario);
     const respuesta = await fetch(URL, {
       method: "POST",
       headers: {
@@ -51,15 +50,22 @@ export const login = async (usuario) => {
       body: JSON.stringify(usuario),
     });
     const datos = await respuesta.json();
-    return {
+        return {
       status: respuesta.status,
       mensaje: datos.mensaje,
-      nombre: datos.nombre,
+      permiso: datos.permiso,
+      email: datos.email,
       token: datos.token,
-      uid: datos.uid,
+      _id: datos._id,
+      estado: datos.estado,
+      admin: datos.admin
     };
   } catch (error) {
     console.log("errores en el login");
     return;
   }
 };
+
+
+
+

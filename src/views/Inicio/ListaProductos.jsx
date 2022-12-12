@@ -1,7 +1,7 @@
-import "./inicio.css";
-import ProductosCard from "./ProductosCard";
-import { Container, Row } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import "./inicio.css"
+import ProductosCard from './ProductosCard';
+import { Container, Row } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 import axios from "axios";
 import { editarPedidoBD } from "../../components/helpers/queriesPedido";
 import Swal from "sweetalert2";
@@ -16,24 +16,14 @@ let usuarioFalso = {
 }
 
 const ListaProductos = () => {
-  const [productos, setProductos] = useState([]);
-  const [pedido, setPedido] = useState();
-
-
-  
-
-
-  useEffect(() => {
-    const getProdutos = async () => {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_API_CODER}/productos/cafe`
-      );
-      setProductos(data);
-    };
-    getProdutos();
-    getPedido();
-    
-  }, []);
+    const [productos, setProductos] = useState([]);
+    useEffect(() =>{
+        const getProdutos = async () =>{
+            const {data} = await axios.get(`${process.env.REACT_APP_API_CODER}/productos/cafe`);
+            setProductos(data);
+        };
+        getProdutos();
+    }, []);
 
 
 
