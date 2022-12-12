@@ -4,6 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { editarPedidoBD } from "../../components/helpers/queriesPedido";
+import Swal from "sweetalert2";
 
 // USUARIO FALSO BORRAR
 let usuarioFalso = {
@@ -58,6 +59,14 @@ const ListaProductos = () => {
       };
       setPedido(pedidoActualizado);
       editarPedidoBD(pedido._id, pedidoActualizado)
+      Swal.fire({
+        position: 'bottom-end',
+        icon: 'success',
+        title: 'Producto añadido al pedido',
+        showConfirmButton: false,
+        width: 300,
+        timer: 1500
+      })
 
   };
 

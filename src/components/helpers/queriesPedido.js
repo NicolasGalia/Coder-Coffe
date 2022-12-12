@@ -31,7 +31,8 @@ export const consultarPedido = async () => {
   }
 
 
-  export const enviarPedido = async (pedido) => {
+
+  export const enviarPedido = async (pedido,id) => {
     console.log(pedido);
     try {
       const respuesta = await fetch(URL, {
@@ -45,4 +46,5 @@ export const consultarPedido = async () => {
     } catch (error) {
         console.log(error);
     }
+  
   };
