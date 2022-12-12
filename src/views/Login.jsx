@@ -43,12 +43,14 @@ const Login = ({ setUsuarioLogueado }) => {
     <section className="container">
       <div className="screen">
         <div className="screen__content">
+          
           <form onSubmit={handleSubmit(onSubmit)}
             id="form"
             className="login"
           >
+            <h2>Bienvenido</h2>
             <div class="login__field">
-              <i class="login__icon fas fa-user"></i>
+            <i class="login__icon bi bi-person-circle"></i>
               <input
                 className="login__input"
                 type="text"
@@ -67,7 +69,7 @@ const Login = ({ setUsuarioLogueado }) => {
               </Form.Text>
             </div>
             <div class="login__field">
-              <i class="login__icon fas fa-lock"></i>
+            <i class="login__icon bi bi-lock"></i>
               <input
                 class="login__input"
                 type="text"
@@ -89,19 +91,11 @@ const Login = ({ setUsuarioLogueado }) => {
                 {errors.password?.message}
               </Form.Text>
             </div>
-            <button class="button login__submit">
+            <button class="button login__submit" type="submit">
               <span class="button__text">Iniciar sesión</span>
-              <i class="button__icon fas fa-chevron-right"></i>
+              <i class="button__icon bi bi-arrow-right"></i>
             </button>
           </form>
-          {/* <div class="social-login">
-            <h3>Registrarse</h3>
-            <div class="social-icons">
-              <a href="#" class="social-login__icon fab fa-instagram"></a>
-              <a href="#" class="social-login__icon fab fa-facebook"></a>
-              <a href="#" class="social-login__icon fab fa-twitter"></a>
-            </div>
-          </div> */}
         </div>
         <div class="screen__background">
           <span class="screen__background__shape screen__background__shape4"></span>
