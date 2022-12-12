@@ -17,12 +17,16 @@ let usuarioFalso = {
 
 const ListaProductos = () => {
     const [productos, setProductos] = useState([]);
+    const [pedido, setPedido] = useState();
+    
+    
     useEffect(() =>{
         const getProdutos = async () =>{
             const {data} = await axios.get(`${process.env.REACT_APP_API_CODER}/productos/cafe`);
             setProductos(data);
         };
         getProdutos();
+        getPedido();
     }, []);
 
 
