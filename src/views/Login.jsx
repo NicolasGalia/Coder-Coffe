@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { login } from "../components/helpers/queriesLogin";
-import "../views/css/registro.css"  
+import "../views/css/registro.css"
 
 const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
@@ -40,61 +40,88 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <section className="formularioRegistro container text-center">
-      <div className="register">
-        <div className="col-12">
-          <div className="m-3 p-3">
-            <h2>Iniciar Sesión</h2>
-            <span>Unite a coder coffe y disfruta de nuestros servicios</span>
-          </div>
+    <section className="container">
+      <div className="screen">
+        <div className="screen__content">
           <form onSubmit={handleSubmit(onSubmit)}
             id="form"
-            className="flex flex-col"
+            className="login"
           >
-            
-            <input
-              type="text"
-              {...register("email", {
-                required: "Debe ingresar un email",
-                pattern: {
-                  value:
-                    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
-                  message: "Debe ingresar un formato valido",
-                },
-              })}
-              placeholder="email"
-            />
-            <Form.Text className="text-danger mb-2">
-              {errors.email?.message}
-            </Form.Text>
-            
-            <input
-              type="text"
-              {...register("password", {
-                required: "Debe ingresar una contraseña",
-                minLength: {
-                  value: 8,
-                  message: "Su contraseña debe tener al menos 8 caracteres",
-                },
-                maxLength: {
-                  value: 30,
-                  message:
-                    "Su contraseña debe tener como 30 caracteres como maximo",
-                },
-              })}
-              placeholder="contraseña"
-            />
-            <Form.Text className="text-danger mb-2">
-              {errors.password?.message}
-            </Form.Text>
-            <button className="btn" type="submit">Iniciar Sesión</button>
+            <div class="login__field">
+              <i class="login__icon fas fa-user"></i>
+              <input
+                className="login__input"
+                type="text"
+                {...register("email", {
+                  required: "Debe ingresar un email",
+                  pattern: {
+                    value:
+                      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
+                    message: "Debe ingresar un formato valido",
+                  },
+                })}
+                placeholder="email"
+              />
+              <Form.Text className="text-danger mb-2">
+                {errors.email?.message}
+              </Form.Text>
+            </div>
+            <div class="login__field">
+              <i class="login__icon fas fa-lock"></i>
+              <input
+                class="login__input"
+                type="text"
+                {...register("password", {
+                  required: "Debe ingresar una contraseña",
+                  minLength: {
+                    value: 8,
+                    message: "Su contraseña debe tener al menos 8 caracteres",
+                  },
+                  maxLength: {
+                    value: 30,
+                    message:
+                      "Su contraseña debe tener como 30 caracteres como maximo",
+                  },
+                })}
+                placeholder="contraseña"
+              />
+              <Form.Text className="text-danger mb-2">
+                {errors.password?.message}
+              </Form.Text>
+            </div>
+            <button class="button login__submit">
+              <span class="button__text">Iniciar sesión</span>
+              <i class="button__icon fas fa-chevron-right"></i>
+            </button>
           </form>
+          {/* <div class="social-login">
+            <h3>Registrarse</h3>
+            <div class="social-icons">
+              <a href="#" class="social-login__icon fab fa-instagram"></a>
+              <a href="#" class="social-login__icon fab fa-facebook"></a>
+              <a href="#" class="social-login__icon fab fa-twitter"></a>
+            </div>
+          </div> */}
         </div>
-       
+        <div class="screen__background">
+          <span class="screen__background__shape screen__background__shape4"></span>
+          <span class="screen__background__shape screen__background__shape3"></span>
+          <span class="screen__background__shape screen__background__shape2"></span>
+          <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
       </div>
     </section>
   );
-  
+
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+
