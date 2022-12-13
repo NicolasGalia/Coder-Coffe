@@ -40,75 +40,92 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <section className="container">
-      <div className="screen">
-        <div className="screen__content">
-          
-          <form onSubmit={handleSubmit(onSubmit)}
-            id="form"
-            className="login"
-          >
-            <h2>Bienvenido</h2>
-            <div class="login__field">
-            <i class="login__icon bi bi-person-circle"></i>
-              <input
-                className="login__input"
-                type="text"
-                {...register("email", {
-                  required: "Debe ingresar un email",
-                  pattern: {
-                    value:
-                      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
-                    message: "Debe ingresar un formato valido",
-                  },
-                })}
-                placeholder="email"
-              />
-              <Form.Text className="text-danger mb-2">
-                {errors.email?.message}
-              </Form.Text>
+    <section className='mainLogin'>
+        <div className="box">
+            <div className="inner-box">
+                <div className="forms-wrap">
+                    <form action="index.html" autocomplete="off" className="sign-in-form">
+                        <div className="logo">
+                            <h4>Coder Coffee</h4>
+                        </div>
+
+                        <div className="heading">
+                            <h2>Bienvenido</h2>
+                            <h6>No tienes una cuenta?</h6>
+                            <a href="#" className="toggle"> Registrate</a>
+                        </div>
+
+                        <div className="actual-form">
+                            <div className="input-wrap">
+                                <input
+                                    className="input-field"
+                                    type="text"
+                                    {...register("email", {
+                                        required: "Debe ingresar un email",
+                                        pattern: {
+                                            value:
+                                                /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
+                                            message: "Debe ingresar un formato valido",
+                                        },
+                                    })}
+                                    placeholder="email"
+                                />
+                                <Form.Text className="text-danger mb-2">
+                                    {errors.email?.message}
+                                </Form.Text>
+                            </div>
+                            <div class="input-wrap">
+                                <input
+                                    className="input-field"
+                                    type="text"
+                                    {...register("password", {
+                                        required: "Debe ingresar una contraseña",
+                                        minLength: {
+                                            value: 8,
+                                            message: "Su contraseña debe tener al menos 8 caracteres",
+                                        },
+                                        maxLength: {
+                                            value: 30,
+                                            message:
+                                                "Su contraseña debe tener como 30 caracteres como maximo",
+                                        },
+                                    })}
+                                    placeholder="contraseña"
+                                />
+                                <Form.Text className="text-danger mb-2">
+                                    {errors.password?.message}
+                                </Form.Text>
+                            </div>
+
+                            <button type="submit" className="sign-btn">Iniciar Sesion</button>
+
+                            <p className="text">
+                                Olvidaste tu contraseña o mail?
+                                <a href="#"> Click aquí</a> Para obtener ayuda
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div className="carousel">
+                    <div className="images-wrapper">
+                        <img src="https://i.postimg.cc/gkcqYp33/1-removebg-preview.png" class="image img-1 show" alt="" />
+                    </div>
+
+                    <div className="text-slider">
+                        <div className="text-wrap">
+                            <div className="text-group">
+                                <h2>Ingresar con</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="login__field">
-            <i class="login__icon bi bi-lock"></i>
-              <input
-                class="login__input"
-                type="text"
-                {...register("password", {
-                  required: "Debe ingresar una contraseña",
-                  minLength: {
-                    value: 8,
-                    message: "Su contraseña debe tener al menos 8 caracteres",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message:
-                      "Su contraseña debe tener como 30 caracteres como maximo",
-                  },
-                })}
-                placeholder="contraseña"
-              />
-              <Form.Text className="text-danger mb-2">
-                {errors.password?.message}
-              </Form.Text>
-            </div>
-            <button class="button login__submit" type="submit">
-              <span class="button__text">Iniciar sesión</span>
-              <i class="button__icon bi bi-arrow-right"></i>
-            </button>
-          </form>
         </div>
-        <div class="screen__background">
-          <span class="screen__background__shape screen__background__shape4"></span>
-          <span class="screen__background__shape screen__background__shape3"></span>
-          <span class="screen__background__shape screen__background__shape2"></span>
-          <span class="screen__background__shape screen__background__shape1"></span>
-        </div>
-      </div>
     </section>
-  );
 
+);
 };
-
 export default Login;
 
 
