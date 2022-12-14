@@ -23,33 +23,24 @@ function App() {
     <div className="App">
       <BrowserRouter>
       
-      <Menu></Menu>
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
       <Routes>
     
     <Route exact path='/' element={<Inicio/>}></Route>
-    <Route exact path='/administrador' element={<Administrador/>}></Route>
-    <Route exact path='/registro' element={<Registro/>}></Route>
+   
+    <Route exact path='/registro' element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
     <Route exact path='/Menu' element={<Menu/>} ></Route>
     <Route exact path='/pedido' element={<PaginaPedido/>} ></Route>
     <Route exact path='/Footer' element={<Footer/>} ></Route>
-  <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
+  
   <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
   <Route exact path='/Error404' element={<Error404/>}></Route>
-  <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
+  
     
 
           <Route exact path="/Menu" element={<Menu />}></Route>
           <Route exact path="/Footer" element={<Footer />}></Route>
-          <Route
-            exact
-            path="/CrearProducto"
-            element={<CrearProducto />}
-          ></Route>
-          <Route
-            exact
-            path="/Administrador/EditarProducto/:id"
-            element={<EditarProducto />}
-          ></Route>
+        
 
           <Route
             exact

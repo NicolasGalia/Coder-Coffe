@@ -7,10 +7,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Logo from '../../../src/img/logoBgTransparent.png';
-import {link, NavLink} from "react-router-dom";
+import {link, NavLink, useNavigate} from "react-router-dom";
 
-const Menu = () => {
+
+const Menu = ({usuarioLogueado, setUsuariosLogueado}) => {
+const navegacion = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem('tokenCoderCoffe');
+    setUsuariosLogueado({});
+    navegacion('/');
+  }
     return (
+      
     <>
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3 navbarPaginas">
@@ -20,7 +29,16 @@ const Menu = () => {
             </Navbar.Brand>
             <Nav.Link to="/" className="itemsNavb linknoMostrar">Menú</Nav.Link>
             <Nav.Link to="/AcercaNosotros" className="itemsNavb linknoMostrar">Sobre nosotros</Nav.Link>
-            <Nav.Link to="/error404" className="itemsNavb linknoMostrar">Medios de pago</Nav.Link>
+            {
+              usuarioLogueado.usuario ? (<>
+              <Nav.Link to="/administrador" className="itemsNavb linknoMostrar">Administrar</Nav.Link>
+            <Nav.Link to="/registro" className="itemsNavb linknoMostrar">Registro</Nav.Link>
+            <Button variant="dark" onClick={logout}>LogOut</Button>
+              </>): (
+              <Nav.Link to="/login" className="itemsNavb linknoMostrar">LogIn</Nav.Link>)
+            }
+           
+            
             
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas

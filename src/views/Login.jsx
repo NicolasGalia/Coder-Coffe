@@ -29,7 +29,7 @@ const Login = ({ setUsuarioLogueado }) => {
           JSON.stringify(respuesta)
         );
         setUsuarioLogueado(respuesta)
-        navigate("/");
+        navigate("/administrador");
       } else {
         Swal.fire(
           "Error",

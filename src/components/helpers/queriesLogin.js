@@ -4,7 +4,7 @@ export const consultarUsuario = async () => {
 
   try {
  
-    const respuesta = await fetch(URL);
+    const respuesta = await fetch(URL + "/nuevo");
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -28,7 +28,7 @@ export const crearUsuario = async (usuario) => {
   }
 };
 
-export const borrarUsuario = async (_id) => {
+export const borrarUsuarioAPI = async (_id) => {
   try {
     const respuesta = await fetch(URL + "/" + _id, {
       method: "DELETE",
@@ -52,13 +52,11 @@ export const login = async (usuario) => {
     const datos = await respuesta.json();
         return {
       status: respuesta.status,
-      mensaje: datos.mensaje,
-      permiso: datos.permiso,
+      nombre: datos.nombre,
+      apellido: datos.apellido,
       email: datos.email,
       token: datos.token,
       _id: datos._id,
-      estado: datos.estado,
-      admin: datos.admin
     };
   } catch (error) {
     console.log("errores en el login");
