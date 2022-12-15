@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -17,7 +17,8 @@ const Login = ({ setUsuarioLogueado }) => {
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      if (respuesta.status === 200) {
+      console.log(respuesta);
+      if (respuesta.token) {
         Swal.fire(
           "Bienvenido",
           `Gracias por contar con nosotros, ${datos.email}`,
@@ -28,7 +29,7 @@ const Login = ({ setUsuarioLogueado }) => {
           JSON.stringify(respuesta)
         );
         setUsuarioLogueado(respuesta)
-        navigate("/Inicio");
+        navigate("/Administrador");
       } else {
         Swal.fire(
           "Error",
@@ -44,7 +45,7 @@ const Login = ({ setUsuarioLogueado }) => {
         <div className="box">
             <div className="inner-box">
                 <div className="forms-wrap">
-                    <form action="index.html" autocomplete="off" className="sign-in-form">
+                    <form onSubmit={handleSubmit(onSubmit)} id="form" className="sign-in-form">
                         <div className="logo">
                             <h4>Coder Coffee</h4>
                         </div>
@@ -70,11 +71,11 @@ const Login = ({ setUsuarioLogueado }) => {
                                     })}
                                     placeholder="email"
                                 />
-                                <Form.Text className="text-danger mb-2">
+                                <Form.Text className="label">
                                     {errors.email?.message}
                                 </Form.Text>
                             </div>
-                            <div class="input-wrap">
+                            <div className="input-wrap">
                                 <input
                                     className="input-field"
                                     type="text"
@@ -92,7 +93,7 @@ const Login = ({ setUsuarioLogueado }) => {
                                     })}
                                     placeholder="contraseña"
                                 />
-                                <Form.Text className="text-danger mb-2">
+                                <Form.Text className="label">
                                     {errors.password?.message}
                                 </Form.Text>
                             </div>
@@ -107,17 +108,9 @@ const Login = ({ setUsuarioLogueado }) => {
                     </form>
                 </div>
 
-                <div className="carousel">
+                <div className="carousel-login">
                     <div className="images-wrapper">
-                        <img src="https://i.postimg.cc/gkcqYp33/1-removebg-preview.png" class="image img-1 show" alt="" />
-                    </div>
-
-                    <div className="text-slider">
-                        <div className="text-wrap">
-                            <div className="text-group">
-                                <h2>Ingresar con</h2>
-                            </div>
-                        </div>
+                        <img src="https://i.postimg.cc/gkcqYp33/1-removebg-preview.png" className="image img-1 show" alt="" />
                     </div>
                 </div>
             </div>

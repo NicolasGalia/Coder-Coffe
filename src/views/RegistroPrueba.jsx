@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -53,12 +53,65 @@ const RegistroPrueba = ({ setUsuarioLogueado }) => {
 
                             <div className="heading">
                                 <h2>Bienvenido</h2>
-                                <h6>No tienes una cuenta?</h6>
-                                <a href="#" className="toggle"> Registrate</a>
+                                <h6>Ya tienes una cuenta?</h6>
+                                <a href="#" className="toggle"> Iniciar Sesión</a>
                             </div>
 
                             <div className="actual-form">
+                                {/* 1er input  nombre */}
                                 <div className="input-wrap">
+                                    <input
+                                        className="input-field"
+                                        type="text"
+                                        {...register("nombre", {
+                                            required: "Debe ingresar un nombre",
+                                            minLength: {
+                                                value: 3,
+                                                message: "El nombre debe tener al menos 3 caracteres",
+                                            },
+                                            maxLength: {
+                                                value: 30,
+                                                message: "El nombre no debe tener mas de 30 caracteres",
+                                            },
+                                            pattern: {
+                                                value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                                                message: "Debe ingresar un nombre valido",
+                                            },
+                                        })}
+                                        placeholder="nombre"
+                                    />
+                                    <Form.Text className="text-danger mb-2">
+                                        {errors.nombre?.message}
+                                    </Form.Text>
+                                </div>
+                                {/* 2input apellido*/}
+                                <div class="input-wrap">
+                                    <input
+                                        className="input-field"
+                                        type="text"
+                                        {...register("apellido", {
+                                            required: "Debe ingresar un apellido",
+                                            minLength: {
+                                                value: 3,
+                                                message: "El nombre debe tener al menos 3 caracteres",
+                                            },
+                                            maxLength: {
+                                                value: 30,
+                                                message: "El nombre no debe tener mas de 30 caracteres",
+                                            },
+                                            pattern: {
+                                                value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                                                message: "Debe ingresar un apellido valido",
+                                            },
+                                        })}
+                                        placeholder="apellido"
+                                    />
+                                    <Form.Text className="text-danger mb-2">
+                                        {errors.apellido?.message}
+                                    </Form.Text>
+                                </div>
+                                {/* 3er input */}
+                                <div class="input-wrap">
                                     <input
                                         className="input-field"
                                         type="text"
@@ -76,6 +129,33 @@ const RegistroPrueba = ({ setUsuarioLogueado }) => {
                                         {errors.email?.message}
                                     </Form.Text>
                                 </div>
+                                {/* 4 input */}
+                                <div class="input-wrap">
+                                    <input
+                                        className="input-field"
+                                        type="text"
+                                        {...register("userName", {
+                                            required: "Debe ingresar un nombre de usuario",
+                                            minLength: {
+                                                value: 3,
+                                                message: "El nombre debe tener al menos 3 caracteres",
+                                            },
+                                            maxLength: {
+                                                value: 30,
+                                                message: "El nombre no debe tener mas de 30 caracteres",
+                                            },
+                                            pattern: {
+                                                value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                                                message: "Debe ingresar un nombre de usuario valido",
+                                            },
+                                        })}
+                                        placeholder="nombre de usuario"
+                                    />
+                                    <Form.Text className="text-danger mb-2">
+                                        {errors.userName?.message}
+                                    </Form.Text>
+                                </div>
+                                {/* 5 input */}
                                 <div class="input-wrap">
                                     <input
                                         className="input-field"
@@ -99,12 +179,7 @@ const RegistroPrueba = ({ setUsuarioLogueado }) => {
                                     </Form.Text>
                                 </div>
 
-                                <button type="submit" className="sign-btn">Iniciar Sesion</button>
-
-                                <p className="text">
-                                    Olvidaste tu contraseña o mail?
-                                    <a href="#"> Click aquí</a> Para obtener ayuda
-                                </p>
+                                <button type="submit" className="sign-btn">Registrarse</button>
                             </div>
                         </form>
                     </div>
@@ -112,14 +187,6 @@ const RegistroPrueba = ({ setUsuarioLogueado }) => {
                     <div className="carousel">
                         <div className="images-wrapper">
                             <img src="https://i.postimg.cc/gkcqYp33/1-removebg-preview.png" class="image img-1 show" alt="" />
-                        </div>
-
-                        <div className="text-slider">
-                            <div className="text-wrap">
-                                <div className="text-group">
-                                    <h2>Ingresar con</h2>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-/* registro prueba */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 *,
@@ -37,6 +34,7 @@ input {
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
 }
+
 
 .inner-box {
   position: absolute;
@@ -122,7 +120,7 @@ form.sign-up-form {
 .input-wrap {
   position: relative;
   height: 37px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .input-field {
@@ -136,18 +134,21 @@ form.sign-up-form {
   padding: 0;
   font-size: 0.95rem;
   color: #151111;
-  transition: 0.4s;
+
 }
 
-label {
+
+
+.label {
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.95rem;
-  color: #bbb;
+  transform: translateY(65%);
+  font-size: 0.75rem;
+  color: rgb(221, 32, 32);
   pointer-events: none;
   transition: 0.4s;
+  margin-top: 0.3rem;
 }
 
 .input-field.active {
@@ -169,6 +170,7 @@ label {
   cursor: pointer;
   border-radius: 0.8rem;
   font-size: 0.8rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
   transition: 0.3s;
 }
@@ -191,25 +193,9 @@ label {
   color: #59b256;
 }
 
-main.sign-up-mode form.sign-in-form {
-  opacity: 0;
-  pointer-events: none;
-}
 
-main.sign-up-mode form.sign-up-form {
-  opacity: 1;
-  pointer-events: all;
-}
 
-main.sign-up-mode .forms-wrap {
-  left: 55%;
-}
-
-main.sign-up-mode .carousel {
-  left: 0%;
-}
-
-.carousel {
+.carousel-login {
   position: absolute;
   height: 100%;
   width: 55%;
@@ -244,26 +230,8 @@ main.sign-up-mode .carousel {
   transform: none;
 }
 
-.text-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
-.text-wrap {
-  max-height: 2.2rem;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-}
 
-.text-group {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  transform: translateY(0);
-  transition: 0.5s;
-}
 
 .text-group h2 {
   line-height: 2.2rem;
@@ -271,28 +239,6 @@ main.sign-up-mode .carousel {
   font-size: 1.6rem;
 }
 
-.bullets {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bullets span {
-  display: block;
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: #aaa;
-  margin: 0 0.25rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* .bullets span.active {
-  width: 1.1rem;
-  background-color: #151111;
-  border-radius: 1rem;
-} */
 
 @media (max-width: 850px) {
   .box {
@@ -329,15 +275,8 @@ main.sign-up-mode .carousel {
     transform: translateX(100%);
   }
 
-  main.sign-up-mode form.sign-in-form {
-    transform: translateX(-100%);
-  }
 
-  main.sign-up-mode form.sign-up-form {
-    transform: translateX(0%);
-  }
-
-  .carousel {
+  .carousel-login {
     position: revert;
     height: auto;
     width: 100%;
@@ -349,9 +288,6 @@ main.sign-up-mode .carousel {
     display: none;
   }
 
-  .text-slider {
-    width: 100%;
-  }
 }
 
 @media (max-width: 530px) {
@@ -367,7 +303,7 @@ main.sign-up-mode .carousel {
     padding: 1rem;
   }
 
-  .carousel {
+  .carousel-login {
     padding: 1.5rem 1rem;
     border-radius: 1.6rem;
   }
