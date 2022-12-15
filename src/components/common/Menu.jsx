@@ -32,7 +32,7 @@ const navegacion = useNavigate();
             {
               usuarioLogueado.usuario ? (<>
               <Nav.Link to="/administrador" className="itemsNavb linknoMostrar">Administrar</Nav.Link>
-            <Nav.Link to="/registro" className="itemsNavb linknoMostrar">Registro</Nav.Link>
+            <Nav.Link to="/administrador/registro" className="itemsNavb linknoMostrar">Registro</Nav.Link>
             <Button variant="dark" onClick={logout}>LogOut</Button>
               </>): (
               <Nav.Link to="/login" className="itemsNavb linknoMostrar">LogIn</Nav.Link>)
