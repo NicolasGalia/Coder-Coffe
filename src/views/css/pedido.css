@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+
+
+.tituloPedido{
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+
+.containerPedido{
+
+    background-color: #F2DEA2;
+    border: 5px solid #244030;
+    color: black;
+    border-radius: 25px;
+}
+
+.rowTotal{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#botonCancelarPedido{
+    background-color: white;
+    border-radius: 25px;
+    color: #fa130b;
+    font-weight: bold;
+    border: #244030 1px solid;
+}
+
+#botonCancelarPedido:hover{
+    background-color: #fa130b;
+    color: white;
+    transition: 450ms;
+}
+
+
+
+#botonEnviarPedido{
+    background-color: white;
+    border-radius: 25px;
+    color: #ffd24c;
+    font-weight: bold;
+    border: #818C69 3px solid;
+}
+
+#botonEnviarPedido:hover{
+    background-color: #F2DEA2;
+    color: white;
+    transition: 450ms;
+}
