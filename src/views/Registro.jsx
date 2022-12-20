@@ -6,6 +6,9 @@ import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLog
 import Swal from "sweetalert2";
 import "../views/css/registro.css"
 
+import { consultarUsuario } from '../components/helpers/queriesLogin';
+
+
 const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -35,6 +38,7 @@ const Registro = () => {
     })
 
   }, [])
+
   return (
     <section className='mainLogin'>
       <div className="box">
@@ -45,6 +49,7 @@ const Registro = () => {
               <div className="logo">
                 <h4>Coder Coffee</h4>
               </div>
+
 
               <div className="heading">
                 <h2>Bienvenido</h2>
