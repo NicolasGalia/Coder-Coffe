@@ -1,7 +1,9 @@
 import Menu from "./components/common/Menu";
 import Footer from './components/common/Footer';
+import Inicio from "./views/Inicio";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import "../src/App.css"
 import DetalleProducto from "./views/DetalleProducto"
 import RutasAdmin from "./routes/RutasAdmin";
@@ -14,10 +16,12 @@ import Registro from "./views/Registro";
 function App() {
 
   const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
+
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
     <div className="App">
+
      // administramos las rutas
     <BrowserRouter>
       {/* aqui pongo un componente que aparece en todas las paginas */}
@@ -60,6 +64,8 @@ function App() {
       <Footer></Footer>
     </BrowserRouter>
 
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }

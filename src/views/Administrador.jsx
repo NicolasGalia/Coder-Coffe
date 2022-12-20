@@ -5,7 +5,9 @@ import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
+
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
+
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -96,9 +98,11 @@ const Administrador = () => {
                 key={usuario._id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
+
               ></ItemUsuarios>
             ))}
           </tbody>
+
         </Table>
       </section>
     </div>

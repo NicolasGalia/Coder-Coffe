@@ -12,7 +12,9 @@ const EditarProducto = () => {
   const navegacion = useNavigate();
 
   useEffect(()=>{
+    console.log(id)
     obtenerProductoAPI(id).then((respuesta)=>{
+      console.log(respuesta)
       if(respuesta.status === 200){
         setValue('nombreProducto', respuesta.dato.nombreProducto);
         setValue('precio', respuesta.dato.precio);
@@ -44,7 +46,7 @@ const EditarProducto = () => {
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">
-          <Form.Label>Nombre producto*</Form.Label>
+          <Form.Label>Nombre producto</Form.Label>
           <Form.Control 
           type="text" 
           placeholder="Ej: Cafe"

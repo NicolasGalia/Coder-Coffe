@@ -3,7 +3,7 @@ const URL = process.env.REACT_APP_API_CODER;
 export const consultarAPI = async () => {
   
   try {
-    const respuesta = await fetch(URL);
+    const respuesta = await fetch(URL + '/productos/cafe');
   
     const listaProductos = await respuesta.json();
     return listaProductos;
@@ -16,7 +16,7 @@ export const consultarAPI = async () => {
 export const crearProductoAPI = async (producto) => {
   
   try {
-    const respuesta = await fetch(URL, {
+    const respuesta = await fetch(URL+'/productos/cafe', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const crearProductoAPI = async (producto) => {
 
 export const obtenerProductoAPI = async(id)=>{
   try {
-      const respuesta = await fetch(URL+'/'+id);
+      const respuesta = await fetch(URL+'/productos/cafe/'+id);
       const producto={
           dato: await respuesta.json(),
           status: respuesta.status
@@ -48,7 +48,7 @@ export const obtenerProductoAPI = async(id)=>{
 
 export const borrarProductoAPI = async(id)=>{
   try {
-      const respuesta = await fetch(URL+'/'+id,{
+      const respuesta = await fetch(URL+'/productos/cafe/'+id,{
           method: "DELETE"          
       });
       return respuesta;
@@ -62,7 +62,7 @@ export const borrarProductoAPI = async(id)=>{
 export const editarProductoAPI = async(id, producto)=>{
 
   try {
-      const respuesta = await fetch(URL+'/'+id,{
+      const respuesta = await fetch(URL+'/productos/cafe/'+id,{
           method: "PUT",
           headers:{
               "Content-Type": "application/json"
@@ -71,7 +71,7 @@ export const editarProductoAPI = async(id, producto)=>{
       });
       return respuesta;
   } catch (error) {
-      console.log(error);
+    
       return false;
   }
 }
