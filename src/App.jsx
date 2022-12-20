@@ -13,41 +13,53 @@ import RutasAdmin from "./routes/RutasAdmin";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenCoderCoffe")) || {};
+
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Menu
-          usuarioLogueado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
-        ></Menu>
-        <Routes>
-          <Route
-            exact
-            path="/login"
-            element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
-          ></Route>
-          <Route exact path="/" element={<Inicio />}></Route>
-          <Route exact path="/Menu" element={<Menu />}></Route>
-          <Route exact path="/pedido" element={<PaginaPedido />}></Route>
-          <Route exact path="/Footer" element={<Footer />}></Route>
-          <Route exact path="/AcercaNosotros" element={<AboutUs />}></Route>
+     // administramos las rutas
+    <BrowserRouter>
+      {/* aqui pongo un componente que aparece en todas las paginas */}
+      <Menu
+        usuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
+      ></Menu>
+      {/* <Routes>
+        <Route exact path="/" element={<Inicio></Inicio>}></Route>
+        <Route
+          exact
+          path="/detalleProducto/:id"
+          element={<DetalleProducto></DetalleProducto>}
+        ></Route>
+        <Route
+          exact
+          path="/login"
+          element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
+        ></Route>
+        <Route
+          exact
+          path="/registro"
+          element={<Registro></Registro>}
+        ></Route> */}
+        {/* aqui quiero las rutas protegidas */}
+        {/* <Route
+          path="/administrador/*"
+          element={
+            <RutasProtegidas>
+              <RutasAdmin setUsuarioLogueado={setUsuarioLogueado}></RutasAdmin>
+            </RutasProtegidas>
+          }
+        ></Route>
+        <Route path="*" element={<Error404></Error404>}></Route>
+      </Routes> */}
 
-          {/* aqui van las rutas protegidas */}
-          <Route
-            path="/administrador/*"
-            element={
-              <RutasProtegidas>
-                <RutasAdmin
-                  setUsuarioLogueado={setUsuarioLogueado}
-                ></RutasAdmin>
-              </RutasProtegidas>
-            }
-          ></Route>
+      <Routes>
+        <Route exact path="/registro" element={<Registro></Registro>}></Route>
+      </Routes>
+      <Footer></Footer>
+    </BrowserRouter>
 
-          <Route exact path="*" element={<Error404 />}></Route>
-        </Routes>
 
         <Footer></Footer>
       </BrowserRouter>

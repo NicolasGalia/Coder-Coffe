@@ -22,11 +22,12 @@ const navegacion = useNavigate();
       
     <>
       {[false].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3 navbarPaginas">
+        <Navbar key={expand} expand={expand} className="navbarPaginas">
           <Container fluid>
-            <Navbar.Brand href="#"> 
+            <Navbar.Brand to="/"> 
             <img src={Logo} alt="Logo" className="logoNav"/>
             </Navbar.Brand>
+
             <Nav.Link to="/" className="itemsNavb linknoMostrar">Menú</Nav.Link>
             <Nav.Link to="/AcercaNosotros" className="itemsNavb linknoMostrar">Sobre nosotros</Nav.Link>
             {
@@ -39,6 +40,11 @@ const navegacion = useNavigate();
             }
            
             
+
+            <NavLink to="/" className="itemsNavb linknoMostrar navbar navbar-brand">Menú</NavLink>
+            <NavLink to="/AcercaNosotros" className="itemsNavb linknoMostrar navbar navbar-brand ">Sobre nosotros</NavLink>
+            <a href="https://drive.google.com/file/d/1ajTaX1qJBuMPvVPx5VHnTGcElgwL7Lzh/view?usp=sharing" className="itemsNavb linknoMostrar navbar navbar-brand">Menú Hamburguesas</a>
+
             
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -53,9 +59,9 @@ const navegacion = useNavigate();
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link to="/login">Iniciar Sesion</Nav.Link>
+                  <NavLink to="/login" className="nav-item nav-link">Iniciar Sesion</NavLink>
                   <NavLink end to="/registro" className="nav-item nav-link">Registro</NavLink>
-                  <Nav.Link to="/error404">Productos destacados</Nav.Link>
+                  <NavLink to="/error404" className="nav-item nav-link">Productos destacados</NavLink>
                   <NavDropdown
                     title="Menús del dia"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}

@@ -1,3 +1,4 @@
+
 import { Navigate } from "react-router-dom"
 
 const RutasProtegidas = ({children}) => {
@@ -8,6 +9,7 @@ if (!token){
 }else {
     return children;
 }
+
 };
 
 export default RutasProtegidas;
