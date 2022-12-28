@@ -46,6 +46,7 @@ const Registro = () => {
                 <h4>Coder Coffee</h4>
               </div>
 
+
               <div className="heading">
                 <h2>Bienvenido</h2>
                 <h6>Ya tienes una cuenta?</h6>

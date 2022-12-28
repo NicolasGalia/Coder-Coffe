@@ -13,6 +13,7 @@ import "../src/App.css"
 import Error404 from "./views/Error404";
 import Login from "./views/Login";
 import { useEffect, useState } from "react";
+import ItemUsuarios from "./views/adminUsuarios/itemUsuarios";
 
 
 function App() {
@@ -32,9 +33,11 @@ function App() {
     <Route exact path='/Menu' element={<Menu/>} ></Route>
     <Route exact path='/pedido' element={<PaginaPedido/>} ></Route>
     <Route exact path='/Footer' element={<Footer/>} ></Route>
+    <Route exact path='/itemUsuario' element={<ItemUsuarios/>} ></Route>
   <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
   <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
   <Route exact path='/Error404' element={<Error404/>}></Route>
+  <Route exact path='/Inicio' element={<Login/>}></Route>
   <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
     
 

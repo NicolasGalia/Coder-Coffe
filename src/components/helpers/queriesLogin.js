@@ -1,10 +1,9 @@
 const URL = process.env.REACT_APP_API_CODER_USUARIO;
 
 export const consultarUsuario = async () => {
-  // console.log(URL)
+
   try {
-    // peticion get para obtener listado de usuarios
-    const respuesta = await fetch(URL + "/auth");
+    const respuesta = await fetch(URL + "/auth/nuevo");
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -15,7 +14,7 @@ export const consultarUsuario = async () => {
 export const crearUsuario = async (usuario) => {
   console.log(usuario);
   try {
-    const respuesta = await fetch(URL + "/", {
+    const respuesta = await fetch(URL + "/auth/nuevo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +29,7 @@ export const crearUsuario = async (usuario) => {
 
 export const borrarUsuario = async (_id) => {
   try {
-    const respuesta = await fetch(URL + "/auth" + _id, {
+    const respuesta = await fetch(URL + "/auth/nuevo/" + _id, {
       method: "DELETE",
     });
     return respuesta;
@@ -43,7 +42,7 @@ export const borrarUsuario = async (_id) => {
 export const login = async (usuario) => {
   try {
     console.log(usuario);
-    const respuesta = await fetch(URL, {
+    const respuesta = await fetch(URL + "/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

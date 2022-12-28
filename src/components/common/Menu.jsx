@@ -18,9 +18,12 @@ const Menu = () => {
             <Navbar.Brand to="/"> 
             <img src={Logo} alt="Logo" className="logoNav"/>
             </Navbar.Brand>
+
             <NavLink to="/" className="itemsNavb linknoMostrar navbar navbar-brand">Menú</NavLink>
             <NavLink to="/AcercaNosotros" className="itemsNavb linknoMostrar navbar navbar-brand ">Sobre nosotros</NavLink>
             <a href="https://drive.google.com/file/d/1ajTaX1qJBuMPvVPx5VHnTGcElgwL7Lzh/view?usp=sharing" className="itemsNavb linknoMostrar navbar navbar-brand">Menú Hamburguesas</a>
+
+
             
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
