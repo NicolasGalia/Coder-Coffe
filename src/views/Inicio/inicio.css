@@ -1,36 +1,71 @@
 
-/* css cards */
-.containerProducto {
-    width: 22%;
-    padding: 10px;
+.item{
+  width: 300px;
+}
+  .item .img  img{
+    height: 320px;
+    transition: 0.5s;
+  }
+
+  .item .img{
+    background-image:linear-gradient(to top right, 
+  #fff, rgb(82, 177, 82)
+    ) ;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 20px 40px;
-    cursor: pointer;
+    align-items: center;
+    border-radius: 30px;
+    margin: 5px;
   }
-  
+
+  .item .content{
+    background-color: #ffffff24;
+    border-radius: 30px;
+    padding: 30px 30px;
+    transform: translate(0, -50px);
+    backdrop-filter: blur(20px);
+    color: black;
+  }
+
   .tituloProducto{
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(16, 128, 16);
-    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
-  .imgProducto{
-    border-radius: 15%;
+  .tituloProductoModal{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(16, 128, 16) ;
   }
-  .precioProducto {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666;
+  .precioProducto{
+    color:rgb(82, 177, 82) ;
+  }
+
+  .item .content .precioProducto {
+    font-size: large;
+  letter-spacing: 3px;
+    margin-bottom: 3px;
   }
   
-  .descripcionProducto {
-    text-align: center;
-    color: #777;
+  .item .content .descripcionProducto {
+    opacity: .7;
+    margin: 10px 0;
+    font-size: 15px;
   }
-  
+  .item .content .add{
+    background-color: rgb(16, 128, 16);
+    padding: 12px;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    margin: 10px;
+  }
+
+  .item:hover img{
+    transform: translate(0, -50px);
+  }
   @media screen and (max-width: 480px) {
     .containerProducto {
       width: 100%;
@@ -45,8 +80,7 @@
       font-size: 24px;
     }
   }
-  /* css cards */
-  /* css lista productos */
+ 
   .containerLista {
     padding: 20px 10px;
     display: flex;
@@ -73,6 +107,201 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  /* css menu */
+  .imgLogo{
+    width: 15rem;
+  }
+  
+  .plan-card {
+    background: #fff;
+    width: 15rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border-bottom: 4px solid #000446;
+    box-shadow: 0 6px 30px rgba(207, 212, 222, 0.3);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .plan-card h2 {
+    margin-bottom: 15px;
+    font-size: 27px;
+    font-weight: 600;
+  }
+  
+  .plan-card h2 span {
+    display: block;
+    margin-top: -4px;
+    color: #4d4d4d;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px;
+  }
+  
+  .etiquet-price {
+    position: relative;
+    background: #fdbd4a;
+    width: 14.46rem;
+    margin-left: -0.65rem;
+    padding: .2rem 1.2rem;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .etiquet-price p {
+    margin: 0;
+    padding-top: .4rem;
+    display: flex;
+    font-size: 1.9rem;
+    font-weight: 500;
+  }
+  
+  .etiquet-price p:before {
+    content: "$";
+    margin-right: 5px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .etiquet-price p:after {
+    content: "/ handle";
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .etiquet-price div {
+    position: absolute;
+    bottom: -23px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #c58102;
+    border-bottom: 10px solid transparent;
+    border-right: 13px solid transparent;
+    z-index: -6;
+  }
+  
+  .benefits-list {
+    margin-top: 16px;
+  }
+  
+  .benefits-list ul {
+    padding: 0;
+    font-size: 14px;
+  }
+  
+  .benefits-list ul li {
+    color: #4d4d4d;
+    list-style: none;
+    margin-bottom: .2rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  
+  .benefits-list ul li svg {
+    width: .9rem;
+    fill: currentColor;
+  }
+  
+  .benefits-list ul li span {
+    font-weight: 300;
+  }
+  
+  .button-get-plan {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+  }
+  
+  .button-get-plan a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000446;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: .8rem;
+    letter-spacing: .05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .divMenu{
+    background-color: #2D5940;
+  }
+  .imgLogo{
+    width: 100px;
+  }
+  .button-get-plan a:hover {
+    transform: translateY(-3%);
+    box-shadow: 0 3px 10px rgba(207, 212, 222, 0.9);
+  }
+  
+  .button-get-plan .svg-rocket {
+    margin-right: 10px;
+    width: .9rem;
+    fill: currentColor;
+  }
+  /* css menu */
+  .about-services{
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+
+.servicio-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-ind{
+    width: 25%;
+    text-align: center;
+}
+
+.servicio-ind img{
+    width: 90%;
+}
+
+.servicio-ind h3{
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.servicio-ind p{
+    font-weight: 300;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+  /* css menus media*/
+  @media screen and (max-width:900px){
+  .servicio-cont{
+    justify-content: center;
+    flex-direction: column;
+}
+
+.servicio-ind{
+    width: 70%;
+    text-align: center;
+}
+
+.servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+    margin-bottom: 60px;
+}
+
+.servicio-ind img{
+    width: 90%;
+}
+}
+
+  /* css menus */
+  /* css menu */
   
   @media screen and (max-width: 480px) {
     .tituloLista {
