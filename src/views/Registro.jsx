@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
 import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import "../views/css/registro.css"
-import logoBgTransparente from "../img/logoBgTransparent.png"
 
 const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
