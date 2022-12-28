@@ -10,7 +10,7 @@ const Error404 = () => {
             <img src={error} alt="error 404" className='w-100' />
             <div className='textoError'>
             <span>Lo sentimos, la pagina no se encuentra disponible</span>
-            <Link en to="/AcercaNosotros" type="button" className='btn btn-lg mb-5 botonError'> Inicio </Link>
+            <Link en to="/" type="button" className='btn btn-lg mb-5 botonError'> Inicio </Link>
             </div> 
         </div>
         </article>

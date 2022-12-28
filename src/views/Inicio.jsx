@@ -1,14 +1,15 @@
 
 import ListaProductos from './Inicio/ListaProductos';
 import Slider from './Inicio/Slider';
-import AboutUs from "./AboutUs";
+import Menu from './Inicio/Menu';
 
 const Inicio = () => {
 
   return (
     <div>
       <Slider></Slider>
-<ListaProductos></ListaProductos>
+      <ListaProductos></ListaProductos>
+      <Menu></Menu>
     </div>
   );
 };
