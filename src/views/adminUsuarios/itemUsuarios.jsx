@@ -38,14 +38,18 @@ const ItemUsuarios = ({ usuario, setUsuarios }) => {
 }
 
   return (
+
         
     <tr>
       <td>{userName}</td>
+
       <td>{email}</td>
       <td>Activo</td>
       
       <td className="text-center">
+
         <Button variant="danger" className=" mt-2 btn-sm btn-block" onClick={borrarUsuarioLogin}>
+
           Borrar Usuario
         </Button>
       </td>

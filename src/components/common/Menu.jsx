@@ -15,7 +15,9 @@ const Menu = () => {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="navbarPaginas">
           <Container fluid>
+
             <Navbar.Brand to="/"> 
+
             <img src={Logo} alt="Logo" className="logoNav"/>
             </Navbar.Brand>
 

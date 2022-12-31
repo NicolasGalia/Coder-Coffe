@@ -1,28 +1,41 @@
 import Menu from "./components/common/Menu";
-import Footer from './components/common/Footer';
-import Inicio from "./views/Inicio";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./components/common/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Administrador from "./views/Administrador";
-import Registro from "./views/Registro";
-import CrearProducto from "./views/adminproductos/CrearProducto";
-import EditarProducto from "./views/adminproductos/EditarProducto";
-import AboutUs from "./views/AboutUs";
-import PaginaPedido from "./views/PaginaPedido";
-import "../src/App.css"
-import Error404 from "./views/Error404";
+import "../src/App.css";
+import DetalleProducto from "./views/DetalleProducto";
+import RutasAdmin from "./routes/RutasAdmin";
+import Inicio from "./views/Inicio";
 import Login from "./views/Login";
+import RutasProtegidas from "./routes/RutasProtegidas";
+import Error404 from "./views/Error404";
+import Registro from "./views/Registro";
+import PaginaPedido from "./views/PaginaPedido";
+import "../src/App.css";
 import { useEffect, useState } from "react";
+
+import axios from "axios";
+
 import ItemUsuarios from "./views/adminUsuarios/itemUsuarios";
 
 
+
 function App() {
-  const usuario = JSON.parse(localStorage.getItem("tokenCoderCoffe")) || {};  
+  const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  
 
   return (
     <div className="App">
       <BrowserRouter>
+
+        <Menu
+          usuarioLogueado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        ></Menu>
+        <Routes>
+          <Route exact path="/" element={<Inicio></Inicio>}></Route>
+
       
       <Menu></Menu>
       <Routes>
@@ -43,24 +56,40 @@ function App() {
 
           <Route exact path="/Menu" element={<Menu />}></Route>
           <Route exact path="/Footer" element={<Footer />}></Route>
-          <Route
-            exact
-            path="/CrearProducto"
-            element={<CrearProducto />}
-          ></Route>
-          <Route
-            exact
-            path="/Administrador/EditarProducto/:id"
-            element={<EditarProducto />}
-          ></Route>
 
+          <Route
+            exact
+            path="/detalleProducto/:id"
+            element={<DetalleProducto></DetalleProducto>}
+          ></Route>
           <Route
             exact
             path="/login"
             element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
           ></Route>
+          <Route exact path="/registro" element={<Registro></Registro>}></Route>
+          <Route
+            exact
+            path="/pedidos"
+            element={<PaginaPedido></PaginaPedido>}
+          ></Route>
+          aqui quiero las rutas protegidas
+          <Route
+            path="/administrador/*"
+            element={
+              <RutasProtegidas>
+                <RutasAdmin
+                  setUsuarioLogueado={setUsuarioLogueado}
+                ></RutasAdmin>
+              </RutasProtegidas>
+            }
+          ></Route>
+          <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
 
+        <Routes>
+          <Route exact path="/registro" element={<Registro></Registro>}></Route>
+        </Routes>
         <Footer></Footer>
       </BrowserRouter>
     </div>

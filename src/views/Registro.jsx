@@ -22,6 +22,7 @@ const Registro = () => {
   }
   const [usuarios, setUsuarios] = useState([])
 
+
   useEffect(() => {
     consultarUsuario().then((respuesta) => {
       setUsuarios(respuesta)
@@ -45,7 +46,6 @@ const Registro = () => {
               <div className="logo">
                 <h4>Coder Coffee</h4>
               </div>
-
 
               <div className="heading">
                 <h2>Bienvenido</h2>
