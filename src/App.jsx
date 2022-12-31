@@ -13,10 +13,11 @@ import Registro from "./views/Registro";
 import PaginaPedido from "./views/PaginaPedido";
 import "../src/App.css";
 import { useEffect, useState } from "react";
-
-import axios from "axios";
-
 import ItemUsuarios from "./views/adminUsuarios/itemUsuarios";
+import Administrador from "../src/views/Administrador"
+import CrearProducto from "./views/adminproductos/CrearProducto";
+import AboutUs from "../src/views/AboutUs";
+import EditarProducto from "./views/adminproductos/EditarProducto";
 
 
 
@@ -28,17 +29,17 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-
-        <Menu
+      <Menu
           usuarioLogueado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         ></Menu>
-        <Routes>
-          <Route exact path="/" element={<Inicio></Inicio>}></Route>
-
-      
-      <Menu></Menu>
       <Routes>
+      
+        
+          <Route exact path="/" element={<Inicio></Inicio>}></Route>
+        
+      
+    
     
     <Route exact path='/' element={<Inicio/>}></Route>
     <Route exact path='/administrador' element={<Administrador/>}></Route>
@@ -85,9 +86,9 @@ function App() {
             }
           ></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
-        </Routes>
+        
 
-        <Routes>
+        
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
         </Routes>
         <Footer></Footer>
