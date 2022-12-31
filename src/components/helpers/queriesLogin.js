@@ -3,7 +3,9 @@ const URL = process.env.REACT_APP_API_CODER_USUARIO;
 export const consultarUsuario = async () => {
 
   try {
+
     const respuesta = await fetch(URL + "/auth/nuevo");
+
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -41,8 +43,10 @@ export const borrarUsuario = async (_id) => {
 
 export const login = async (usuario) => {
   try {
+
     console.log(usuario);
     const respuesta = await fetch(URL + "/auth", {
+
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,15 +54,22 @@ export const login = async (usuario) => {
       body: JSON.stringify(usuario),
     });
     const datos = await respuesta.json();
-    return {
+        return {
       status: respuesta.status,
       mensaje: datos.mensaje,
-      nombre: datos.nombre,
+      permiso: datos.permiso,
+      email: datos.email,
       token: datos.token,
-      uid: datos.uid,
+      _id: datos._id,
+      estado: datos.estado,
+      admin: datos.admin
     };
   } catch (error) {
     console.log("errores en el login");
     return;
   }
 };
+
+
+
+
