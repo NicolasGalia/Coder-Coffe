@@ -18,6 +18,7 @@ const PaginaPedido = () => {
     apellido: "Ross",
   };
 
+
   const [pedido, setPedido] = useState({});
 
   useEffect(() => {
@@ -123,6 +124,7 @@ const PaginaPedido = () => {
     
   };
 
+
   return (
     <Container>
       <h1 className="text-center mt-3 tituloPedido">Pedido</h1>
@@ -131,7 +133,9 @@ const PaginaPedido = () => {
           <h1 className="display-5 fs-5 text-center my-5">
             Aún no agrego ningun producto a su pedido
           </h1>
+
           {arregloPedido?.map((producto) => (
+
             <ItemProductoPedido
               key={producto._id}
               nombreProducto={producto.nombre}
@@ -139,23 +143,27 @@ const PaginaPedido = () => {
               id={producto._id}
               borrarProductoprop={borrarProducto}
             ></ItemProductoPedido>
-          ))}
+          ))} */}
         </ListGroup>
 
         <Row className="border-top border-dark bg-dark text-light rowTotal">
           <Col className="fs-4 display-1 ps-5 my-1" xs={9}>
             Total a pagar
           </Col>
+
           <Col className="fs-4 display-1 my-1">${pedido.total}</Col>
         </Row>
       </Container>
       <div className="d-flex justify-content-evenly my-3">
         <Button onClick={()=>vaciarPedido(true)} id="botonCancelarPedido" className="btn w-50 mx-3">
+
           Eliminar todos los productos
         </Button>
         <Button
           id="botonEnviarPedido"
+
           onClick={() =>{ enviarPedidoSweetAlert()}}
+
           className="btn w-50 mx-3"
         >
           Enviar pedido

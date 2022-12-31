@@ -57,10 +57,8 @@ const Administrador = () => {
         <Table responsive={"sm md"}>
           <thead className="text-light text-center">
             <tr>
-              <th>CODIGO</th>
               <th>PRODUCTO</th>
               <th>PRECIO</th>
-              <th>URL IMAGEN</th>
               <th>CATEGORIA</th>
               <th>ACCIONES</th>
             </tr>
@@ -84,10 +82,9 @@ const Administrador = () => {
         <Table responsive={"sm md"}>
           <thead className="text-light text-center">
             <tr>
-              <th>IDENTIFICADOR</th>
               <th>USUARIO</th>
               <th>EMAIL</th>
-              <th>ESTATUS</th>
+              <th>STATUS</th>
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
@@ -96,8 +93,10 @@ const Administrador = () => {
                 key={usuario._id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
-              ></ItemUsuarios>
-            ))}
+
+              ></ItemUsuarios> 
+            ))} 
+
           </tbody>
         </Table>
       </section>

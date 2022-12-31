@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { consultarUsuario } from "../../components/helpers/queriesLogin";
@@ -38,15 +38,18 @@ const ItemUsuarios = ({ usuario, setUsuarios }) => {
 }
 
   return (
+
+        
     <tr>
-      <td>{_id}</td>
       <td>{userName}</td>
 
       <td>{email}</td>
       <td>Activo</td>
       
       <td className="text-center">
-        <Button variant="danger" className=" mt-2" onClick={borrarUsuarioLogin}>
+
+        <Button variant="danger" className=" mt-2 btn-sm btn-block" onClick={borrarUsuarioLogin}>
+
           Borrar Usuario
         </Button>
       </td>

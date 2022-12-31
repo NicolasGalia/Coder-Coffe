@@ -13,7 +13,12 @@ import Registro from "./views/Registro";
 import PaginaPedido from "./views/PaginaPedido";
 import "../src/App.css";
 import { useEffect, useState } from "react";
+
 import axios from "axios";
+
+import ItemUsuarios from "./views/adminUsuarios/itemUsuarios";
+
+
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
@@ -23,12 +28,35 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+
         <Menu
           usuarioLogueado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         ></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
+
+      
+      <Menu></Menu>
+      <Routes>
+    
+    <Route exact path='/' element={<Inicio/>}></Route>
+    <Route exact path='/administrador' element={<Administrador/>}></Route>
+    <Route exact path='/registro' element={<Registro/>}></Route>
+    <Route exact path='/Menu' element={<Menu/>} ></Route>
+    <Route exact path='/pedido' element={<PaginaPedido/>} ></Route>
+    <Route exact path='/Footer' element={<Footer/>} ></Route>
+    <Route exact path='/itemUsuario' element={<ItemUsuarios/>} ></Route>
+  <Route exact path='/CrearProducto' element={<CrearProducto/>}></Route>
+  <Route exact path='/AcercaNosotros' element={<AboutUs/>}></Route>
+  <Route exact path='/Error404' element={<Error404/>}></Route>
+  <Route exact path='/Inicio' element={<Login/>}></Route>
+  <Route exact path='/Administrador/EditarProducto/:id' element={<EditarProducto/>}></Route>
+    
+
+          <Route exact path="/Menu" element={<Menu />}></Route>
+          <Route exact path="/Footer" element={<Footer />}></Route>
+
           <Route
             exact
             path="/detalleProducto/:id"

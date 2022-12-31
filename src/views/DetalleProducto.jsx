@@ -1,3 +1,4 @@
+
 import { Container, Button, Modal, Card } from "react-bootstrap";
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
@@ -25,3 +26,4 @@ const DetalleProducto = () => {
 };
 
 export default DetalleProducto;
+
