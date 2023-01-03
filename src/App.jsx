@@ -13,10 +13,11 @@ import Registro from "./views/Registro";
 import PaginaPedido from "./views/PaginaPedido";
 import "../src/App.css";
 import { useEffect, useState } from "react";
-
-import axios from "axios";
-
 import ItemUsuarios from "./views/adminUsuarios/itemUsuarios";
+import Administrador from "./views/Administrador";
+import CrearProducto from "./views/adminproductos/CrearProducto";
+import AboutUs from "./views/AboutUs"
+import EditarProducto from "./views/adminproductos/EditarProducto";
 
 
 
@@ -33,11 +34,6 @@ function App() {
           usuarioLogueado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         ></Menu>
-        <Routes>
-          <Route exact path="/" element={<Inicio></Inicio>}></Route>
-
-      
-      <Menu></Menu>
       <Routes>
     
     <Route exact path='/' element={<Inicio/>}></Route>

@@ -143,7 +143,7 @@ const PaginaPedido = () => {
               id={producto._id}
               borrarProductoprop={borrarProducto}
             ></ItemProductoPedido>
-          ))} */}
+          ))} 
         </ListGroup>
 
         <Row className="border-top border-dark bg-dark text-light rowTotal">
