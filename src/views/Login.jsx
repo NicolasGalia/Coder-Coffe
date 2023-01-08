@@ -18,7 +18,11 @@ const Login = ({ setUsuarioLogueado }) => {
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
       console.log(respuesta);
-      if (respuesta.token) {
+      if (respuesta) {
+        let respuesta2 = {
+            ...respuesta,
+            email: datos.email
+        }
         Swal.fire(
           "Bienvenido",
           `Gracias por contar con nosotros, ${datos.email}`,
@@ -26,8 +30,9 @@ const Login = ({ setUsuarioLogueado }) => {
         );
         localStorage.setItem(
           "tokenCoderCofee",
-          JSON.stringify(respuesta)
+          JSON.stringify(respuesta2)
         );
+        console.log(respuesta2)
         setUsuarioLogueado(respuesta)
 
         navigate("/");

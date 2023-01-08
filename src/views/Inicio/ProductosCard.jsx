@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import "./inicio.css"
 // import { agregarProductoPedido } from '../../components/helpers/queriesPedido';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -29,6 +30,11 @@ const ProductosCard = ({producto, actualizarPedidoprops}) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const agregarYCerrar = (producto, precio)=>{
+    handleClose()
+    actualizarPedidoprops(producto, precio)
+  }
+
     return (
       <>
         <div className="item">
@@ -50,7 +56,7 @@ const ProductosCard = ({producto, actualizarPedidoprops}) => {
         <Modal.Body>{producto.categoria}</Modal.Body>
         <Modal.Body className="fs-3 precioProducto" >${producto.precio}</Modal.Body>
         <Modal.Footer>
-          <Button variant="success" onClick={()=>{actualizarPedidoprops(producto.nombreProducto, producto.precio)}}>
+          <Button variant="success" onClick={()=>agregarYCerrar(producto.nombreProducto, producto.precio)}>
             Agregal al <i class="bi bi-cart3"></i>
           </Button>
         </Modal.Footer>

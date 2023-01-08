@@ -11,15 +11,13 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const PaginaPedido = () => {
-  // USUARIO FALSO BORRAR
-  const usuarioFalso = {
-    nombreUsuario: "Edu",
-    idUsuario: 5484212,
-    apellido: "Ross",
-  };
-
 
   const [pedido, setPedido] = useState({});
+
+  let logueado = localStorage.getItem('tokenCoderCofee')
+  let logueadoparse = JSON.parse(logueado)
+
+  console.log(logueadoparse)
 
   useEffect(() => {
     getPedido();
@@ -30,7 +28,7 @@ const PaginaPedido = () => {
       `${process.env.REACT_APP_API_CODER}/pedidos`,
       {
         params: {
-          nombreUsuario: usuarioFalso.nombreUsuario,
+          email: logueadoparse.email,
         },
       }
     );
@@ -45,7 +43,7 @@ const PaginaPedido = () => {
     );
     const pedidoActualizado = {
       _id: pedido._id,
-      nombreUsuario: pedido.nombreUsuario,
+      email: pedido.email,
       pedido: productosActualizados,
       total: pedido.total - precio,
     };
@@ -53,7 +51,7 @@ const PaginaPedido = () => {
   };
 
   let pedidoListoParaEnviar = {
-    nombreUsuario: pedido.nombreUsuario,
+    email: pedido.email,
     pedido: arregloPedido,
     total: pedido.total,
   };
@@ -102,7 +100,7 @@ const PaginaPedido = () => {
           )
           const pedidoVacio = {
             _id: pedido._id,
-            nombreUsuario: pedido.nombreUsuario,
+            email: pedido.email,
             pedido: [],
             total: 0,
           };
@@ -114,7 +112,7 @@ const PaginaPedido = () => {
     else{
       const pedidoVacio = {
         _id: pedido._id,
-        nombreUsuario: pedido.nombreUsuario,
+        email: pedido.email,
         pedido: [],
         total: 0,
       };

@@ -83,9 +83,6 @@ function App() {
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
 
-        <Routes>
-          <Route exact path="/registro" element={<Registro></Registro>}></Route>
-        </Routes>
         <Footer></Footer>
       </BrowserRouter>
     </div>
