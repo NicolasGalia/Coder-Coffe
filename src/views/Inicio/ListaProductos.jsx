@@ -32,15 +32,16 @@ const ListaProductos = () => {
 
 
   const getPedido = async () => {
-    const pedido = await axios.get(
+    const pedidoGET = await axios.get(
       `${process.env.REACT_APP_API_CODER}/pedidos/`, {
           params: {
             nombreUsuario: usuarioFalso.nombreUsuario
           }
         }
     );
-    setPedido(pedido.data);
+    setPedido(pedidoGET.data);
   };
+  
 
   let actualizarPedido = (producto, precio) => {
 
@@ -52,6 +53,7 @@ const ListaProductos = () => {
         __v: pedido.__v,
       };
       setPedido(pedidoActualizado);
+      console.log(pedidoActualizado)
       editarPedidoBD(pedido._id, pedidoActualizado)
       Swal.fire({
         position: 'bottom-end',

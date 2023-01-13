@@ -14,9 +14,9 @@ import PaginaPedido from "./views/PaginaPedido";
 import "../src/App.css";
 import { useEffect, useState } from "react";
 import ItemUsuarios from "./views/adminUsuarios/itemUsuarios";
-import Administrador from "../src/views/Administrador"
+import Administrador from "./views/Administrador";
 import CrearProducto from "./views/adminproductos/CrearProducto";
-import AboutUs from "../src/views/AboutUs";
+import AboutUs from "./views/AboutUs"
 import EditarProducto from "./views/adminproductos/EditarProducto";
 
 
@@ -25,22 +25,17 @@ function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   
-
+}
   return (
     <div className="App">
       <BrowserRouter>
+      <Routes>
       <Menu
           usuarioLogueado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         ></Menu>
-      <Routes>
-      
-        
-          <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        
-      
-    
-    
+  </Routes>    
+  <Routes>
     <Route exact path='/' element={<Inicio/>}></Route>
     <Route exact path='/administrador' element={<Administrador/>}></Route>
     <Route exact path='/registro' element={<Registro/>}></Route>
@@ -86,15 +81,12 @@ function App() {
             }
           ></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
-        
+          </Routes>
 
-        
-          <Route exact path="/registro" element={<Registro></Registro>}></Route>
-        </Routes>
         <Footer></Footer>
       </BrowserRouter>
     </div>
   );
-}
+
 
 export default App;
