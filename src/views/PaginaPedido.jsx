@@ -17,7 +17,6 @@ const PaginaPedido = () => {
   let logueado = localStorage.getItem('tokenCoderCofee')
   let logueadoparse = JSON.parse(logueado)
 
-  console.log(logueadoparse)
 
   useEffect(() => {
     getPedido();
@@ -55,6 +54,8 @@ const PaginaPedido = () => {
     pedido: arregloPedido,
     total: pedido.total,
   };
+
+  console.log(pedidoListoParaEnviar)
 
   const enviarPedidoSweetAlert = ()=>{
     Swal.fire({
