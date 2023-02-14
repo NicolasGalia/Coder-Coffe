@@ -29,8 +29,10 @@ const Administrador = () => {
     );
   }, []);
 
+  
   const [usuarios, setUsuarios] = useState([]);
   const [listaPedido, setListaPedido] = useState([]);
+
   useEffect(() => {
     consultarUsuario().then(
       (respuesta) => {
@@ -131,12 +133,10 @@ const Administrador = () => {
           </thead>
           <tbody className="fw-bold text-center">
             {listaPedido.map((pedido) => (
-              <pedidoAdmin
-                email={pedido.email}
-                key={pedido._id}
-                pedido={pedido.pedido}
-                total={pedido.total}
-              ></pedidoAdmin>
+              <pedidoAdmin email={pedido.email}
+              key={pedido._id}
+              pedido={pedido.pedido}
+              total={pedido.total}></pedidoAdmin>
             ))}
           </tbody>
         </Table>

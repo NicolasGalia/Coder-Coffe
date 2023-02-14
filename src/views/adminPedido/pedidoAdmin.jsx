@@ -1,7 +1,9 @@
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
-const pedidoAdmin = ({ email, pedido, total }) => {
+import React from "react";
+
+const pedidoAdmin = ({email, total, pedido}) => {
   return (
     <tr>
       <td>{email}</td>
