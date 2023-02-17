@@ -1,15 +1,18 @@
 const URL = process.env.REACT_APP_API_CODER_PEDIDO
 
 
-export const consultarPedido = async () => {
-    try {
-      const respuesta = await fetch(URL);
-      const pedido = await respuesta.json();
-      return pedido;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+export const consultarPedidoTodos = async () => {
+
+  try {
+
+    const respuesta = await fetch(URL + "/todos");
+
+    const listaPedido = await respuesta.json();
+    return listaPedido;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
 
@@ -47,4 +50,17 @@ export const consultarPedido = async () => {
         console.log(error);
     }
   
+  };
+
+  export const consultarTodosPedido = async () => {
+  
+    try {
+      const respuesta = await fetch(URL + '/productos/cafe');
+    
+      const listaProductos = await respuesta.json();
+      return listaProductos;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   };

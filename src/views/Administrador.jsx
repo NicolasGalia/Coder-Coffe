@@ -6,9 +6,8 @@ import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
-import { consultarPedido } from "../components/helpers/queriesPedido";
-import ItemProductoPedido from "../views/productoPedido/ItemProductoPedido";
-
+import { consultarPedidoTodos } from "../components/helpers/queriesPedido";
+import pedidoAdmin from "./adminPedido/pedidoAdmin";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
@@ -30,11 +29,28 @@ const Administrador = () => {
     );
   }, []);
 
+  
   const [usuarios, setUsuarios] = useState([]);
+  const [listaPedido, setListaPedido] = useState([]);
+
   useEffect(() => {
     consultarUsuario().then(
       (respuesta) => {
         setUsuarios(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
+
+        swal.fire(
+          "Ocurrio un error",
+          "Intentelo nuevamente en unos minutos",
+          "error"
+        );
+      }
+    );
+    consultarPedidoTodos().then(
+      (respuesta) => {
+        setListaPedido(respuesta);
       },
       (reason) => {
         console.log(reason);
@@ -111,15 +127,36 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody className="fw-bold text-center">
-          {usuarios.map((usuario) => (
+            {usuarios.map((usuario) => (
               <ItemUsuarios
                 key={usuario._id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
-
-              ></ItemUsuarios> 
-            ))} 
-
+              ></ItemUsuarios>
+            ))}
+          </tbody>
+        </Table>
+      </section>
+      <section className="container  boxAdmin p-2 my-5 mainSection">
+        <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
+          <h1 className="display-6 tituloAdmin ">PEDIDOS EN CARRITO</h1>
+        </div>
+        <hr />
+        <Table responsive={"sm md"}>
+          <thead className="text-light text-center">
+            <tr>
+              <th>EMAIL</th>
+              <th>PRODUCTOS</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody className="fw-bold text-center">
+            {listaPedido.map((pedido) => (
+              <pedidoAdmin email={pedido.email}
+              key={pedido._id}
+              pedido={pedido.pedido}
+              total={pedido.total}></pedidoAdmin>
+            ))}
           </tbody>
         </Table>
       </section>
