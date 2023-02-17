@@ -12,12 +12,11 @@ import Swal from "sweetalert2";
 
 const PaginaPedido = () => {
 
-  const [pedido, setPedido] = useState({});
+  const [pedido, setPedido] = useState([]);
 
   let logueado = localStorage.getItem('tokenCoderCofee')
   let logueadoparse = JSON.parse(logueado)
 
-  console.log(logueadoparse)
 
   useEffect(() => {
     getPedido();
@@ -25,14 +24,15 @@ const PaginaPedido = () => {
 
   const getPedido = async () => {
     const pedido = await axios.get(
-      `${process.env.REACT_APP_API_CODER}/pedidos`,
-      {
+      `${process.env.REACT_APP_API_CODER}`,
+      [{
         params: {
           email: logueadoparse.email,
         },
-      }
+      }]
     );
     setPedido(pedido.data);
+    
   };
 
   let arregloPedido = pedido.pedido;

@@ -3,7 +3,7 @@ const URL = process.env.REACT_APP_API_CODER_PEDIDO
 
 export const consultarPedido = async () => {
     try {
-      const respuesta = await fetch(URL + "/pedido");
+      const respuesta = await fetch(URL);
       const pedido = await respuesta.json();
       return pedido;
     } catch (error) {
@@ -32,7 +32,7 @@ export const consultarPedido = async () => {
 
 
 
-  export const enviarPedido = async (pedido,id) => {
+  export const enviarPedido = async (pedido) => {
     console.log(pedido);
     try {
       const respuesta = await fetch(URL, {

@@ -6,6 +6,10 @@ import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
+import { consultarPedido } from "../components/helpers/queriesPedido";
+import ItemProductoPedido from "../views/productoPedido/ItemProductoPedido";
+
+
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
@@ -43,6 +47,25 @@ const Administrador = () => {
       }
     );
   }, []);
+  const [pedido, setPedido] = useState([]);
+  useEffect(() => {
+    consultarPedido().then(
+      (respuesta) => {
+        console.log(respuesta)
+        setPedido(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
+
+        swal.fire(
+          "Ocurrio un error",
+          "Intentelo nuevamente en unos minutos",
+          "error"
+        );
+      }
+    );
+  }, []);
+  console.log(pedido)
 
   return (
     <div className="mainSection my-5 container">
@@ -100,6 +123,34 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
+
+      <section className="container  boxAdmin p-2 my-5 mainSection">
+        <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
+          <h1 className="display-6 tituloAdmin ">PEDIDOS</h1>
+        </div>
+        <hr />
+        <Table responsive={"sm md"}>
+          <thead className="text-light text-center">
+            <tr>
+              <th>PEDIDO</th>
+              <th>CANTIDAD</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody className="fw-bold text-center">
+          {pedido.map((pedido) => (
+              <ItemProductoPedido
+                key={pedido._id}
+                pedido={nombreProducto}
+                setPedido={setPedido}
+
+              ></ItemProductoPedido> 
+            ))} 
+
+          </tbody>
+        </Table>
+      </section>
+
     </div>
   );
 };

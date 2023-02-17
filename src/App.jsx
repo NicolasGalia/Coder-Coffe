@@ -25,16 +25,16 @@ function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenCafeBenito")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   
-}
+
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
+      
       <Menu
           usuarioLogueado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         ></Menu>
-  </Routes>    
+    
   <Routes>
     <Route exact path='/' element={<Inicio/>}></Route>
     <Route exact path='/administrador' element={<Administrador/>}></Route>
@@ -88,5 +88,5 @@ function App() {
     </div>
   );
 
-
+}
 export default App;
