@@ -5,7 +5,7 @@ export const consultarPedidoTodos = async () => {
 
   try {
 
-    const respuesta = await fetch(URL + "/todos");
+    const respuesta = await fetch(URL);
 
     const listaPedido = await respuesta.json();
     return listaPedido;
@@ -17,7 +17,7 @@ export const consultarPedidoTodos = async () => {
 
 
   export const editarPedidoBD = async(id, pedido)=>{
-
+console.log(id)
     try {
         const respuesta = await fetch(URL+"/"+id,{
             method: "PUT",

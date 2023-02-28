@@ -32,6 +32,7 @@ const Administrador = () => {
   
   const [usuarios, setUsuarios] = useState([]);
   const [listaPedido, setListaPedido] = useState([]);
+  const [pedido, setPedido] = useState([]);
 
   useEffect(() => {
     consultarUsuario().then(
@@ -63,25 +64,6 @@ const Administrador = () => {
       }
     );
   }, []);
-  const [pedido, setPedido] = useState([]);
-  useEffect(() => {
-    consultarPedido().then(
-      (respuesta) => {
-        console.log(respuesta)
-        setPedido(respuesta);
-      },
-      (reason) => {
-        console.log(reason);
-
-        swal.fire(
-          "Ocurrio un error",
-          "Intentelo nuevamente en unos minutos",
-          "error"
-        );
-      }
-    );
-  }, []);
-  console.log(pedido)
 
   return (
     <div className="mainSection my-5 container">
@@ -161,7 +143,7 @@ const Administrador = () => {
         </Table>
       </section>
 
-      <section className="container  boxAdmin p-2 my-5 mainSection">
+      {/* <section className="container  boxAdmin p-2 my-5 mainSection">
         <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
           <h1 className="display-6 tituloAdmin ">PEDIDOS</h1>
         </div>
@@ -186,7 +168,7 @@ const Administrador = () => {
 
           </tbody>
         </Table>
-      </section>
+      </section> */}
 
     </div>
   );

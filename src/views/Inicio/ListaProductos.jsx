@@ -48,13 +48,13 @@ const ListaProductos = () => {
       let pedidoActualizado = {
         _id: pedido._id,
         nombreUsuario: pedido.nombreUsuario,
-        pedido: [...pedido.pedido, { nombre: producto, precio: precio }],
+        pedido: [{ nombre: producto, precio: precio }],
         total: pedido.total + precio,
         __v: pedido.__v,
       };
       setPedido(pedidoActualizado);
       console.log(pedidoActualizado)
-      editarPedidoBD(pedido._id, pedidoActualizado)
+      // editarPedidoBD(pedido._id, pedidoActualizado)
       Swal.fire({
         position: 'bottom-end',
         icon: 'success',
