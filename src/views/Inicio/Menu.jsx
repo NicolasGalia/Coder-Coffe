@@ -1,8 +1,4 @@
 import React from 'react';
-
-
-
-
 const Menu = () => {
   return (
     <div  class="carousel slide mb-3">

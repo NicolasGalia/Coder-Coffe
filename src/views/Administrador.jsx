@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
 import ItemProducto from "./adminproductos/ItemProducto";
 import { consultarAPI } from "../components/helpers/queries";
 import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
 import { consultarPedidoTodos } from "../components/helpers/queriesPedido";
-import pedidoAdmin from "./adminPedido/pedidoAdmin";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
@@ -29,10 +31,8 @@ const Administrador = () => {
     );
   }, []);
 
-  
   const [usuarios, setUsuarios] = useState([]);
   const [listaPedido, setListaPedido] = useState([]);
-  const [pedido, setPedido] = useState([]);
 
   useEffect(() => {
     consultarUsuario().then(
@@ -119,57 +119,33 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <section className="container  boxAdmin p-2 my-5 mainSection">
-        <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
-          <h1 className="display-6 tituloAdmin ">PEDIDOS EN CARRITO</h1>
+      <section className="container boxAdmin p-2 my-5">
+        <div className="d-flex justify-content-between align-items-center mt-5 ps-3 pe-3">
+          <h1 className="display-6 tituloAdmin">PEDIDOS EN CARRITO</h1>
         </div>
         <hr />
-        <Table responsive={"sm md"}>
-          <thead className="text-light text-center">
-            <tr>
-              <th>EMAIL</th>
-              <th>PRODUCTOS</th>
-              <th>TOTAL</th>
-            </tr>
-          </thead>
-          <tbody className="fw-bold text-center">
-            {listaPedido.map((pedido) => (
-              <pedidoAdmin email={pedido.email}
-              key={pedido._id}
-              pedido={pedido.pedido}
-              total={pedido.total}></pedidoAdmin>
-            ))}
-          </tbody>
-        </Table>
       </section>
-
-      {/* <section className="container  boxAdmin p-2 my-5 mainSection">
-        <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
-          <h1 className="display-6 tituloAdmin ">PEDIDOS</h1>
+      <div className="container">
+        <div className="row">
+          {listaPedido.map((pedido) => (
+            <Card style={{ width: "18rem" }} className="m-3">
+              <Card.Body>
+                <Card.Title>Usuario: {pedido.email}</Card.Title>
+                <Card.Text>
+                  <ul>
+                    {pedido.pedido.map((p) => (
+                      <li>{`${p.nombre} -- Precio: ${p.precio}`}</li>
+                    ))}
+                  </ul>
+                  <Button key={pedido.id} variant="primary">
+                    Total <Badge bg="secondary">{pedido.total}</Badge>
+                  </Button>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
         </div>
-        <hr />
-        <Table responsive={"sm md"}>
-          <thead className="text-light text-center">
-            <tr>
-              <th>PEDIDO</th>
-              <th>CANTIDAD</th>
-              <th>STATUS</th>
-            </tr>
-          </thead>
-          <tbody className="fw-bold text-center">
-          {pedido.map((pedido) => (
-              <ItemProductoPedido
-                key={pedido._id}
-                pedido={nombreProducto}
-                setPedido={setPedido}
-
-              ></ItemProductoPedido> 
-            ))} 
-
-          </tbody>
-        </Table>
-      </section> */}
-
+      </div>
     </div>
   );
 };

@@ -11,8 +11,6 @@ let usuarioFalso = {
     nombreUsuario: "Edu",
     idUsuario: 5484212,
     apellido: "Ross"
-
-
 }
 
 const ListaProductos = () => {
@@ -44,25 +42,36 @@ const ListaProductos = () => {
   
 
   let actualizarPedido = (producto, precio) => {
-
-      let pedidoActualizado = {
-        _id: pedido._id,
-        nombreUsuario: pedido.nombreUsuario,
-        pedido: [{ nombre: producto, precio: precio }],
-        total: pedido.total + precio,
-        __v: pedido.__v,
-      };
-      setPedido(pedidoActualizado);
-      console.log(pedidoActualizado)
-      // editarPedidoBD(pedido._id, pedidoActualizado)
-      Swal.fire({
-        position: 'bottom-end',
-        icon: 'success',
-        title: 'Producto añadido al pedido',
-        showConfirmButton: false,
-        width: 300,
-        timer: 1500
-      })
+      const token = localStorage.getItem('tokenCoderCofee')
+      if (token) {
+        let pedidoActualizado = {
+          _id: pedido._id,
+          nombreUsuario: pedido.nombreUsuario,
+          pedido: [{ nombre: producto, precio: precio }],
+          total: pedido.total + precio,
+          __v: pedido.__v,
+        };
+        setPedido(pedidoActualizado);
+        console.log(pedidoActualizado)
+        // editarPedidoBD(pedido._id, pedidoActualizado)
+        Swal.fire({
+          position: 'bottom-end',
+          icon: 'success',
+          title: 'Producto añadido al pedido',
+          showConfirmButton: false,
+          width: 300,
+          timer: 1500
+        })
+      } else {
+        Swal.fire({
+          position: 'bottom-end',
+          icon: 'warning',
+          title: 'Registrate para hacer el pedido',
+          showConfirmButton: false,
+          width: 300,
+          timer: 1500
+        })
+      }
 
   };
 

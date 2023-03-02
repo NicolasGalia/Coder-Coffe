@@ -17,12 +17,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      console.log(respuesta);
-      if (respuesta) {
-        let respuesta2 = {
-            ...respuesta,
-            email: datos.email
-        }
+      if (respuesta.token) {
         Swal.fire(
           "Bienvenido",
           `Gracias por contar con nosotros, ${datos.email}`,
@@ -30,9 +25,9 @@ const Login = ({ setUsuarioLogueado }) => {
         );
         localStorage.setItem(
           "tokenCoderCofee",
-          JSON.stringify(respuesta2)
+          JSON.stringify(respuesta.token)
         );
-        console.log(respuesta2)
+        console.log(respuesta);
         setUsuarioLogueado(respuesta)
 
         navigate("/");
@@ -40,7 +35,7 @@ const Login = ({ setUsuarioLogueado }) => {
       } else {
         Swal.fire(
           "Error",
-          `Contraseña incorrecta, vuelva a intentarlo`,
+          `Credenciales inválidas, vuelva a intentarlo`,
           "error"
         );
       }
