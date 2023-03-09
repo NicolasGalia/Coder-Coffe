@@ -17,7 +17,6 @@ const ListaProductos = () => {
     const [productos, setProductos] = useState([]);
     const [pedido, setPedido] = useState();
     
-    
     useEffect(() =>{
         const getProdutos = async () =>{
             const {data} = await axios.get(`${process.env.REACT_APP_API_CODER}/productos/cafe`);
@@ -26,7 +25,6 @@ const ListaProductos = () => {
         getProdutos();
         getPedido();
     }, []);
-
 
 
   const getPedido = async () => {
@@ -52,7 +50,6 @@ const ListaProductos = () => {
           __v: pedido.__v,
         };
         setPedido(pedidoActualizado);
-        console.log(pedidoActualizado)
         // editarPedidoBD(pedido._id, pedidoActualizado)
         Swal.fire({
           position: 'bottom-end',
@@ -91,7 +88,7 @@ const ListaProductos = () => {
         {productos.map((p) => (
           <ProductosCard
             actualizarPedidoprops={actualizarPedido}
-            producto={p}
+            itemProducto={p}
             key={p._id}
           />
         ))}

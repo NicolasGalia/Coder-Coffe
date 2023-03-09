@@ -3,6 +3,10 @@ import Slider from './Inicio/Slider';
 import Menu from './Inicio/Menu';
 
 const Inicio = () => {
+  const carrito = JSON.parse(localStorage.getItem('shopping-cart'));
+  if (!carrito) {
+    localStorage.setItem('shopping-cart', JSON.stringify([]))
+  }
 
   return (
     <div>

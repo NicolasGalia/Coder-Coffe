@@ -23,26 +23,33 @@ import axios from 'axios';
       //<button className='btn btnCard col btn-warning'>ver detalles</button>
       //</div>
 
-const ProductosCard = ({producto, actualizarPedidoprops}) => {
-
+const ProductosCard = ({itemProducto, actualizarPedidoprops}) => {
   const [show, setShow] = useState(false);
-
+  let carrito = JSON.parse(localStorage.getItem('shopping-cart'));
+  console.log(carrito)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const agregarYCerrar = (producto, precio)=>{
+  const agregarYCerrar = (producto)=>{
     handleClose()
-    actualizarPedidoprops(producto, precio)
+    const findProduct = carrito.find(p => p.nombreProducto === producto.nombreProducto)
+    if (findProduct) {
+      carrito = carrito.map(p => p._id === findProduct._id ? {...p, quantity: p.quantity + 1} : p)
+    } else {
+      carrito.push({...producto, quantity: 1});
+    }
+    localStorage.setItem('shopping-cart', JSON.stringify(carrito))
+    actualizarPedidoprops(producto.nombreProducto, producto.precio)
   }
 
     return (
       <>
         <div className="item">
           <div className='img'>
-          <img src={producto.imagen} alt="producto"/>
+          <img src={itemProducto.imagen} alt="producto"/>
           </div>
       <div className='content'>
-      <h3 className="tituloProducto m-3">{producto.nombreProducto}</h3>
+      <h3 className="tituloProducto m-3">{itemProducto.nombreProducto}</h3>
       <Button className="add" onClick={handleShow}>
         Ver detalles
       </Button>
@@ -51,12 +58,12 @@ const ProductosCard = ({producto, actualizarPedidoprops}) => {
       </div> 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="tituloProductoModal fs-2">{producto.nombreProducto}</Modal.Title>
+          <Modal.Title className="tituloProductoModal fs-2">{itemProducto.nombreProducto}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{producto.categoria}</Modal.Body>
-        <Modal.Body className="fs-3 precioProducto" >${producto.precio}</Modal.Body>
+        <Modal.Body>{itemProducto.categoria}</Modal.Body>
+        <Modal.Body className="fs-3 precioProducto" >${itemProducto.precio}</Modal.Body>
         <Modal.Footer>
-          <Button variant="success" onClick={()=>agregarYCerrar(producto.nombreProducto, producto.precio)}>
+          <Button variant="success" onClick={()=>agregarYCerrar(itemProducto)}>
             Agregal al <i class="bi bi-cart3"></i>
           </Button>
         </Modal.Footer>
