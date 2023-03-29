@@ -1,8 +1,30 @@
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useState } from 'react';
+import { enviarPedido } from '../helpers/queriesPedido';
+
 
 const ModalCustom = ({show, handleClose, title, data}) => {
+  
+  const [show1, setShow] = useState(false);
+  let [carritoCerrado, setCarritoCerrado] = useState(false);
+
+  const cerrarCarrito = async () => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    const pedido = {
+      nombreUsuario: user.email,
+      pedido: data.map(producto => ({nombre: producto.nombreProducto, precio: producto.precio, catidad: producto.quantity})),
+      total: data.reduce((acc,curr) => acc + curr.precio * curr.quantity, 0),
+    }
+    try {
+      await enviarPedido(pedido);
+    } catch (error) {
+      
+    }
+    setShow(false);
+  };
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -32,10 +54,10 @@ const ModalCustom = ({show, handleClose, title, data}) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Close
+          Cerrar
         </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
+        <Button variant="primary" onClick={cerrarCarrito}>
+          Comprar
         </Button>
       </Modal.Footer>
     </Modal>

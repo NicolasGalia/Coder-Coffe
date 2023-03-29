@@ -55,14 +55,9 @@ export const login = async (usuario) => {
     });
     const datos = await respuesta.json();
         return {
-      status: respuesta.status,
       mensaje: datos.mensaje,
-      permiso: datos.permiso,
-      email: datos.email,
+      usuario: datos.usuario,
       token: datos.token,
-      _id: datos._id,
-      estado: datos.estado,
-      admin: datos.admin
     };
   } catch (error) {
     console.log("errores en el login");

@@ -10,9 +10,11 @@ import swal from "sweetalert";
 import { consultarUsuario } from "../components/helpers/queriesLogin";
 import ItemUsuarios from "../views/adminUsuarios/itemUsuarios";
 import { consultarPedidoTodos } from "../components/helpers/queriesPedido";
+import Modal from "react-bootstrap/Modal";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
+  const [currentOrder, setCurrentOrder] = useState([]);
 
   useEffect(() => {
     consultarAPI().then(
@@ -33,6 +35,7 @@ const Administrador = () => {
 
   const [usuarios, setUsuarios] = useState([]);
   const [listaPedido, setListaPedido] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     consultarUsuario().then(
@@ -65,88 +68,120 @@ const Administrador = () => {
     );
   }, []);
 
+  const toggleOpenModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const openModal = (email) => {
+    console.log(email);
+    console.log(listaPedido);
+    toggleOpenModal();
+    const findOrder = listaPedido.find((item) => item.nombreUsuario === email);
+    setCurrentOrder(findOrder);
+  };
+  console.log("ORDER", currentOrder);
   return (
-    <div className="mainSection my-5 container">
-      <section className="container  boxAdmin p-2 my-5 ">
-        <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
-          <h1 className="display-6 tituloAdmin ">PRODUCTOS</h1>
-          <Link to="/CrearProducto" className="btn  btnAgregar ">
-            Agregar Producto
-          </Link>
-        </div>
-        <hr />
-        <Table responsive={"sm md"}>
-          <thead className="text-light text-center">
-            <tr>
-              <th>PRODUCTO</th>
-              <th>PRECIO</th>
-              <th>CATEGORIA</th>
-              <th>ACCIONES</th>
-            </tr>
-          </thead>
-          <tbody className="fw-bold">
-            {productos.map((producto) => (
-              <ItemProducto
-                key={producto._id}
-                producto={producto}
-                setProductos={setProductos}
-              ></ItemProducto>
+    <>
+      <Modal show={showModal} onHide={toggleOpenModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ul>
+            {currentOrder?.pedido?.map((item) => (
+              <li>
+                `${item.nombre} - ${item.precio}`
+              </li>
             ))}
-          </tbody>
-        </Table>
-      </section>
-      <section className="container  boxAdmin p-2 my-5 mainSection">
-        <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
-          <h1 className="display-6 tituloAdmin ">USUARIOS REGISTRADOS</h1>
-        </div>
-        <hr />
-        <Table responsive={"sm md"}>
-          <thead className="text-light text-center">
-            <tr>
-              <th>USUARIO</th>
-              <th>EMAIL</th>
-              <th>STATUS</th>
-            </tr>
-          </thead>
-          <tbody className="fw-bold text-center">
-            {usuarios.map((usuario) => (
-              <ItemUsuarios
-                key={usuario._id}
-                usuario={usuario}
-                setUsuarios={setUsuarios}
-              ></ItemUsuarios>
-            ))}
-          </tbody>
-        </Table>
-      </section>
-      <section className="container boxAdmin p-2 my-5">
-        <div className="d-flex justify-content-between align-items-center mt-5 ps-3 pe-3">
-          <h1 className="display-6 tituloAdmin">PEDIDOS EN CARRITO</h1>
-        </div>
-        <hr />
-      </section>
-      <div className="container">
-        <div className="row">
-          {listaPedido.map((pedido) => (
-            <Card style={{ width: "18rem" }} className="m-3">
-              <Card.Body>
-                <Card.Title>Usuario: {pedido.email}</Card.Title>
-                <Card.Text>
-                  <ul>
-                    {pedido.pedido.map((p) => (
-                      <li>{`${p.nombre} -- Precio: ${p.precio}`}</li>
-                    ))}
-                  </ul>
-                  <Button key={pedido.id} variant="primary">
-                    Total <Badge bg="secondary">{pedido.total}</Badge>
-                  </Button>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
+          </ul>
+        </Modal.Body>
+        <Modal.Footer></Modal.Footer>
+      </Modal>
+      <div className="mainSection my-5 container">
+        <section className="container  boxAdmin p-2 my-5 ">
+          <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
+            <h1 className="display-6 tituloAdmin ">PRODUCTOS</h1>
+            <Link to="/CrearProducto" className="btn  btnAgregar ">
+              Agregar Producto
+            </Link>
+          </div>
+          <hr />
+          <Table responsive={"sm md"}>
+            <thead className="text-light text-center">
+              <tr>
+                <th>PRODUCTO</th>
+                <th>PRECIO</th>
+                <th>CATEGORIA</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody className="fw-bold">
+              {productos.map((producto) => (
+                <ItemProducto
+                  key={producto._id}
+                  producto={producto}
+                  setProductos={setProductos}
+                ></ItemProducto>
+              ))}
+            </tbody>
+          </Table>
+        </section>
+        <section className="container  boxAdmin p-2 my-5 mainSection">
+          <div className="d-flex justify-content-between align-items-center  mt-5 ps-3 pe-3">
+            <h1 className="display-6 tituloAdmin ">USUARIOS REGISTRADOS</h1>
+          </div>
+          <hr />
+          <Table responsive={"sm md"}>
+            <thead className="text-light text-center">
+              <tr>
+                <th>USUARIO</th>
+                <th>EMAIL</th>
+                <th>STATUS</th>
+              </tr>
+            </thead>
+            <tbody className="fw-bold text-center">
+              {usuarios.map((usuario) => (
+                <ItemUsuarios
+                  key={usuario._id}
+                  usuario={usuario}
+                  setUsuarios={setUsuarios}
+                ></ItemUsuarios>
+              ))}
+            </tbody>
+          </Table>
+        </section>
+        <section className="container boxAdmin p-2 my-5">
+          <div className="d-flex justify-content-between align-items-center mt-5 ps-3 pe-3">
+            <h1 className="display-6 tituloAdmin">PEDIDOS EN CARRITO</h1>
+          </div>
+          <hr />
+          <Table responsive={"sm md"}>
+            <thead className="text-light text-center">
+              <tr>
+                <th>Email</th>
+                <th>Productos</th>
+                <th>Precio Total</th>
+              </tr>
+            </thead>
+            <tbody className="fw-bold text-center">
+              {listaPedido.map((pedido) => (
+                <tr>
+                  <td>{pedido.nombreUsuario}</td>
+                  <td>
+                    <Button onClick={() => openModal(pedido.nombreUsuario)}>
+                      Ver productos
+                    </Button>
+                  </td>
+                  <td>
+                    <Badge>{pedido.total}</Badge>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </section>
       </div>
-    </div>
+    </>
   );
 };
 

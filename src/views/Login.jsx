@@ -27,7 +27,11 @@ const Login = ({ setUsuarioLogueado }) => {
           "tokenCoderCofee",
           JSON.stringify(respuesta.token)
         );
-        console.log(respuesta);
+        localStorage.setItem(
+            "user",
+            JSON.stringify(respuesta.usuario)
+          );
+        console.log('resss', respuesta);
         setUsuarioLogueado(respuesta)
 
         navigate("/");
