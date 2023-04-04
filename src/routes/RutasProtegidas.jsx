@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 const RutasProtegidas = ({children}) => {
-   const token = JSON.parse(localStorage.getItem('tokenCodderCofee')) || null
+   const token = JSON.parse(localStorage.getItem('user')) || null
    if(!token){
     // si el usuario no esta logueado
     return <Navigate to={'/login'}></Navigate>

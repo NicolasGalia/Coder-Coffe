@@ -1,9 +1,8 @@
 import "./inicio.css"
 import ProductosCard from './ProductosCard';
-import { Container, Row } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { editarPedidoBD } from "../../components/helpers/queriesPedido";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 // USUARIO FALSO BORRAR
@@ -16,6 +15,7 @@ let usuarioFalso = {
 const ListaProductos = () => {
     const [productos, setProductos] = useState([]);
     const [pedido, setPedido] = useState();
+    const navigate =  useNavigate();
     
     useEffect(() =>{
         const getProdutos = async () =>{
@@ -39,7 +39,7 @@ const ListaProductos = () => {
   };
   
 
-  let actualizarPedido = (producto, precio) => {
+  const actualizarPedido = (producto, precio) => {
       const token = localStorage.getItem('tokenCoderCofee')
       if (token) {
         let pedidoActualizado = {
@@ -50,7 +50,6 @@ const ListaProductos = () => {
           __v: pedido.__v,
         };
         setPedido(pedidoActualizado);
-        // editarPedidoBD(pedido._id, pedidoActualizado)
         Swal.fire({
           position: 'bottom-end',
           icon: 'success',
@@ -68,8 +67,12 @@ const ListaProductos = () => {
           width: 300,
           timer: 1500
         })
+        navigate('/registro');
+        window.scrollTo({
+          top: 10,
+          behavior: "smooth",
+        });        
       }
-
   };
 
   return (

@@ -3,12 +3,23 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { enviarPedido } from '../helpers/queriesPedido';
+import { useEffect } from 'react';
+import ItemUsuarios from '../../views/adminUsuarios/itemUsuarios';
 
 
 const ModalCustom = ({show, handleClose, title, data}) => {
-  
+  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
+  const [userActive, setUserActive] = useState(false);
   const [show1, setShow] = useState(false);
   let [carritoCerrado, setCarritoCerrado] = useState(false);
+ 
+
+  // Comprueba que haya un usuario conectado
+  // useEffect(() => {
+  //   if (storageUser.length !== 0) {
+  //     setUserActive(true);
+  //   }
+  // }, [setUserActive, storageUser]);
 
   const cerrarCarrito = async () => {
     const user = JSON.parse(localStorage.getItem('user'))

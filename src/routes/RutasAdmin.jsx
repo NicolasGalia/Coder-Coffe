@@ -17,15 +17,15 @@ const RutasAdmin = ({ setUsuarioLogueado }) => {
         ></Route>
         <Route
           exact
-          path="/crear"
+          path="/CrearProducto"
           element={<CrearProducto></CrearProducto>}
         ></Route>
         <Route
           exact
-          path="/editar/:id"
+          path="/EditarProducto/:id"
           element={<EditarProducto></EditarProducto>}
         ></Route>
-        
+        <Route exact path="/registro" element={<Registro setUsuarioLogueado ={setUsuarioLogueado }></Registro>}></Route>
       </Routes>
     </>
   );

@@ -1,6 +1,5 @@
 import { Button, Container } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 import { consultarUsuario } from "../../components/helpers/queriesLogin";
 
 import { borrarUsuario } from "../../components/helpers/queriesLogin";
