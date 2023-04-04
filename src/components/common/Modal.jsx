@@ -3,8 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { enviarPedido } from '../helpers/queriesPedido';
-import { useEffect } from 'react';
-import ItemUsuarios from '../../views/adminUsuarios/itemUsuarios';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 
