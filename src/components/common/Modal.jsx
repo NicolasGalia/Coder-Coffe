@@ -5,21 +5,17 @@ import { useState } from 'react';
 import { enviarPedido } from '../helpers/queriesPedido';
 import { useEffect } from 'react';
 import ItemUsuarios from '../../views/adminUsuarios/itemUsuarios';
+import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
 
 
 const ModalCustom = ({show, handleClose, title, data}) => {
-  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
+  const carrito = JSON.parse(localStorage.getItem("shopping-cart")) || [];
   const [userActive, setUserActive] = useState(false);
   const [show1, setShow] = useState(false);
   let [carritoCerrado, setCarritoCerrado] = useState(false);
+  const navigate = useNavigate();
  
-
-  // Comprueba que haya un usuario conectado
-  // useEffect(() => {
-  //   if (storageUser.length !== 0) {
-  //     setUserActive(true);
-  //   }
-  // }, [setUserActive, storageUser]);
 
   const cerrarCarrito = async () => {
     const user = JSON.parse(localStorage.getItem('user'))
@@ -29,8 +25,23 @@ const ModalCustom = ({show, handleClose, title, data}) => {
       total: data.reduce((acc,curr) => acc + curr.precio * curr.quantity, 0),
     }
     try {
-      await enviarPedido(pedido);
+      if (carrito.length) {
+        await enviarPedido(pedido);
+        swal("Good job!", "You clicked the button!", "success");
+        localStorage.setItem("shopping-cart", JSON.stringify([]));
+        handleClose();
+        navigate("/");
+      } else {
+        swal("Error", "Elija los productos que desea comprar", "error");
+        handleClose();
+        navigate("/");
+      }
     } catch (error) {
+      swal.fire(
+        "Ocurrio un error",
+        "Intentelo nuevamente en unos minutos",
+        "error"
+      );
       
     }
     setShow(false);

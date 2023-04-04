@@ -1,13 +1,11 @@
 import { Navigate } from "react-router-dom";
 
-const RutasProtegidas = ({children}) => {
-   const token = JSON.parse(localStorage.getItem('user')) || null
-   if(!token){
+export const RutasAdmin = ({children}) => {
+   const user = JSON.parse(localStorage.getItem('user')) || null
+   if(!user?.admin){
     // si el usuario no esta logueado
-    return <Navigate to={'/login'}></Navigate>
+    return <Navigate to={'/'}></Navigate>
    }else{
     return children;
    }
 };
-
-export default RutasProtegidas;

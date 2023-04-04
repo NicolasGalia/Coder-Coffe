@@ -4,10 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../src/App.css";
 import DetalleProducto from "./views/DetalleProducto";
-import RutasAdmin from "./routes/RutasAdmin";
+import { RutasAdmin } from "./routes/RutasProtegidas";
 import Inicio from "./views/Inicio";
 import Login from "./views/Login";
-import RutasProtegidas from "./routes/RutasProtegidas";
 import Error404 from "./views/Error404";
 import Registro from "./views/Registro";
 import PaginaPedido from "./views/PaginaPedido";
@@ -36,7 +35,11 @@ function App() {
           <Route
             exact
             path="/administrador"
-            element={<Administrador />}
+            element={
+              <RutasAdmin>
+                <Administrador />
+              </RutasAdmin>
+            }
           ></Route>
           <Route exact path="/registro" element={<Registro />}></Route>
           <Route exact path="/Menu" element={<Menu />}></Route>
@@ -75,18 +78,6 @@ function App() {
             element={<PaginaPedido></PaginaPedido>}
           ></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
-          aqui quiero las rutas protegidas
-          <Route
-            path="/administrador/*"
-            element={
-              <RutasProtegidas>
-                <RutasAdmin
-                  setUsuarioLogueado={setUsuarioLogueado}
-                ></RutasAdmin>
-              </RutasProtegidas>
-            }
-          ></Route>
-          
         </Routes>
 
         <Footer></Footer>
