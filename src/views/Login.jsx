@@ -45,6 +45,9 @@ const Login = ({ setUsuarioLogueado }) => {
       }
     });
   };
+const submit = () => {
+navigate("/registro");
+}
 
   return (
     <section className='mainLogin'>
@@ -59,7 +62,7 @@ const Login = ({ setUsuarioLogueado }) => {
                         <div className="heading">
                             <h2>Bienvenido</h2>
                             <h6>No tienes una cuenta?</h6>
-                            <a href="#" className="toggle"> Registrate</a>
+                            <a href="#" className="toggle" onClick={submit}> Registrate</a>
                         </div>
 
                         <div className="actual-form">

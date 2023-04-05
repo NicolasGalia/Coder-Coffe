@@ -25,7 +25,7 @@ const ModalCustom = ({show, handleClose, title, data}) => {
     try {
       if (carrito.length) {
         await enviarPedido(pedido);
-        swal("Good job!", "You clicked the button!", "success");
+        swal("Compra Exitosa", "Ahora puedes disfrutar de tu producto!", "success");
         localStorage.setItem("shopping-cart", JSON.stringify([]));
         handleClose();
         navigate("/");

@@ -1,13 +1,18 @@
-
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import { consultarUsuario, crearUsuario } from '../components/helpers/queriesLogin';
 import Swal from "sweetalert2";
 import "../views/css/registro.css"
 
 const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate();
+  
+  const submit2 = () => {
+    navigate("/login");
+    }
 
   const onSubmit = (datos) => {
    
@@ -33,7 +38,7 @@ const Registro = () => {
         "Intentelo nuevamente en unos minutos",
         "error"
       )
-    })
+    });
 
   }, [])
   return (
@@ -50,7 +55,7 @@ const Registro = () => {
               <div className="heading">
                 <h2>Bienvenido</h2>
                 <h6>Ya tienes una cuenta?</h6>
-                <a href="#" className="toggle"> Iniciar Sesión</a>
+                <a href="#" className="toggle" onClick={submit2}> Iniciar Sesión</a>
               </div>
 
               <div className="actual-form">
