@@ -1,24 +1,24 @@
 <h1>Coder Coffe <h2/>
 
-<h2>Productos de calidad y al mejor precio<div/>
+<h3>Productos de calidad y al mejor precio<div/>
 
-Proyecto realizado con CSS y HTML, JS, Mongo DB.
+ Proyecto realizado con CSS y HTML, JS, Mongo DB.
 
 Accede a la demo desde el siguiente link demo
 
 
-Librerias Utilizadas
-# Bootstrap -ObejetoUUVID
-# sweetalert
-# React-router-dom
-# React-hook-form
-# Axios
-# React-Bootstrap
+ # Librerias Utilizadas
+ Bootstrap -ObejetoUUVID
+sweetalert
+React-router-dom
+React-hook-form
+Axios
+React-Bootstrap
 
-Recursos Utilizados
-# Productos
-# Usuarios
-# Pedidos
+# Recursos Utilizados
+Productos
+Usuarios
+Pedidos
 
 Autores
 1 Galia Maldonado, Nicolas.
