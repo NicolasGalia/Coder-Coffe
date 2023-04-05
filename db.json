@@ -1,0 +1,87 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "cafe",
+      "precio": "121",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "bebidas",
+      "id": 1
+    },
+    {
+      "nombreProducto": "Brownie con nueces",
+      "precio": "123",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "Postres",
+      "id": 2
+    },
+    {
+      "nombreProducto": "Brownie con nueces",
+      "precio": "123",
+      "imagen": "https://i.blogs.es/c38962/galaxy-a03/840_560.jpeg",
+      "categoria": "Postres",
+      "id": 3
+    }
+  ],
+
+  
+      
+  "usuarios": [
+    {
+      "nombre": "florencia",
+      "apellido": "palma",
+      "email": "flor@gmail.com",
+      "userName": "florpalma1",
+      "password": "florencia12345",
+      "id": 1
+    },
+    {
+      "nombre": "myriam",
+      "apellido": "salazar",
+      "email": "myriarg@gmail.com",
+      "userName": "myriss",
+      "password": "salazar2345",
+      "id": 2
+    },
+    {
+      "nombre": "neymar",
+      "apellido": "santos",
+      "email": "brasil2022@gmail.com",
+      "userName": "boricua2022",
+      "password": "alemania7",
+      "id": 4
+    },
+    {
+      "nombre": "Lucas",
+      "apellido": "Paqueta",
+      "email": "lpaqueta@mail.com",
+      "userName": "Brasil123",
+      "password": "bailandotiktok",
+      "id": 5
+    },
+    {
+      "nombre": "lionel",
+      "apellido": "messi",
+      "email": "liomessi@gmail.com",
+      "userName": "d10s",
+      "password": "antomateo12",
+      "id": 6
+    },
+    {
+      "nombre": "daniel",
+      "apellido": "scioli",
+      "email": "pichici@gmail.com",
+      "userName": "pichichi15",
+      "password": "gobierno12345",
+      "id": 8
+    },
+    {
+      "nombre": "juan",
+      "apellido": "taxista",
+      "email": "juangh@mail.com",
+      "userName": "tachero",
+      "password": "bigbrother32",
+      "id": 10
+    }
+  ]
+
+}
