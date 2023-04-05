@@ -1,20 +1,30 @@
 <h1>Coder Coffe <h2/>
 
-Productos de calidad y al mejor precio
-Proyecto realizado con CSS y HTML, JS. Para guardar los productos utilizamos el LocalStorage y para inciar la sesion utilizamos SessionStorage
+<h2>Productos de calidad y al mejor precio<div/>
+
+Proyecto realizado con CSS y HTML, JS, Mongo DB.
 
 Accede a la demo desde el siguiente link demo
-Supermercado Rolling
+
 
 Librerias Utilizadas
--Bootstrap -ObejetoUUVID
--sweetalert
+# Bootstrap -ObejetoUUVID
+# sweetalert
+# React-router-dom
+# React-hook-form
+# Axios
+# React-Bootstrap
 
 Recursos Utilizados
--Productos
+# Productos
+# Usuarios
+# Pedidos
 
 Autores
-1 Luciana Soria 2 Manuel Ibañez Astorga 3 Nicolas Fara 4 Nico Elias
+1 Galia Maldonado, Nicolas.
+2 Palma, Florencia.
+3 Pintos, Eloy.
+4 Ross, Eduardo.
 
 
 
