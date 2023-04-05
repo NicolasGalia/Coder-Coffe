@@ -56,7 +56,7 @@ const PaginaPedido = () => {
     total: pedido.total,
   };
 
-  console.log(pedidoListoParaEnviar)
+
 
   const enviarPedidoSweetAlert = ()=>{
     Swal.fire({

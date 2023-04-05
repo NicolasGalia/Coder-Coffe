@@ -31,7 +31,7 @@ const Login = ({ setUsuarioLogueado }) => {
             "user",
             JSON.stringify(respuesta.usuario)
           );
-        console.log('resss', respuesta);
+        
         setUsuarioLogueado(respuesta)
 
         navigate("/");

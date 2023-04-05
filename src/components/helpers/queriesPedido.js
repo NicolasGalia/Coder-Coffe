@@ -10,14 +10,14 @@ export const consultarPedidoTodos = async () => {
     const listaPedido = await respuesta.json();
     return listaPedido;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
 
 
   export const editarPedidoBD = async(id, pedido)=>{
-console.log(id)
+
     try {
         const respuesta = await fetch(URL+"/"+id,{
             method: "PUT",
@@ -36,7 +36,7 @@ console.log(id)
 
 
   export const enviarPedido = async (pedido) => {
-    console.log(pedido);
+   
     try {
       const respuesta = await fetch(URL, {
         method: "POST",
@@ -47,7 +47,7 @@ console.log(id)
       });
       return respuesta;
     } catch (error) {
-        console.log(error);
+        
     }
   
   };
@@ -60,7 +60,7 @@ console.log(id)
       const listaProductos = await respuesta.json();
       return listaProductos;
     } catch (error) {
-      console.log(error);
+    
       return false;
     }
   };

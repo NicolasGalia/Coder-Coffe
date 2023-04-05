@@ -12,9 +12,9 @@ const EditarProducto = () => {
   const navegacion = useNavigate();
 
   useEffect(()=>{
-    console.log(id)
+   
     obtenerProductoAPI(id).then((respuesta)=>{
-      console.log(respuesta)
+      
       if(respuesta.status === 200){
         setValue('nombreProducto', respuesta.dato.nombreProducto);
         setValue('precio', respuesta.dato.precio);

@@ -9,12 +9,12 @@ export const consultarUsuario = async () => {
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
-    console.log(error);
+   
   }
 };
 
 export const crearUsuario = async (usuario) => {
-  console.log(usuario);
+
   try {
     const respuesta = await fetch(URL + "/auth/nuevo", {
       method: "POST",
@@ -25,7 +25,7 @@ export const crearUsuario = async (usuario) => {
     });
     return respuesta;
   } catch (e) {
-    console.log(e);
+   
   }
 };
 
@@ -36,7 +36,7 @@ export const borrarUsuario = async (_id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    
     return false;
   }
 }
@@ -44,7 +44,7 @@ export const borrarUsuario = async (_id) => {
 export const login = async (usuario) => {
   try {
 
-    console.log(usuario);
+  
     const respuesta = await fetch(URL + "/auth", {
 
       method: "POST",
@@ -60,7 +60,7 @@ export const login = async (usuario) => {
       token: datos.token,
     };
   } catch (error) {
-    console.log("errores en el login");
+    
     return;
   }
 };

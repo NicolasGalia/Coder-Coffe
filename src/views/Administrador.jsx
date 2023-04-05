@@ -22,7 +22,7 @@ const Administrador = () => {
         setProductos(respuesta);
       },
       (reason) => {
-        console.log(reason);
+        
 
         swal.fire(
           "Ocurrio un error",
@@ -43,7 +43,7 @@ const Administrador = () => {
         setUsuarios(respuesta);
       },
       (reason) => {
-        console.log(reason);
+      
 
         swal.fire(
           "Ocurrio un error",
@@ -57,7 +57,7 @@ const Administrador = () => {
         setListaPedido(respuesta);
       },
       (reason) => {
-        console.log(reason);
+       
 
         swal.fire(
           "Ocurrio un error",
@@ -73,13 +73,12 @@ const Administrador = () => {
   };
 
   const openModal = (email) => {
-    console.log(email);
-    console.log(listaPedido);
+   
     toggleOpenModal();
     const findOrder = listaPedido.find((item) => item.nombreUsuario === email);
     setCurrentOrder(findOrder);
   };
-  console.log("ORDER", currentOrder);
+  
   return (
     <>
       <Modal show={showModal} onHide={toggleOpenModal}>

@@ -8,7 +8,6 @@ export const consultarAPI = async () => {
     const listaProductos = await respuesta.json();
     return listaProductos;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };
@@ -27,7 +26,6 @@ export const crearProductoAPI = async (producto) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };
@@ -41,7 +39,6 @@ export const obtenerProductoAPI = async(id)=>{
       }
       return producto;
   } catch (error) {
-      console.log(error);
       return false;
   }
 }
@@ -54,7 +51,6 @@ export const borrarProductoAPI = async(id)=>{
       return respuesta;
       
   } catch (error) {
-      console.log(error);
       return false;
   }
 }

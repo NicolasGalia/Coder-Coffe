@@ -10,7 +10,7 @@ const Registro = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (datos) => {
-    console.log(datos);
+   
     crearUsuario(datos).then((respuesta) => {
 
       if (respuesta.status === 201) {
@@ -27,7 +27,7 @@ const Registro = () => {
     consultarUsuario().then((respuesta) => {
       setUsuarios(respuesta)
     }, (reason) => {
-      console.log(reason);
+   
       Swal.fire(
         "Ocurrio un error",
         "Intentelo nuevamente en unos minutos",
