@@ -8,11 +8,11 @@ Accede a la demo desde el siguiente link demo
 
 
  # Librerias Utilizadas
-Bootstrap -ObejetoUUVID  <hr/>
-sweetalert
-React-router-dom
-React-hook-form
-Axios
+Bootstrap -ObejetoUUVID  <br/>
+sweetalert <br/>
+React-router-dom <br/>
+React-hook-form <br/>
+Axios <br/>
 React-Bootstrap
 
 # Recursos Utilizados
