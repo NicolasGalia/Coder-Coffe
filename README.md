@@ -2,7 +2,7 @@
 
 <h3>Productos de calidad y al mejor precio<div/>
 
- Proyecto realizado con CSS y HTML, JS, Mongo DB.
+ Proyecto realizado con CSS y HTML, JS, Mongo DB. <br/>
 
 Accede a la demo desde el siguiente link demo
 
@@ -16,14 +16,14 @@ Axios <br/>
 React-Bootstrap
 
 # Recursos Utilizados
-Productos
-Usuarios
+Productos <br/>
+Usuarios <br/> 
 Pedidos
 
 # Autores
-1 Galia Maldonado, Nicolas.
-2 Palma, Florencia.
-3 Pintos, Eloy.
+1 Galia Maldonado, Nicolas.<br/>
+2 Palma, Florencia. <br/>
+3 Pintos, Eloy. <br/>
 4 Ross, Eduardo.
 
 
