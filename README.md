@@ -8,7 +8,7 @@ Accede a la demo desde el siguiente link demo
 
 
  # Librerias Utilizadas
- Bootstrap -ObejetoUUVID
+Bootstrap -ObejetoUUVID  <hr/>
 sweetalert
 React-router-dom
 React-hook-form
