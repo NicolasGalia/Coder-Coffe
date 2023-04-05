@@ -1,6 +1,6 @@
 <h1>Coder Coffe <h2/>
 
-<h3>Productos de calidad y al mejor precio<div/>
+Productos de calidad y al mejor precio <br/> 
 
  Proyecto realizado con CSS y HTML, JS, Mongo DB. <br/>
 
