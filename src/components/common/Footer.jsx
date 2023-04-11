@@ -23,7 +23,7 @@ const Footer = () => {
         
 
         <Col xs={12} lg={3} md={6}>
-        <Nav.Link end to="/acercaDeNosotros" className="m-3 fs-4">
+        <Nav.Link to="/acercaDeNosotros" className="m-3 fs-4">
             Sobre Nosotros
           </Nav.Link>
           <Nav.Link href="#" className="m-4">

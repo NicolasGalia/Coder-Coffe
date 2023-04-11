@@ -57,7 +57,7 @@ const ProductosCard = ({ itemProducto, actualizarPedidoprops }) => {
             variant="success"
             onClick={() => agregarYCerrar(itemProducto)}
           >
-            Agregal al <i class="bi bi-cart3"></i>
+            Agregal al <i className="bi bi-cart3"></i>
           </Button>
         </Modal.Footer>
       </Modal>

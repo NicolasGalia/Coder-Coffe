@@ -41,7 +41,7 @@ const Menu = () => {
                 to="/"
                 className="itemsNavb linknoMostrar navbar navbar-brand"
               >
-                Carrito<i class="bi bi-cart3"></i>
+                Carrito<i className="bi bi-cart3"></i>
               </NavLink>
             )}
             <NavLink
@@ -87,7 +87,7 @@ const Menu = () => {
                   <NavLink to="/login" className="nav-item nav-link">
                     Iniciar Sesion
                   </NavLink>
-                  <NavLink end to="/registro" className="nav-item nav-link">
+                  <NavLink to="/registro" className="nav-item nav-link">
                     Registro
                   </NavLink>
                   <NavLink to="/error404" className="nav-item nav-link">

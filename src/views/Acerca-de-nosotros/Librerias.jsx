@@ -17,7 +17,7 @@ const Librerias = () => {
                Conoce más sobre nuestro
               </span>
               <span>Proyecto</span>
-              <spane>
+              <span>
                 Para nuestro proyecto final utilizamos librerias tales
                 <br />
                  como Reactjs, BootstrapJs, MongoDB, Nodejs, Express 
@@ -25,7 +25,7 @@ const Librerias = () => {
                 De la misma forma utilizamos los conocimientos a lo largo del 
                 <br />
                 curso en Javascript, Css, Github, Trello.
-              </spane>
+              </span>
             </div>
     
             {/* right side */}

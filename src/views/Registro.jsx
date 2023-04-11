@@ -86,7 +86,7 @@ const Registro = () => {
                   </Form.Text>
                 </div>
                 {/* 2input apellido*/}
-                <div class="input-wrap">
+                <div className="input-wrap">
                   <input
                     className="input-field"
                     type="text"
@@ -112,7 +112,7 @@ const Registro = () => {
                   </Form.Text>
                 </div>
                 {/* 3er input */}
-                <div class="input-wrap">
+                <div className="input-wrap">
                   <input
                     className="input-field"
                     type="text"
@@ -131,7 +131,7 @@ const Registro = () => {
                   </Form.Text>
                 </div>
                 {/* 4 input */}
-                <div class="input-wrap">
+                <div className="input-wrap">
                   <input
                     className="input-field"
                     type="text"
@@ -157,7 +157,7 @@ const Registro = () => {
                   </Form.Text>
                 </div>
                 {/* 5 input */}
-                <div class="input-wrap">
+                <div className="input-wrap">
                   <input
                     className="input-field"
                     type="text"
@@ -187,7 +187,7 @@ const Registro = () => {
 
           <div className="carousel-login">
             <div className="images-wrapper">
-              <img src="https://i.postimg.cc/gkcqYp33/1-removebg-preview.png" class="image img-1 show" alt="" />
+              <img src="https://i.postimg.cc/gkcqYp33/1-removebg-preview.png" className="image img-1 show" alt="" />
             </div>
           </div>
         </div>
