@@ -2,6 +2,9 @@
 .item{
   width: 300px;
 }
+.quitarScroll {
+  overflow: hidden;
+}
   .item .img  img{
     height: 320px;
     transition: 0.5s;
