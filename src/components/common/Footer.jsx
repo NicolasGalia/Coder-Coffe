@@ -10,38 +10,40 @@ import { AiOutlineTwitter } from "react-icons/ai";
 import { GiCoffeeCup } from "react-icons/gi";
 import Logo from "../../../src/img/logoBgTransparent.png";
 import {Routes} from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="text-light py-4 footer text-center">
       <Row >
         <Col xs={12} lg={3} md={12}>
-          <Nav.Link href="#">
+          <NavLink to="/AcercaNosotros" href="#">
             <img src={Logo} alt="Logo" className="logoFooter " />
-          </Nav.Link>
+          </NavLink>
         </Col>
         
 
         <Col xs={12} lg={3} md={6}>
-        <Nav.Link to="/acercaDeNosotros" className="m-3 fs-4">
+        <p className="m-3 fs-4">
             Sobre Nosotros
-          </Nav.Link>
-          <Nav.Link href="#" className="m-4">
+          </p>
+          <p className="m-4">
             Menús
-          </Nav.Link>
-          <Nav.Link href="#" className="m-4">
+          </p>
+          <p className="m-4">
           Nuestro Cafe <GiCoffeeCup></GiCoffeeCup>
-          </Nav.Link>
-          <Nav.Link href="#" className="m-4">
+          </p>
+          <p className="m-4">
             Experiencia CoderCoffe
-          </Nav.Link>
+          </p>
         </Col>
           
         
         <Col xs={12} lg={3} md={6}>
-          <Nav.Link href="#" className="m-3 fs-4">
+          <p  className="m-3 fs-4">
             Atencion al Cliente{" "}
-          </Nav.Link>
+          </p>
           <p className="m-4">
             + 11 4347 9443 <BsFillTelephoneInboundFill className="m-1" />
           </p>
@@ -53,17 +55,17 @@ const Footer = () => {
         <Col xs={12} lg={3} md={12}>
         
           <div className="d-flex justify-content-center">
-            <Nav.Link href="#">
+            <p href="#">
               <BsInstagram className="m-3 bg" />
-            </Nav.Link>
-            <Nav.Link href="#">
+            </p>
+            <p>
               {" "}
               <BsFacebook className="m-3"></BsFacebook>
-            </Nav.Link>
-            <Nav.Link href="#">
+            </p>
+            <p>
               {" "}
               <AiOutlineTwitter className="m-3"></AiOutlineTwitter>
-            </Nav.Link>
+            </p>
           </div>
         </Col>
         
@@ -71,7 +73,7 @@ const Footer = () => {
 
       <hr />
       <div>
-        <p className="m-5 d-flex justify-content-center">
+        <p className=" m-5 d-flex justify-content-center">
           &copy; Todos los derechos reservados
         </p>
       </div>

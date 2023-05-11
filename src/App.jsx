@@ -23,7 +23,7 @@ function App() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
-    <div className="App">
+    <div className="App row gx-0">
       <BrowserRouter>
         <Menu
           usuarioLogueado={usuarioLogueado}
